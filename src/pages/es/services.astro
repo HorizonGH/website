@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const locale = 'es';
+const t = useTranslations(locale);
+---
+
+<Layout title="Nuestros Servicios | Horizon.gh" locale={locale}>
+  <Navigation locale={locale} />
+
+  <main class="pt-32">
+    <!-- Page Header -->
+    <header class="max-w-7xl mx-auto px-6 mb-24">
+      <div class="relative inline-block mb-4">
+        <span class="bg-tertiary-container text-tertiary px-4 py-1 rounded-full font-label text-xs tracking-widest uppercase">Ecosistema</span>
+      </div>
+      <h1 class="text-6xl md:text-8xl font-display font-bold tracking-tighter mb-8 bg-gradient-to-r from-on-surface to-primary bg-clip-text text-transparent">
+        {t.services.title}
+      </h1>
+      <p class="text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed">
+        {t.services.description}
+      </p>
+    </header>
+
+    <!-- Detailed Service List -->
+    <section class="max-w-7xl mx-auto px-6 mb-32">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="md:col-span-7 group relative overflow-hidden rounded-xl bg-surface-container-low p-8 border-none transition-all duration-300 hover:bg-surface-container">
+          <div class="flex flex-col h-full">
+            <div class="mb-8">
+              <span class="material-symbols-outlined text-5xl text-primary mb-4">web</span>
+              <h3 class="text-3xl font-display font-bold text-on-surface mb-4">{t.services.webDevelopment.title}</h3>
+              <p class="text-on-surface-variant mb-6 text-lg">
+                {t.services.webDevelopment.description}
+              </p>
+              <ul class="grid grid-cols-1 gap-4 mb-8">
+                <li class="flex items-center gap-3 text-sm text-slate-300">
+                  <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                  Landing pages que convierten
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-300">
+                  <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                  Webs profesionales
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-300">
+                  <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                  Presencia digital sólida
+                </li>
+              </ul>
+            </div>
+            <a class="mt-auto flex items-center gap-2 text-primary font-label font-bold group-hover:gap-4 transition-all" href="#">
+              Aprende Más <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 group relative overflow-hidden rounded-xl bg-surface-container-highest p-8 transition-all duration-300 hover:bg-surface-bright">
+          <span class="material-symbols-outlined text-5xl text-tertiary mb-4">code_blocks</span>
+          <h3 class="text-2xl font-display font-bold text-on-surface mb-4">{t.services.softwareDevelopment.title}</h3>
+          <p class="text-on-surface-variant mb-6">
+            {t.services.softwareDevelopment.description}
+          </p>
+          <ul class="grid grid-cols-1 gap-4 mb-8">
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+              Sistemas internos
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+              APIs
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+              Dashboards
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+              Automatización básica
+            </li>
+          </ul>
+          <a class="flex items-center gap-2 text-tertiary font-label font-bold group-hover:gap-4 transition-all" href="#">
+            Aprende Más <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="cta-gradient rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+          <div class="absolute inset-0 bg-black/10 z-0"></div>
+          <div class="relative z-10">
+            <h2 class="text-4xl md:text-6xl font-display font-bold text-on-primary mb-8 tracking-tighter">Listo para Transformar</h2>
+            <p class="text-on-primary text-xl mb-12 max-w-2xl mx-auto opacity-90 leading-relaxed">
+              Déjanos diseñar la solución perfecta para tu negocio.
+            </p>
+            <button class="cta-gradient text-on-primary font-label font-bold py-4 px-10 rounded-lg text-lg transition-all hover:shadow-[0_0_30px_rgba(56,222,187,0.3)]">
+              Contáctanos Hoy
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

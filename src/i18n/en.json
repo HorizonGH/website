@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "home": {
+    "tagline": "Redefining Innovation",
+    "headline": "Engineering the Digital Horizon",
+    "subheadline": "Enterprise IT solutions designed for forward-thinking organizations that demand more than status quo.",
+    "cta": "Explore Our Services"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Enterprise IT solutions built on technical excellence and strategic vision.",
+    "consulting": {
+      "title": "IT Consulting",
+      "description": "Strategic guidance for digital transformation and infrastructure modernization."
+    },
+    "cloudServices": {
+      "title": "Cloud Services",
+      "description": "Seamless migration and management across AWS, Azure, and Google Cloud."
+    },
+    "security": {
+      "title": "Security Solutions",
+      "description": "Zero-trust architecture and comprehensive threat management."
+    },
+    "devops": {
+      "title": "DevOps & Automation",
+      "description": "CI/CD pipelines and infrastructure as code for maximum velocity."
+    },
+    "webDevelopment": {
+      "title": "Web Development",
+      "description": "Landing pages that convert, professional websites, and a strong digital presence."
+    },
+    "softwareDevelopment": {
+      "title": "Software Development",
+      "description": "Internal systems, APIs, dashboards, and practical automation for smarter operations."
+    }
+  },
+  "blog": {
+    "title": "Technical Insights",
+    "description": "Industry analysis and strategic perspectives from our engineering team.",
+    "readMore": "Read Article",
+    "publishedOn": "Published on",
+    "backToBlog": "Back to Blog"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "description": "Ready to transform your infrastructure? Get in touch with our team.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company",
+      "message": "Message",
+      "send": "Send Message",
+      "success": "Message sent successfully!"
+    }
+  },
+  "footer": {
+    "mission": "Engineering the Digital Horizon",
+    "rights": "All rights reserved.",
+    "language": "Language"
+  }
+}

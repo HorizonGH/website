@@ -1,0 +1,136 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const locale = 'es';
+const t = useTranslations(locale);
+---
+
+<Layout title="Contacto | Horizon.gh" locale={locale}>
+  <Navigation locale={locale} />
+
+  <main class="pt-32 pb-24 px-6 overflow-hidden">
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto mb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+        <div>
+          <h1 class="font-display text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-6 leading-[0.9]">
+            Ponte en <span class="text-primary italic">Contacto</span>
+          </h1>
+          <p class="font-body text-xl text-on-surface-variant max-w-lg leading-relaxed">
+            {t.contact.description}
+          </p>
+        </div>
+        <div class="hidden lg:block relative">
+          <div class="absolute -top-24 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+          <div class="w-full h-1 bg-gradient-to-r from-primary to-transparent opacity-30"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Grid -->
+    <section class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Contact Form Section -->
+        <div class="lg:col-span-7 bg-surface-container-low rounded-xl p-8 md:p-12 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-700"></div>
+          <form action="#" class="relative z-10 space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="font-label text-xs uppercase tracking-widest text-slate-500 ml-1">{t.contact.form.name}</label>
+                <input
+                  class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all duration-300 placeholder:text-slate-600"
+                  placeholder="Juan Pérez"
+                  type="text"
+                />
+              </div>
+              <div class="space-y-2">
+                <label class="font-label text-xs uppercase tracking-widest text-slate-500 ml-1">{t.contact.form.email}</label>
+                <input
+                  class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all duration-300 placeholder:text-slate-600"
+                  placeholder="juan@empresa.com"
+                  type="email"
+                />
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="font-label text-xs uppercase tracking-widest text-slate-500 ml-1">{t.contact.form.company}</label>
+              <input
+                class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all duration-300 placeholder:text-slate-600"
+                placeholder="Tu Empresa"
+                type="text"
+              />
+            </div>
+            <div class="space-y-2">
+              <label class="font-label text-xs uppercase tracking-widest text-slate-500 ml-1">{t.contact.form.message}</label>
+              <textarea
+                class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all duration-300 placeholder:text-slate-600 resize-none"
+                placeholder="Cuéntanos tu visión..."
+                rows="6"
+              ></textarea>
+            </div>
+            <button
+              class="w-full md:w-auto cta-gradient text-on-primary font-bold px-10 py-4 rounded-lg hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 group"
+              type="submit"
+            >
+              {t.contact.form.send}
+              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Info & Sidebar Section -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="bg-surface-container-high rounded-xl p-8 border-l-4 border-primary">
+            <h3 class="font-display text-2xl font-bold text-on-surface mb-6">Oficina Principal</h3>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">location_on</span>
+                <div>
+                  <p class="font-label text-sm text-slate-500">Ubicación</p>
+                  <p class="text-on-surface font-body">Silicon Roundabout, LATAM</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">email</span>
+                <div>
+                  <p class="font-label text-sm text-slate-500">Correo Electrónico</p>
+                  <p class="text-on-surface font-body">contact@horizon.gh</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">schedule</span>
+                <div>
+                  <p class="font-label text-sm text-slate-500">Horario</p>
+                  <p class="text-on-surface font-body">Lunes - Viernes, 8:00 - 18:00 CST</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface-container-highest rounded-xl p-8">
+            <h3 class="font-display text-xl font-bold text-on-surface mb-4">Respuesta Rápida</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+              Típicamente respondemos en menos de 2 horas durante horas de oficina.
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                <p class="text-sm text-on-surface">Consulta estratégica gratuita</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                <p class="text-sm text-on-surface">Evaluación de necesidades sin compromiso</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                <p class="text-sm text-on-surface">Soporte en español y propuestas personalizadas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,229 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import { useTranslations } from '../i18n/utils';
+
+const locale = 'en';
+const t = useTranslations(locale);
+---
+
+<Layout title="Our Solutions | Horizon.gh" locale={locale}>
+  <Navigation locale={locale} />
+
+  <main class="pt-32">
+    <!-- Page Header -->
+    <header class="max-w-7xl mx-auto px-6 mb-24">
+      <div class="relative inline-block mb-4">
+        <span class="bg-tertiary-container text-tertiary px-4 py-1 rounded-full font-label text-xs tracking-widest uppercase">Ecosystem</span>
+      </div>
+      <h1 class="text-6xl md:text-8xl font-display font-bold tracking-tighter mb-8 bg-gradient-to-r from-on-surface to-primary bg-clip-text text-transparent">
+        {t.services.title}
+      </h1>
+      <p class="text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed">
+        {t.services.description}
+      </p>
+    </header>
+
+    <!-- Detailed Service List -->
+    <section class="max-w-7xl mx-auto px-6 mb-32">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="md:col-span-7 group relative overflow-hidden rounded-xl bg-surface-container-low p-8 border-none transition-all duration-300 hover:bg-surface-container">
+          <div class="flex flex-col h-full">
+            <div class="mb-8">
+              <span class="material-symbols-outlined text-5xl text-primary mb-4">web</span>
+              <h3 class="text-3xl font-display font-bold text-on-surface mb-4">Web Development</h3>
+              <p class="text-on-surface-variant mb-6 text-lg">
+                Landing pages that convert, polished websites, and a strong digital presence.
+              </p>
+              <ul class="grid grid-cols-1 gap-4 mb-8">
+                <li class="flex items-center gap-3 text-sm text-slate-300">
+                  <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                  Landing pages that convert
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-300">
+                  <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                  Professional websites
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-300">
+                  <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                  Strong digital presence
+                </li>
+              </ul>
+            </div>
+            <a class="mt-auto flex items-center gap-2 text-primary font-label font-bold group-hover:gap-4 transition-all" href="#">
+              Learn More <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 group relative overflow-hidden rounded-xl bg-surface-container-highest p-8 transition-all duration-300 hover:bg-surface-bright">
+          <span class="material-symbols-outlined text-5xl text-tertiary mb-4">code_blocks</span>
+          <h3 class="text-2xl font-display font-bold text-on-surface mb-4">Software Development</h3>
+          <p class="text-on-surface-variant mb-6">
+            Internal systems, APIs, dashboards, and practical automation for smarter operations.
+          </p>
+          <ul class="grid grid-cols-1 gap-4 mb-8">
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+              Internal systems
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+              APIs
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+              Dashboards
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+              Basic automation
+            </li>
+          </ul>
+          <a class="flex items-center gap-2 text-tertiary font-label font-bold group-hover:gap-4 transition-all" href="#">
+            Learn More <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Comparison -->
+    <section class="bg-surface-container-low py-24 mb-32">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-display font-bold mb-4">Find Your Fit</h2>
+          <p class="text-on-surface-variant">Compare our engagement levels to find the perfect match for your project.</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-outline-variant/20">
+                <th class="py-6 px-4 font-display text-lg">Features</th>
+                <th class="py-6 px-4 font-display text-lg text-primary">Strategic Consulting</th>
+                <th class="py-6 px-4 font-display text-lg text-tertiary">Agile Execution</th>
+                <th class="py-6 px-4 font-display text-lg">Full Partnership</th>
+              </tr>
+            </thead>
+            <tbody class="text-on-surface-variant">
+              <tr class="border-b border-outline-variant/10">
+                <td class="py-6 px-4 font-label">Project Scoping</td>
+                <td class="py-6 px-4"><span class="material-symbols-outlined text-primary">check</span></td>
+                <td class="py-6 px-4"><span class="material-symbols-outlined text-primary">check</span></td>
+                <td class="py-6 px-4"><span class="material-symbols-outlined text-primary">check</span></td>
+              </tr>
+              <tr class="border-b border-outline-variant/10">
+                <td class="py-6 px-4 font-label">Development Team</td>
+                <td class="py-6 px-4">Partial</td>
+                <td class="py-6 px-4">Dedicated</td>
+                <td class="py-6 px-4">Managed Squad</td>
+              </tr>
+              <tr class="border-b border-outline-variant/10">
+                <td class="py-6 px-4 font-label">SLA Support</td>
+                <td class="py-6 px-4">—</td>
+                <td class="py-6 px-4">Business Hours</td>
+                <td class="py-6 px-4">24/7 Priority</td>
+              </tr>
+              <tr>
+                <td class="py-6 px-4 font-label">Post-Launch Audit</td>
+                <td class="py-6 px-4">—</td>
+                <td class="py-6 px-4">Quarterly</td>
+                <td class="py-6 px-4">Monthly</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="max-w-7xl mx-auto px-6 mb-32">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="md:w-1/3">
+          <h2 class="text-4xl font-display font-bold mb-4">Our Tech Stack</h2>
+          <p class="text-on-surface-variant">We leverage industry-leading technologies to build robust and future-proof digital assets.</p>
+        </div>
+        <div class="md:w-2/3 grid grid-cols-3 md:grid-cols-4 gap-8 opacity-60">
+          <div class="flex flex-col items-center gap-2">
+            <img class="w-12 h-12 invert" alt="AWS logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOCSS0ivxuOrKkIh_xHLqT5aUqFAM6a_IKhjnD5WMDeLsAyeLo6kUB3vOfkH2-O9x0bKTKZvy3yoS7krLA3nC0uNV_7htHNkPKwA1ILz8Rv3z-WE9OzqOLHvGL0RkwDv_GWaBcZrAJoXZ0zB26l_068Qqf09hHqEaIKGHldWOY2gSL7UT673maanFAShJzbpYPzU7OJrimBwYZ7Bt6_bRSfEqWZ2po0e7niVfT824S7f1TuawEzEf8QWGp8--s1wsP9q6xQ5OlscY" />
+            <span class="text-xs font-label">AWS</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img class="w-12 h-12 invert" alt="React logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLz7vw7r_PvLZKHtxuL4DeJ2p6vt-6_s5phJesm5i-oG6gJsBWdsWKSriS1T8DbzK9saEAPVWJMHw6vhhsXgjaf8x1eelHQ9-gSeSP3TDN_jYtbH7Wog_7WqOqwey-ti-wUgvUujiW-rKXEmoREVFV4ry6EIAx5Jj_Uqb115kEnVOg2ShkqFv7gTMP09PLMDoc5R8bzsKPj0AhHfWrCi-H8tYlN4ErGWsEbvKAOjXcEg6JygIAIew3P9vdQIMWjr_YOg1_66vCYAg" />
+            <span class="text-xs font-label">React</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img class="w-12 h-12 invert" alt="Python logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNJQR0cSHrUqhh3Y_DzVASyuzlvEMtBKnn_b5xxyUGcTg_rSTTKqcMOs4abNUj_iPnhYnqWdm3hOhd5636tJeCe_1YgrqcKtzBetyvszi7KCv3picNJ03BQIZq6p-b-osmHUpujq-s0YgiIXHNFFdstLXmpYwRGBVro2nebC9FZybHA9YEW6ZayjMaOOBwEXE9GavjjAzWhyJ57YFG3C1ypVaMebUnq3DuiN3d-mYJ_90n9od_j3sx0Sp9_WK6LYVLoGZb4BDuhZU" />
+            <span class="text-xs font-label">Python</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img class="w-12 h-12 invert" alt="Kubernetes logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9M9odvG8h6lhemukWN-53E6hEgmGFiVeuDL3FEbAUYdZKFw0n80VHRBo4eAsyJgFHuqO9OITR4stybnCpuVFv_8S4f-vlQveDOWexs2Takmu_O_2fv2qLCZUsQYkLqD7NRZykHDCti8RmshwWVPk9IYxuofCgWmGMBu9I9czgSC4BTeZb8E2TOQdWqrEXgDeNwUoYD8MEDVQSu35nLMd2WuiH0vIQn94aP2iKfNi2asFKxwahfDOQf88ptJYVCMrcIHZgXiyt3og" />
+            <span class="text-xs font-label">K8s</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img class="w-12 h-12 invert" alt="Azure logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf3DwJb8LVqA2sIm6psfqTw0syT7yvLynHq0P_W2C3Jku2LY_Z7ZVAfqmN4T3ydEDgdoxgBdGCKIvdK_V9EpBolxuPDdtequSiv1FCLFBlqi2ii8OOa7huLjZ8NTaFlaeK3bBu7dcyAf1SS_QkxDFZydEYc70MPZAq7A2OAx37dc9pn6JTUJPSCru-V-6bP5SmCjGDbr-uqvyQx-pSgErydg-wXOyk9nQny5vK7IgDxgI7js71UrWJIhCS60ttCahgE969KKyb65U" />
+            <span class="text-xs font-label">Azure</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img class="w-12 h-12 invert" alt="Terraform logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb5tnTjWS6itSNc_ReEP9ryzNeAI3G31OYC7iTPkBVcSifxjMjEtBIUcjgZJHNs9IEWk6xaZOM67uBtPhW4gzQB7269AAeTKL8miFkbR33Oq9JAgivAUQOMF6ULP-fmV97d9--UtKzj-GczSkWEDUYYli3fs95rJNocFCODKkSOvO8O5mKEN79RnDkLL8oQDG2FCDql1dIww6ezQJ6MV7i8S7Y0WbzlKZmgMmP2rNux8UZ7b0Ds0HXfQ1GvKUN1M-vcvb2oR5ty-A" />
+            <span class="text-xs font-label">Terraform</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img class="w-12 h-12 invert" alt="PostgreSQL logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjjTcG1eP5NVyggJZPQqrPIqQHrmTzGkL6W6I3-WDq-S-QesmYgeqg-Zf0_Vs8wTd5xuYVYgnkA6VCrBrbzihVY2iG_O9wcleY5pA-fIdAoksWqzNf-ZMnAij6TpuHN-vGh6Kw3pK3uGqK5tJPen04OvVwWMbYEhErgZnzJrmwZldis-NtqpWoCl5K2uSrMkGci8ATGmSQashMlm-kvwnKwMfLKt3DxupEDoWoqpDdkefRnctaAYvPQtc6d47U91J-_qIpUrMmYE4" />
+            <span class="text-xs font-label">Postgres</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img class="w-12 h-12 invert" alt="Docker logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu1Hml9R_Wy0i8gH_09dah8c8yYR0yYmhte_Uud8Vp9QIEbFg3wnbSMy_hDgUgGX4w1e1G6GrTUY3g74n540FqUmw1TMHgcRwVbZFb5L97UMkUM-D5dDmq8Ao3K1Mv3gum9h0Bve81VTNPRsS2VfjpAfqPFPxJfN8vWi4SWhANRZTq6OAwQyc6syX6AxOHgYqxPIYSI-lMVBtgqdx1Y-jhNX8z4y2EImVJ3I61LhmOmGWqec4thDBh18M8jViiP6-R2-wfJAAMzVs" />
+            <span class="text-xs font-label">Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secondary CTA -->
+    <section class="max-w-7xl mx-auto px-6 mb-32">
+      <div class="relative rounded-2xl overflow-hidden p-12 bg-surface-container-high text-center">
+        <div
+          class="absolute inset-0 opacity-10 pointer-events-none"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAODjaaewAv5apsRdUEK5KW_rrkTOpHq0OXDxtvkzDF3eTnK2q5y-sHD8qGeFCnoGPUlVu4KXJHdk_FLEv5zGxCCj41alXK0c2jdoTkS2Q580syFflcsOE79WxgiQsG5w0NuQNhEtHlZENcLKBrUqpcSbv69omW0YvzrHP9RJBAxJyWhyKaCPyqZw0TwVDxg_uS4HKN0wm4849HF-qMdT4SFDhhUDk7_p9QzcT0_UBiYwe9IGbZtL8w16XVfu3KaJDF5CSpgxFeGS8');"
+        ></div>
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 text-on-surface">Looking for a custom solution?</h2>
+        <p class="text-on-surface-variant text-lg mb-10 max-w-2xl mx-auto">
+          Sometimes standard packages are not enough. Our engineers thrive on complex, unique challenges. Let us build something bespoke.
+        </p>
+        <button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label font-bold text-lg hover:shadow-[0_0_20px_rgba(56,222,187,0.4)] transition-all">
+          Talk to our experts
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-slate-800/30 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="col-span-1 md:col-span-2">
+        <div class="text-xl font-bold text-primary mb-4 font-display">Horizon.gh</div>
+        <p class="font-body text-sm text-slate-400 max-w-xs">
+          Architecting the digital landscape with precision engineering and creative intuition.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-on-surface font-label font-bold mb-4">Explore</h4>
+        <div class="flex flex-col space-y-2">
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/services">Services</a>
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/blog">Insights</a>
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-on-surface font-label font-bold mb-4">Legal</h4>
+        <div class="flex flex-col space-y-2">
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 py-8 border-t border-slate-800/20 text-center">
+      <p class="font-body text-sm text-slate-400">© 2024 Horizon.gh. Engineering the Digital Horizon.</p>
+    </div>
+  </footer>
+</Layout>

@@ -1,0 +1,297 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import { useTranslations } from '../i18n/utils';
+
+const locale = 'en';
+const t = useTranslations(locale);
+---
+
+<Layout title="Horizon.gh | Engineering the Digital Horizon" locale={locale}>
+    <Navigation locale={locale} />
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center pt-20">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
+                <img
+                    alt="Digital connectivity"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAhar_E8A9Z1t9nRrWW3PBbJMdclrpqFFG3NN42YnqvMV9X0kTfwYvnqfQuWqiKXjwLHsQUek19HIFmVjijgSbP7Xi2B1XiilfZB7I3ky1easP_UbZEU3K2Sf7Pb2C4cctYeL_7wGHx7TUgYNmY2hHslA2JlXn-g-sACqK9nDfKC-cvFacqWqyY9sYtliPMDrY18-TdKyk7PLcf-6Ocrhj6eRojnHswHttZnMGcdKIHnJ2OjJUOgFcklk2BOA6msnHvc0E1T-esuU"
+                />
+            </div>
+            <div class="relative z-20 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container border border-tertiary/20">
+                        <span class="text-tertiary font-label text-xs font-bold tracking-widest uppercase">{t.home.tagline}</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.1] tracking-tighter text-on-surface">
+                        {t.home.headline}
+                    </h1>
+                    <p class="text-xl md:text-2xl text-on-surface-variant font-body max-w-xl leading-relaxed">
+                        {t.home.subheadline}
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button class="cta-gradient text-on-primary font-label font-bold py-4 px-10 rounded-lg text-lg transition-all hover:shadow-[0_0_30px_rgba(56,222,187,0.3)]">
+                            {t.home.cta}
+                        </button>
+                        <button class="bg-surface-variant/20 border border-outline-variant/30 text-on-surface font-label font-bold py-4 px-10 rounded-lg text-lg backdrop-blur-md hover:bg-surface-variant/40 transition-all">
+                            View Solutions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Services Section -->
+        <section class="py-24 bg-surface-container-low relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div class="max-w-2xl">
+                        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 text-on-surface tracking-tight">Our Core Expertise</h2>
+                        <p class="text-on-surface-variant text-lg leading-relaxed">
+                            We deliver high-impact digital transformations through a specialized suite of technology services designed for the modern enterprise.
+                        </p>
+                    </div>
+                    <div class="text-tertiary font-label font-bold border-b border-tertiary/30 pb-2 cursor-pointer hover:text-white transition-colors">
+                        Explore all services
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="group bg-surface-container-highest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl">web</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-4 text-on-surface">Web Development</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">
+                            Landing pages that convert, polished websites, and a strong digital presence.
+                        </p>
+                    </div>
+                    <div class="group bg-surface-container-highest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl">code_blocks</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-4 text-on-surface">Software Development</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">
+                            Internal systems, APIs, dashboards, and automation for smarter operations.
+                        </p>
+                    </div>
+                    <div class="group bg-surface-container-highest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl">trending_up</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-4 text-on-surface">Digital Presence</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">
+                            Build credibility with modern design, clear messaging, and a strong online identity.
+                        </p>
+                    </div>
+                    <div class="group bg-surface-container-highest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl">integration_instructions</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-4 text-on-surface">Automation & APIs</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">
+                            Streamline operations with practical automation, dashboards, and connected services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact/Stats Section -->
+        <section class="py-24 bg-surface">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="md:col-span-2 glass-panel p-12 rounded-2xl flex flex-col justify-center relative overflow-hidden">
+                        <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/10 rounded-full blur-[80px]"></div>
+                        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 relative z-10">
+                            Unmatched Performance<br /><span class="text-tertiary">By the Numbers</span>
+                        </h2>
+                        <p class="text-on-surface-variant text-lg max-w-md relative z-10 leading-relaxed">
+                            Our commitment to excellence is reflected in every deployment, providing the stability your business demands.
+                        </p>
+                    </div>
+                    <div class="grid grid-rows-3 gap-6">
+                        <div class="bg-surface-container p-8 rounded-2xl flex items-center justify-between">
+                            <div>
+                                <div class="text-3xl font-display font-bold text-primary">50+</div>
+                                <div class="text-sm font-label text-on-surface-variant uppercase tracking-wider">Projects Delivered</div>
+                            </div>
+                            <span class="material-symbols-outlined text-4xl text-outline-variant">rocket_launch</span>
+                        </div>
+                        <div class="bg-surface-container p-8 rounded-2xl flex items-center justify-between">
+                            <div>
+                                <div class="text-3xl font-display font-bold text-primary">99.9%</div>
+                                <div class="text-sm font-label text-on-surface-variant uppercase tracking-wider">Uptime</div>
+                            </div>
+                            <span class="material-symbols-outlined text-4xl text-outline-variant">bolt</span>
+                        </div>
+                        <div class="bg-surface-container p-8 rounded-2xl flex items-center justify-between">
+                            <div>
+                                <div class="text-3xl font-display font-bold text-primary">24/7</div>
+                                <div class="text-sm font-label text-on-surface-variant uppercase tracking-wider">Active Support</div>
+                            </div>
+                            <span class="material-symbols-outlined text-4xl text-outline-variant">support_agent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-24 bg-surface-container-lowest">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="relative">
+                    <div class="aspect-square rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+                        <img
+                            alt="Server room tech"
+                            class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIHfOi3Jvlwh4niz7KSVDPLF4CD463rEWF-Bx279TY-n1PRbkYomWmNWYChP8Z9UzAMy1C8hDOgeX7RnQkVPLSfFYRqYRI15pJJ7SFWOmG37W70_BR-4puAE4x2de3AzGHHySOrF_t9sWJIoWMuCLWxc5RnIv4mVgUE8OZ91tGBQl41Eul1r995k9DFkO7Q9KvCM7RK1OfDu3p4G3iMFjpbzs3jrGfyCchy4FtWMWRIIXRrMcFBr4deE6JqNtXccWRjjF77z8LJiQ"
+                        />
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 p-8 glass-panel rounded-2xl border border-primary/20 max-w-xs hidden md:block">
+                        <div class="text-primary font-display font-bold text-lg mb-2">Technical Expertise</div>
+                        <p class="text-sm text-on-surface-variant">
+                            Our team of certified engineers brings decades of collective experience in deep-tech implementation.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-8 text-on-surface leading-tight">
+                        Why Industry Leaders Trust <span class="text-primary">Horizon.gh</span>
+                    </h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary/40 flex items-center justify-center text-tertiary">
+                                <span class="material-symbols-outlined">auto_awesome</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-display font-bold text-on-surface mb-2">Pioneering Innovation</h4>
+                                <p class="text-on-surface-variant leading-relaxed">
+                                    We do not just follow trends; we anticipate the technical shifts that will define the next decade of digital commerce.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary/40 flex items-center justify-center text-tertiary">
+                                <span class="material-symbols-outlined">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-display font-bold text-on-surface mb-2">Steadfast Reliability</h4>
+                                <p class="text-on-surface-variant leading-relaxed">
+                                    Business continuity is our baseline. Our solutions are engineered for zero-failure tolerance in critical environments.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary/40 flex items-center justify-center text-tertiary">
+                                <span class="material-symbols-outlined">hub</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-display font-bold text-on-surface mb-2">Unified Ecosystems</h4>
+                                <p class="text-on-surface-variant leading-relaxed">
+                                    We bridge the gap between siloed technologies, creating a fluid and interconnected IT landscape for your brand.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-24 bg-surface relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-on-surface">Trusted by Innovators</h2>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="glass-panel p-10 md:p-16 rounded-3xl text-center relative">
+                        <span class="material-symbols-outlined text-6xl text-primary/20 absolute top-8 left-8">format_quote</span>
+                        <p class="text-2xl md:text-3xl font-body italic text-on-surface mb-10 leading-relaxed">
+                            "Horizon.gh redefined our technical architecture. Within six months, our operational efficiency increased by 40% while reducing infrastructure costs. Their team is simply elite."
+                        </p>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-primary">
+                                <img
+                                    alt="Client"
+                                    class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYkFLCMl8y4kgj8BiSNA8EsKlRcpws6U837nxAoJFOBKnOWqekZgudxHlqckSnZEQpkf7CFJk5PaCbh5OFjzy3KZsDprIK9Mp-CTY9noTaCMCGWLy4A8T5Wt1biY54s1szQz9c9yYeYPcAgYmngSbCb_jRwVLVVA8bAK7_uHshDjqupcrPJu_Ivi61zqzibBZoAf3V5xDNiWA0zALonWa9xEwIJ3AKTyfjxWvj_1zttnKQdsTJbixn5__woh1eq3vrzcHk8fBDQZg"
+                                />
+                            </div>
+                            <h5 class="text-lg font-display font-bold text-on-surface">Dr. Samuel Mensah</h5>
+                            <p class="text-sm font-label text-tertiary uppercase tracking-widest">CTO, Global Logistics Corp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Banner -->
+        <section class="py-24 bg-surface-container-low">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="cta-gradient rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black/10 z-0"></div>
+                    <div class="relative z-10">
+                        <h2 class="text-4xl md:text-6xl font-display font-bold text-on-primary mb-8 tracking-tighter">Ready to build your future?</h2>
+                        <p class="text-on-primary text-xl mb-12 max-w-2xl mx-auto opacity-90 leading-relaxed">
+                            Join the next generation of enterprises scaling with Horizon.gh. Let us engineer your digital success together.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-6">
+                            <button class="bg-surface text-primary font-label font-bold py-4 px-12 rounded-lg text-lg transition-transform hover:scale-105 active:scale-95">
+                                Consultation Request
+                            </button>
+                            <button class="bg-white/20 border border-white/30 text-white font-label font-bold py-4 px-12 rounded-lg text-lg backdrop-blur-md hover:bg-white/30 transition-all">
+                                View Case Studies
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface w-full border-t border-slate-800/30">
+        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-1">
+                <div class="text-xl font-bold text-primary mb-4 font-display">Horizon.gh</div>
+                <p class="font-body text-sm text-slate-400 leading-relaxed">
+                    Engineering premium IT infrastructure for a connected world.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-white font-display font-bold mb-6">Explore</h5>
+                <ul class="space-y-4 font-body text-sm text-slate-400">
+                    <li><a class="hover:text-tertiary transition-colors" href="#">Services</a></li>
+                    <li><a class="hover:text-tertiary transition-colors" href="#">Insights</a></li>
+                    <li><a class="hover:text-tertiary transition-colors" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-display font-bold mb-6">Legal</h5>
+                <ul class="space-y-4 font-body text-sm text-slate-400">
+                    <li><a class="hover:text-tertiary transition-colors" href="#">Privacy Policy</a></li>
+                    <li><a class="hover:text-tertiary transition-colors" href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-display font-bold mb-6">Connect</h5>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-surface-variant/30 flex items-center justify-center hover:bg-primary transition-all group" href="#">
+                        <span class="material-symbols-outlined text-sm text-slate-400 group-hover:text-on-primary">share</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-surface-variant/30 flex items-center justify-center hover:bg-primary transition-all group" href="#">
+                        <span class="material-symbols-outlined text-sm text-slate-400 group-hover:text-on-primary">alternate_email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 py-8 border-t border-slate-800/20 text-center md:text-left">
+            <p class="font-body text-xs text-slate-500 uppercase tracking-widest">
+                © 2024 Horizon.gh. Engineering the Digital Horizon.
+            </p>
+        </div>
+    </footer>
+</Layout>

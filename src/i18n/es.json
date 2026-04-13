@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "getStarted": "Comenzar"
+  },
+  "home": {
+    "tagline": "Redefiniendo la Innovación",
+    "headline": "Ingenería del Horizonte Digital",
+    "subheadline": "Soluciones empresariales de TI diseñadas para organizaciones con visión de futuro que exigen más que el status quo.",
+    "cta": "Explorar Nuestros Servicios"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "description": "Soluciones empresariales de TI construidas sobre excelencia técnica y visión estratégica.",
+    "consulting": {
+      "title": "Consultoría de TI",
+      "description": "Orientación estratégica para transformación digital y modernización de infraestructura."
+    },
+    "cloudServices": {
+      "title": "Servicios en la Nube",
+      "description": "Migración y gestión transparente en AWS, Azure y Google Cloud."
+    },
+    "security": {
+      "title": "Soluciones de Seguridad",
+      "description": "Arquitectura de confianza cero y gestión integral de amenazas."
+    },
+    "devops": {
+      "title": "DevOps y Automatización",
+      "description": "Canalizaciones CI/CD e infraestructura como código para máxima velocidad."
+    },
+    "webDevelopment": {
+      "title": "Desarrollo Web",
+      "description": "Landing pages que convierten, webs profesionales y una presencia digital sólida."
+    },
+    "softwareDevelopment": {
+      "title": "Desarrollo de Software",
+      "description": "Sistemas internos, APIs, dashboards y automatización básica para operaciones más inteligentes."
+    }
+  },
+  "blog": {
+    "title": "Perspectivas Técnicas",
+    "description": "Análisis de la industria y perspectivas estratégicas de nuestro equipo de ingeniería.",
+    "readMore": "Leer Artículo",
+    "publishedOn": "Publicado el",
+    "backToBlog": "Volver al Blog"
+  },
+  "contact": {
+    "title": "Conectemos",
+    "description": "¿Listo para transformar tu infraestructura? Ponte en contacto con nuestro equipo.",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "company": "Empresa",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "success": "¡Mensaje enviado exitosamente!"
+    }
+  },
+  "footer": {
+    "mission": "Ingenería del Horizonte Digital",
+    "rights": "Todos los derechos reservados.",
+    "language": "Idioma"
+  }
+}

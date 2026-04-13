@@ -1,0 +1,15 @@
+---
+interface Props {
+  interactive?: boolean;
+  class?: string;
+}
+
+const { interactive = false, class: className = '' } = Astro.props;
+
+const baseStyles = "bg-surface-container-low rounded-xl p-8 transition-all duration-300";
+const hoverStyles = interactive ? "hover:-translate-y-1 hover:bg-surface-bright hover:shadow-ambient-hover cursor-pointer" : "";
+---
+
+<div class:list={[baseStyles, hoverStyles, className]}>
+  <slot />
+</div>

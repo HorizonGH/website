@@ -1,0 +1,21 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary';
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const { variant = 'primary', type = 'button', class: className = '' } = Astro.props;
+
+const baseStyles = "inline-flex items-center justify-center font-label text-sm transition-all duration-300 rounded-[12px] px-6 py-3 cursor-pointer";
+
+const primaryStyles = "bg-signature text-on-primary hover:brightness-110 hover:shadow-ambient-hover hover:-translate-y-0.5";
+
+const secondaryStyles = "bg-surface-variant/20 ghost-border text-white hover:bg-surface-bright/30 hover:shadow-ambient-hover hover:-translate-y-0.5 backdrop-blur-24";
+
+const styles = variant === 'primary' ? primaryStyles : secondaryStyles;
+---
+
+<button type={type} class:list={[baseStyles, styles, className]}>
+  <slot />
+</button>

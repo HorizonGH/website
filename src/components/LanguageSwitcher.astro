@@ -1,0 +1,38 @@
+---
+import { getLocaleFromUrl, getAlternateLocale, getLocalePath } from '../i18n/utils';
+
+interface Props {
+  currentUrl: URL;
+}
+
+const { currentUrl } = Astro.props;
+const currentLocale = getLocaleFromUrl(currentUrl);
+const alternateLocale = getAlternateLocale(currentLocale);
+
+// Get base path without locale prefix
+const pathname = currentUrl.pathname;
+const cleanPath = pathname.replace(/^\/(es|en)/, '') || '/';
+
+// Build alternate language URL
+const alternateUrl = alternateLocale === 'en' 
+  ? cleanPath 
+  : `/es${cleanPath}`;
+
+const labels = {
+  en: 'English',
+  es: 'Español'
+};
+---
+
+<div class="flex items-center gap-2">
+  <span class="text-xs uppercase tracking-widest text-on-surface-variant font-label">
+    {labels[currentLocale]}
+  </span>
+  <a 
+    href={alternateUrl}
+    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-high hover:bg-primary hover:text-surface transition-colors text-on-surface-variant hover:text-on-surface text-sm font-label font-bold"
+    title={`Switch to ${labels[alternateLocale]}`}
+  >
+    {alternateLocale.toUpperCase()}
+  </a>
+</div>
