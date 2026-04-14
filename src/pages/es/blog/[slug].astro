@@ -1,9 +1,9 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog_en');
+  const posts = await getCollection('blog_es');
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -17,10 +17,10 @@ interface Props {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
+  date.toLocaleDateString('es-ES', { month: 'long', day: '2-digit', year: 'numeric' });
 ---
 
-<Layout title={`${post.data.title} | Horizon.gh`}>
+<Layout title={`${post.data.title} | Horizon.gh`} locale="es">
   <main class="pt-24 sm:pt-28 pb-20">
     <section class="relative overflow-hidden">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(76,214,251,0.14),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_24%)] pointer-events-none"></div>
@@ -29,9 +29,9 @@ const formatDate = (date: Date) =>
           <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-surface-container-high/90 to-transparent pointer-events-none"></div>
 
           <div class="relative z-10 space-y-6">
-            <a class="inline-flex items-center gap-2 text-accent-cyan text-sm uppercase tracking-[0.28em] font-label hover:text-primary transition-colors" href="/blog">
+            <a class="inline-flex items-center gap-2 text-accent-cyan text-sm uppercase tracking-[0.28em] font-label hover:text-primary transition-colors" href="/es/blog">
               <span class="material-symbols-outlined text-base">arrow_back</span>
-              Back to insights
+              Volver a perspectivas
             </a>
 
             <div class="flex flex-wrap items-center gap-3 sm:gap-4">
@@ -70,9 +70,9 @@ const formatDate = (date: Date) =>
               </div>
 
               <div class="rounded-3xl overflow-hidden border border-surface-container-highest bg-surface-container-high p-6">
-                <div class="text-xs uppercase tracking-[0.28em] text-on-surface-variant font-label mb-3">Feature</div>
+                <div class="text-xs uppercase tracking-[0.28em] text-on-surface-variant font-label mb-3">Destacado</div>
                 <p class="text-sm leading-6 text-on-surface-variant">
-                  An immersive reading experience combining the site's visual style with clear technical content presentation.
+                  Una experiencia de lectura inmersiva que combina el estilo visual del sitio con una presentación clara del contenido técnico.
                 </p>
               </div>
             </div>
@@ -99,27 +99,27 @@ const formatDate = (date: Date) =>
 
       <aside class="space-y-6">
         <div class="rounded-[2rem] border border-surface-container-highest bg-surface-container-high p-6 shadow-ambient">
-          <h2 class="text-lg font-display font-bold text-on-surface mb-4">Article details</h2>
+          <h2 class="text-lg font-display font-bold text-on-surface mb-4">Detalles del artículo</h2>
           <div class="space-y-3 text-sm text-on-surface-variant">
             <div>
-              <p class="font-semibold text-on-surface">Category</p>
+              <p class="font-semibold text-on-surface">Categoría</p>
               <p>{post.data.category}</p>
             </div>
             <div>
-              <p class="font-semibold text-on-surface">Reading time</p>
+              <p class="font-semibold text-on-surface">Tiempo de lectura</p>
               <p>{post.data.readTime}</p>
             </div>
             <div>
-              <p class="font-semibold text-on-surface">Published</p>
+              <p class="font-semibold text-on-surface">Publicado</p>
               <p>{formatDate(post.data.date)}</p>
             </div>
           </div>
         </div>
 
         <div class="rounded-[2rem] border border-surface-container-highest bg-surface-container-high p-6 shadow-ambient">
-          <h2 class="text-lg font-display font-bold text-on-surface mb-4">Related</h2>
+          <h2 class="text-lg font-display font-bold text-on-surface mb-4">Relacionado</h2>
           <p class="text-sm text-on-surface-variant">
-            Visita la página de insights para ver más artículos y descubrimientos de ingeniería digital.
+            Visita la página de perspectivas para ver más artículos y descubrimientos de ingeniería digital.
           </p>
         </div>
       </aside>
@@ -131,27 +131,27 @@ const formatDate = (date: Date) =>
       <div class="col-span-1 md:col-span-2">
         <div class="text-xl font-bold text-primary mb-4 font-display">Horizon.gh</div>
         <p class="font-body text-sm text-slate-400 max-w-xs">
-          Architecting the digital landscape with precision engineering and creative intuition.
+          Arquitectando el panorama digital con precisión de ingeniería e intuición creativa.
         </p>
       </div>
       <div>
-        <h4 class="text-on-surface font-label font-bold mb-4">Explore</h4>
+        <h4 class="text-on-surface font-label font-bold mb-4">Explorar</h4>
         <div class="flex flex-col space-y-2">
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/services">Services</a>
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/blog">Insights</a>
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/contact">Contact</a>
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/es/services">Servicios</a>
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/es/blog">Perspectivas</a>
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/es/contact">Contacto</a>
         </div>
       </div>
       <div>
         <h4 class="text-on-surface font-label font-bold mb-4">Legal</h4>
         <div class="flex flex-col space-y-2">
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="#">Terms of Service</a>
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="#">Política de privacidad</a>
+          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="#">Términos de servicio</a>
         </div>
       </div>
     </div>
     <div class="max-w-7xl mx-auto px-6 py-8 border-t border-slate-800/20 text-center">
-      <p class="font-body text-sm text-slate-400">© 2026 Horizon.gh. Engineering the Digital Horizon.</p>
+      <p class="font-body text-sm text-slate-400">© 2026 Horizon.gh. Ingeniería del Horizonte Digital.</p>
     </div>
   </footer>
 </Layout>

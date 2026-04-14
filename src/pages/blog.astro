@@ -2,11 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('blog_en')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-const formatDate = (date) =>
+const formatDate = (date: Date) =>
   date.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
 ---
 
@@ -54,7 +54,7 @@ const formatDate = (date) =>
                     {post.data.readTime}
                   </span>
                 </div>
-                <a href={"/blog/" + post.id} class="block">
+                <a href={`/blog/${post.id}`} class="block">
                   <h3 class="text-2xl font-black tracking-tight text-black mb-4 line-clamp-2 group-hover:text-[#00E5FF] transition-colors">
                     {post.data.title}
                   </h3>
@@ -66,7 +66,7 @@ const formatDate = (date) =>
                   <span class="text-sm text-gray-500 font-medium tracking-wide uppercase">
                     {formatDate(post.data.date)}
                   </span>
-                  <a href={"/blog/" + post.id} class="text-black font-black text-sm uppercase tracking-widest hover:text-[#00E5FF] flex items-center gap-2 group/link">
+                  <a href={`/blog/${post.id}`} class="text-black font-black text-sm uppercase tracking-widest hover:text-[#00E5FF] flex items-center gap-2 group/link">
                     Read 
                     <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </a>
