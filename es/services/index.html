@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="/icon.ico"><meta name="generator" content="Astro v6.1.6"><title>Nuestros Servicios | Horizon.gh</title><!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, Manrope, Caveat --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Layout.Cta_KG-W.css"></head> <body class="bg-surface text-on-surface font-body antialiased min-h-screen overflow-x-hidden">  <nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl bg-gradient-to-b from-surface to-transparent"> <div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4"> <a href="/es/" aria-label="Horizon.gh Home"> <div class="inline-flex flex-col items-start w-fit hover:opacity-90 transition-opacity"> <div class="flex items-baseline"> <span class="text-3xl font-display font-black text-on-surface tracking-wide">Horizon</span> <span class="text-accent-cyan text-3xl ml-[2px] leading-none" style="font-family: 'Caveat', 'Brush Script MT', cursive; font-weight: 600; transform: translateY(2px) rotate(-2deg); margin-left: 2px;">gh</span> </div> <div class="h-1 bg-on-surface w-[78%] mt-[1px] rounded-r-sm"></div> </div> </a> <div class="hidden md:flex items-center space-x-8 font-display tracking-tight"> <a class="text-slate-300 hover:text-primary transition-colors" href="/es/"> Inicio </a> <a class="text-slate-300 hover:text-primary transition-colors" href="/es/services"> Servicios </a> <a class="text-slate-300 hover:text-primary transition-colors" href="/es/blog"> Blog </a> <a class="text-slate-300 hover:text-primary transition-colors" href="/es/contact"> Contacto </a> </div> <div class="flex items-center gap-2 sm:gap-4"> <div class="flex items-center gap-2"> <span class="text-xs uppercase tracking-widest text-on-surface-variant font-label"> Español </span> <a href="/services/" data-lang-url="/services/" class="language-switcher-button inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-high hover:bg-primary hover:text-surface transition-colors text-on-surface-variant hover:text-on-surface text-sm font-label font-bold" title="Switch to English"> EN </a> </div> <script>
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('.language-switcher-button');
+    if (!button) return;
+    const url = button.dataset.langUrl;
+    if (!url) return;
+
+    event.preventDefault();
+    if (document.body.classList.contains('language-switching')) return;
+
+    const rect = button.getBoundingClientRect();
+    const diameter = Math.max(window.innerWidth, window.innerHeight) * 2;
+    const bubble = document.createElement('div');
+
+    bubble.className = 'language-switch-bubble';
+    bubble.style.width = `${diameter}px`;
+    bubble.style.height = `${diameter}px`;
+    bubble.style.left = `${rect.left + rect.width / 2}px`;
+    bubble.style.top = `${rect.top + rect.height / 2}px`;
+
+    document.body.append(bubble);
+    document.documentElement.classList.add('language-transitioning');
+    document.body.classList.add('language-switching');
+    button.classList.add('language-switcher-animate');
+
+    requestAnimationFrame(() => bubble.classList.add('language-switch-bubble--expand'));
+
+    window.setTimeout(() => {
+      window.location.href = url;
+    }, 420);
+  });
+</script> <button class="hidden sm:inline-block cta-gradient text-on-primary font-label font-bold py-2.5 px-6 rounded-lg scale-95 active:scale-90 transition-transform hover:opacity-80"> Comenzar </button> <!-- Mobile Menu Toggle --> <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-surface-container-highest rounded-lg transition-colors"> <span class="material-symbols-outlined">menu</span> </button> </div> </div> </nav> <div id="mobile-menu" class="hidden fixed inset-0 z-40 md:hidden"> <!-- Backdrop --> <div class="absolute inset-0 bg-surface/80 backdrop-blur-sm"></div> <!-- Menu Content --> <div class="absolute inset-y-0 right-0 w-64 bg-surface-container-high border-l border-outline-variant/20 shadow-lg overflow-y-auto"> <div class="p-6 space-y-6"> <div class="flex justify-between items-center mb-8"> <h2 class="font-display font-bold text-lg">Menu</h2> <button id="close-mobile-menu" class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors"> <span class="material-symbols-outlined">close</span> </button> </div> <nav class="space-y-4"> <a href="/es/" class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"> Inicio </a> <a href="/es/services" class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"> Servicios </a> <a href="/es/blog" class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"> Blog </a> <a href="/es/contact" class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"> Contacto </a> </nav> <div class="pt-4 border-t border-outline-variant/20"> <button class="w-full cta-gradient text-on-primary font-label font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity"> Comenzar </button> </div> </div> </div> </div> <script type="module">const t=document.getElementById("mobile-menu-toggle"),e=document.getElementById("mobile-menu"),d=document.getElementById("close-mobile-menu"),c=e?.querySelectorAll("a");t&&e&&(t.addEventListener("click",()=>{e.classList.toggle("hidden")}),d?.addEventListener("click",()=>{e.classList.add("hidden")}),c?.forEach(n=>{n.addEventListener("click",()=>{e.classList.add("hidden")})}),e.addEventListener("click",n=>{n.target===e&&e.classList.add("hidden")}));</script> <main class="pt-16 sm:pt-20 md:pt-32"> <!-- Page Header --> <header class="max-w-7xl mx-auto px-4 sm:px-6 mb-16 sm:mb-24"> <div class="relative inline-block mb-4"> <span class="bg-tertiary-container text-tertiary px-4 py-1 rounded-full font-label text-xs tracking-widest uppercase">Ecosistema</span> </div> <h1 class="text-4xl sm:text-6xl md:text-8xl font-display font-bold tracking-tighter mb-8 bg-gradient-to-r from-on-surface to-primary bg-clip-text text-transparent"> Nuestros Servicios </h1> <p class="text-lg sm:text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed"> Soluciones empresariales de TI construidas sobre excelencia técnica y visión estratégica. </p> </header> <!-- Detailed Service List --> <section class="max-w-7xl mx-auto px-4 sm:px-6 mb-24 sm:mb-32"> <div class="grid grid-cols-1 md:grid-cols-12 gap-6"> <div class="md:col-span-7 group relative overflow-hidden rounded-xl bg-surface-container-low p-8 border-none transition-all duration-300 hover:bg-surface-container"> <div class="flex flex-col h-full"> <div class="mb-8"> <span class="material-symbols-outlined text-5xl text-primary mb-4">web</span> <h3 class="text-3xl font-display font-bold text-on-surface mb-4">Desarrollo Web</h3> <p class="text-on-surface-variant mb-6 text-lg"> Landing pages que convierten, webs profesionales y una presencia digital sólida. </p> <ul class="grid grid-cols-1 gap-4 mb-8"> <li class="flex items-center gap-3 text-sm text-slate-300"> <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+Landing pages que convierten
+</li> <li class="flex items-center gap-3 text-sm text-slate-300"> <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+Webs profesionales
+</li> <li class="flex items-center gap-3 text-sm text-slate-300"> <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+Presencia digital sólida
+</li> </ul> </div> <a class="mt-auto flex items-center gap-2 text-primary font-label font-bold group-hover:gap-4 transition-all" href="#">
+Aprende Más <span class="material-symbols-outlined">arrow_forward</span> </a> </div> </div> <div class="md:col-span-5 group relative overflow-hidden rounded-xl bg-surface-container-highest p-8 transition-all duration-300 hover:bg-surface-bright"> <span class="material-symbols-outlined text-5xl text-tertiary mb-4">code_blocks</span> <h3 class="text-2xl font-display font-bold text-on-surface mb-4">Desarrollo de Software</h3> <p class="text-on-surface-variant mb-6"> Sistemas internos, APIs, dashboards y automatización básica para operaciones más inteligentes. </p> <ul class="grid grid-cols-1 gap-4 mb-8"> <li class="flex items-center gap-3 text-sm text-slate-300"> <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+Sistemas internos
+</li> <li class="flex items-center gap-3 text-sm text-slate-300"> <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+APIs
+</li> <li class="flex items-center gap-3 text-sm text-slate-300"> <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+Dashboards
+</li> <li class="flex items-center gap-3 text-sm text-slate-300"> <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+Automatización básica
+</li> </ul> <a class="flex items-center gap-2 text-tertiary font-label font-bold group-hover:gap-4 transition-all" href="#">
+Aprende Más <span class="material-symbols-outlined">arrow_forward</span> </a> </div> </div> </section> <!-- CTA Section --> <section class="py-24 bg-surface-container-low"> <div class="max-w-7xl mx-auto px-6"> <div class="cta-gradient rounded-3xl p-12 md:p-20 text-center relative overflow-hidden"> <div class="absolute inset-0 bg-black/10 z-0"></div> <div class="relative z-10"> <h2 class="text-4xl md:text-6xl font-display font-bold text-on-primary mb-8 tracking-tighter">Listo para Transformar</h2> <p class="text-on-primary text-xl mb-12 max-w-2xl mx-auto opacity-90 leading-relaxed">
+Déjanos diseñar la solución perfecta para tu negocio.
+</p> <button class="cta-gradient text-on-primary font-label font-bold py-4 px-10 rounded-lg text-lg transition-all hover:shadow-[0_0_30px_rgba(56,222,187,0.3)]">
+Contáctanos Hoy
+</button> </div> </div> </div> </section> </main>  </body></html>
