@@ -18,6 +18,6 @@
     "astro": "^6.1.4",
     "astro-i18n": "^1.0.0",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.5.4"
+    "typescript": "^6.0.2"
   }
 }
