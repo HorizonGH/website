@@ -1,0 +1,93 @@
+---
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<div id="mobile-menu" class="hidden fixed inset-0 z-40 md:hidden">
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-surface/80 backdrop-blur-sm"></div>
+  
+  <!-- Menu Content -->
+  <div class="absolute inset-y-0 right-0 w-64 bg-surface-container-high border-l border-outline-variant/20 shadow-lg overflow-y-auto">
+    <div class="p-6 space-y-6">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="font-display font-bold text-lg">Menu</h2>
+        <button id="close-mobile-menu" class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      
+      <nav class="space-y-4">
+        <a 
+          href={locale === 'en' ? '/' : '/es/'} 
+          class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"
+        >
+          {t.nav.home}
+        </a>
+        <a 
+          href={locale === 'en' ? '/services' : '/es/services'} 
+          class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"
+        >
+          {t.nav.services}
+        </a>
+        <a 
+          href={locale === 'en' ? '/blog' : '/es/blog'} 
+          class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"
+        >
+          {t.nav.blog}
+        </a>
+        <a 
+          href={locale === 'en' ? '/contact' : '/es/contact'} 
+          class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"
+        >
+          {t.nav.contact}
+        </a>
+      </nav>
+
+      <div class="pt-4 border-t border-outline-variant/20">
+        <button class="w-full cta-gradient text-on-primary font-label font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">
+          {t.nav.getStarted}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenuBtn = document.getElementById('close-mobile-menu');
+  const menuLinks = mobileMenu?.querySelectorAll('a');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    closeMenuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+
+    // Close menu when clicking on a link
+    menuLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Close menu when clicking on backdrop
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  }
+</script>

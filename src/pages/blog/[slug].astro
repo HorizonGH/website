@@ -23,37 +23,37 @@ const formatDate = (date: Date) =>
 <Layout title={`${post.data.title} | Horizon.gh`}>
   <!-- Top Navigation Bar -->
   <nav class="fixed top-0 w-full z-50 bg-gradient-to-b from-surface to-transparent">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-2xl font-display font-bold tracking-tighter text-primary">Horizon.gh</div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+      <div class="text-lg sm:text-2xl font-display font-bold tracking-tighter text-primary">Horizon.gh</div>
       <div class="hidden md:flex items-center gap-8 font-display tracking-tight">
         <a class="text-slate-300 hover:text-primary transition-colors" href="/">Home</a>
         <a class="text-slate-300 hover:text-primary transition-colors" href="/services">Services</a>
         <a class="text-primary border-b-2 border-primary pb-1" href="/blog">Blog</a>
         <a class="text-slate-300 hover:text-primary transition-colors" href="/contact">Contact</a>
       </div>
-      <button class="cta-gradient text-on-primary px-6 py-2 rounded-lg font-label font-bold scale-95 active:scale-90 transition-transform hover:opacity-80">
+      <button class="hidden sm:block cta-gradient text-on-primary px-6 py-2 rounded-lg font-label font-bold scale-95 active:scale-90 transition-transform hover:opacity-80">
         Get Started
       </button>
     </div>
   </nav>
 
-  <main class="pt-32 pb-24">
-    <header class="max-w-4xl mx-auto px-6 mb-12">
-      <div class="flex flex-wrap items-center gap-3 mb-6">
-        <span class="px-4 py-1.5 rounded-full glass-panel text-tertiary text-xs font-bold tracking-widest uppercase">
+  <main class="pt-16 sm:pt-20 md:pt-32 pb-20 sm:pb-24">
+    <header class="max-w-4xl mx-auto px-4 sm:px-6 mb-8 sm:mb-12">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
+        <span class="px-3 sm:px-4 py-1 sm:py-1.5 rounded-full glass-panel text-tertiary text-xs font-bold tracking-widest uppercase">
           {post.data.category}
         </span>
-        <span class="px-4 py-1.5 rounded-full glass-panel text-on-surface-variant text-xs font-label">
+        <span class="px-3 sm:px-4 py-1 sm:py-1.5 rounded-full glass-panel text-on-surface-variant text-xs font-label">
           {post.data.readTime}
         </span>
-        <span class="text-on-surface-variant text-sm font-label">
+        <span class="text-on-surface-variant text-xs sm:text-sm font-label">
           {formatDate(post.data.date)}
         </span>
       </div>
-      <h1 class="text-4xl md:text-6xl font-display font-bold text-on-surface tracking-tight mb-6">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-on-surface tracking-tight mb-6">
         {post.data.title}
       </h1>
-      <p class="text-xl text-on-surface-variant leading-relaxed">
+      <p class="text-lg sm:text-xl text-on-surface-variant leading-relaxed">
         {post.data.excerpt}
       </p>
       <div class="flex items-center gap-3 mt-6">

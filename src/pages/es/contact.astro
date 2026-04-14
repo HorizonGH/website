@@ -10,15 +10,15 @@ const t = useTranslations(locale);
 <Layout title="Contacto | Horizon.gh" locale={locale}>
   <Navigation locale={locale} />
 
-  <main class="pt-32 pb-24 px-6 overflow-hidden">
+  <main class="pt-16 sm:pt-20 md:pt-32 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden">
     <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto mb-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+    <section class="max-w-7xl mx-auto mb-16 sm:mb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-end">
         <div>
-          <h1 class="font-display text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-6 leading-[0.9]">
+          <h1 class="font-display text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-6 leading-[0.9]">
             Ponte en <span class="text-primary italic">Contacto</span>
           </h1>
-          <p class="font-body text-xl text-on-surface-variant max-w-lg leading-relaxed">
+          <p class="font-body text-base sm:text-xl text-on-surface-variant max-w-lg leading-relaxed">
             {t.contact.description}
           </p>
         </div>

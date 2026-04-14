@@ -1,6 +1,7 @@
 ---
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import Logo from '../components/Logo.astro';
+import MobileMenu from '../components/MobileMenu.astro';
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -13,7 +14,7 @@ const t = useTranslations(locale);
 ---
 
 <nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl bg-gradient-to-b from-surface to-transparent">
-  <div class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
+  <div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
     <a href={locale === 'en' ? '/' : '/es/'} aria-label="Horizon.gh Home">
       <Logo />
     </a>
@@ -31,11 +32,17 @@ const t = useTranslations(locale);
         {t.nav.contact}
       </a>
     </div>
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2 sm:gap-4">
       <LanguageSwitcher currentUrl={Astro.url} />
-      <button class="cta-gradient text-on-primary font-label font-bold py-2.5 px-6 rounded-lg scale-95 active:scale-90 transition-transform hover:opacity-80">
+      <button class="hidden sm:inline-block cta-gradient text-on-primary font-label font-bold py-2.5 px-6 rounded-lg scale-95 active:scale-90 transition-transform hover:opacity-80">
         {t.nav.getStarted}
+      </button>
+      <!-- Mobile Menu Toggle -->
+      <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-surface-container-highest rounded-lg transition-colors">
+        <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
   </div>
 </nav>
+
+<MobileMenu locale={locale} />
