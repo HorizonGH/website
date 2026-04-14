@@ -1,160 +1,238 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
-import { useTranslations } from '../../i18n/utils';
+import Button from '../../components/Button.astro';
+import Card from '../../components/Card.astro';
 
 const locale = 'es';
-const t = useTranslations(locale);
+
+const painPoints = [
+  'Procesos manuales que no escalan',
+  'Herramientas desconectadas',
+  'Falta de visibilidad sobre el negocio',
+  'Perdida de oportunidades'
+];
+
+const services = [
+  {
+    icon: 'web',
+    title: 'Desarrollo Web',
+    copy: 'Sitios y landing pages disenados para convertir visitas en clientes.'
+  },
+  {
+    icon: 'code_blocks',
+    title: 'Productos de Software',
+    copy: 'Sistemas internos, APIs y plataformas que optimizan tu operacion.'
+  },
+  {
+    icon: 'monitoring',
+    title: 'Dashboards Operativos',
+    copy: 'Visualiza en tiempo real lo que ocurre en tu negocio y toma mejores decisiones.'
+  }
+];
+
+const workSteps = [
+  'Analizamos tu negocio',
+  'Disenamos la arquitectura digital',
+  'Desarrollamos el sistema',
+  'Iteramos y escalamos'
+];
+
+const samples = [
+  {
+    title: 'Landing SaaS',
+    problem: 'Funnel de conversion debil y baja velocidad del sitio.',
+    solution: 'Rediseno del funnel y optimizacion de arquitectura.',
+    result: 'Mayor conversion y mejor rendimiento en campanas.'
+  },
+  {
+    title: 'Portal de Operaciones',
+    problem: 'Solicitudes, reportes y SLA gestionados en herramientas separadas.',
+    solution: 'Plataforma interna unificada con flujos por roles.',
+    result: 'Respuesta mas rapida y visibilidad completa del equipo.'
+  },
+  {
+    title: 'Suite de Automatizacion',
+    problem: 'Equipos dedicando horas a reportes repetitivos.',
+    solution: 'Automatizacion de pipelines de datos y reportes programados.',
+    result: 'Mas tiempo de ejecucion y menos errores operativos.'
+  }
+];
+
+const differentiators = [
+  'No usamos plantillas',
+  'Disenamos sistemas, no solo interfaces',
+  'Pensamos en escalabilidad desde el inicio',
+  'Enfocados en resultados reales, no solo estetica'
+];
 ---
 
-<Layout title="Horizon.gh | Ingenería del Horizonte Digital" locale={locale}>
-    <Navigation locale={locale} />
+<Layout title="Horizon.gh | Ingenieria del Horizonte Digital" locale={locale}>
+  <Navigation locale={locale} />
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center pt-20">
-            <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
-                <img
-                    alt="Conectividad digital"
-                    class="w-full h-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAhar_E8A9Z1t9nRrWW3PBbJMdclrpqFFG3NN42YnqvMV9X0kTfwYvnqfQuWqiKXjwLHsQUek19HIFmVjijgSbP7Xi2B1XiilfZB7I3ky1easP_UbZEU3K2Sf7Pb2C4cctYeL_7wGHx7TUgYNmY2hHslA2JlXn-g-sACqK9nDfKC-cvFacqWqyY9sYtliPMDrY18-TdKyk7PLcf-6Ocrhj6eRojnHswHttZnMGcdKIHnJ2OjJUOgFcklk2BOA6msnHvc0E1T-esuU"
-                />
-            </div>
-            <div class="relative z-20 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container border border-tertiary/20">
-                        <span class="text-tertiary font-label text-xs font-bold tracking-widest uppercase">{t.home.tagline}</span>
-                    </div>
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.1] tracking-tighter text-on-surface">
-                        {t.home.headline}
-                    </h1>
-                    <p class="text-xl md:text-2xl text-on-surface-variant font-body max-w-xl leading-relaxed">
-                        {t.home.subheadline}
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button class="cta-gradient text-on-primary font-label font-bold py-4 px-10 rounded-lg text-lg transition-all hover:shadow-[0_0_30px_rgba(56,222,187,0.3)]">
-                            {t.home.cta}
-                        </button>
-                        <button class="bg-surface-variant/20 border border-outline-variant/30 text-on-surface font-label font-bold py-4 px-10 rounded-lg text-lg backdrop-blur-md hover:bg-surface-variant/40 transition-all">
-                            Ver Soluciones
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <main>
+    <section class="relative min-h-screen overflow-hidden pt-24">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/85 to-surface/30"></div>
+        <img
+          alt="Conectividad digital"
+          class="h-full w-full object-cover"
+          src="https://res.cloudinary.com/dnta7zbad/image/upload/v1776103096/heroPageImage_rfon1c.png"
+        />
+        <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-surface to-transparent"></div>
+      </div>
+      <div class="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl items-center px-6">
+        <div class="max-w-3xl space-y-8" data-motion="fade-up">
+          <h1 class="text-5xl font-display font-bold leading-[1.05] tracking-tight text-on-surface md:text-7xl lg:text-8xl">
+            Ingenieria del Horizonte Digital
+          </h1>
+          <p class="max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-2xl">
+            Construimos la base digital de tu negocio con software y sistemas disenados para escalar.
+          </p>
+          <p class="max-w-2xl text-base leading-relaxed text-on-surface-variant md:text-lg">
+            Webs, plataformas y herramientas internas que convierten tu operacion en un sistema eficiente.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Button href="/es/services" size="lg">Explorar servicios</Button>
+            <Button href="/es/contact" variant="outline" size="lg">Reservar llamada estrategica</Button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Core Services Section -->
-        <section class="py-24 bg-surface-container-low relative">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                    <div class="max-w-2xl">
-                        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 text-on-surface tracking-tight">Nuestra Experiencia Central</h2>
-                        <p class="text-on-surface-variant text-lg leading-relaxed">
-                            Entregamos transformaciones digitales de alto impacto a través de un conjunto especializado de servicios tecnológicos diseñados para la empresa moderna.
-                        </p>
-                    </div>
-                    <div class="text-tertiary font-label font-bold border-b border-tertiary/30 pb-2 cursor-pointer hover:text-white transition-colors">
-                        Explorar todos los servicios
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="group bg-surface-container-highest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
-                        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">web</span>
-                        </div>
-                        <h3 class="text-xl font-display font-bold mb-4 text-on-surface">Desarrollo Web</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">
-                            Landing pages que convierten, webs profesionales y una presencia digital sólida.
-                        </p>
-                    </div>
-                    <div class="group bg-surface-container-highest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
-                        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">code_blocks</span>
-                        </div>
-                        <h3 class="text-xl font-display font-bold mb-4 text-on-surface">Desarrollo de Software</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">
-                            Sistemas internos, APIs, dashboards y automatización básica para operaciones más inteligentes.
-                        </p>
-                    </div>
-                    <div class="group bg-surface-container-highest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
-                        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">language</span>
-                        </div>
-                        <h3 class="text-xl font-display font-bold mb-4 text-on-surface">Presencia Digital</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">
-                            Fortalece tu marca con diseño moderno, mensajes claros y una identidad digital coherente.
-                        </p>
-                    </div>
-                    <div class="group bg-surface-container-highest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
-                        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">integration_instructions</span>
-                        </div>
-                        <h3 class="text-xl font-display font-bold mb-4 text-on-surface">Automatización y APIs</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">
-                            Optimiza procesos con automatización práctica, dashboards e integraciones conectadas.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-7xl" data-motion="fade-up">
+        <p class="text-xs font-label uppercase tracking-[0.18em] text-tertiary">El problema</p>
+        <h2 class="mt-3 text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">
+          La mayoria de negocios opera sin una base digital real
+        </h2>
+        <div class="mt-8 grid gap-4 md:grid-cols-2" data-motion-group="problem">
+          {
+            painPoints.map((point) => (
+              <Card interactive class="micro-hover" data-card>
+                <p class="text-base text-on-surface">{point}</p>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-        <!-- Impact/Stats Section -->
-        <section class="py-24 bg-surface">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="md:col-span-2 glass-panel p-12 rounded-2xl flex flex-col justify-center relative overflow-hidden">
-                        <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/10 rounded-full blur-[80px]"></div>
-                        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 relative z-10">
-                            Rendimiento Incomparable<br /><span class="text-tertiary">Por los Números</span>
-                        </h2>
-                        <p class="text-on-surface-variant text-lg max-w-md relative z-10 leading-relaxed">
-                            Nuestro compromiso con la excelencia se refleja en cada implementación, brindando la estabilidad que su negocio demanda.
-                        </p>
-                    </div>
-                    <div class="grid grid-rows-3 gap-6">
-                        <div class="bg-surface-container p-8 rounded-2xl flex items-center justify-between">
-                            <div>
-                                <div class="text-3xl font-display font-bold text-primary">50+</div>
-                                <div class="text-sm font-label text-on-surface-variant uppercase tracking-wider">Proyectos Entregados</div>
-                            </div>
-                            <span class="material-symbols-outlined text-4xl text-outline-variant">rocket_launch</span>
-                        </div>
-                        <div class="bg-surface-container p-8 rounded-2xl flex items-center justify-between">
-                            <div>
-                                <div class="text-3xl font-display font-bold text-primary">99.9%</div>
-                                <div class="text-sm font-label text-on-surface-variant uppercase tracking-wider">Disponibilidad</div>
-                            </div>
-                            <span class="material-symbols-outlined text-4xl text-outline-variant">bolt</span>
-                        </div>
-                        <div class="bg-surface-container p-8 rounded-2xl flex items-center justify-between">
-                            <div>
-                                <div class="text-3xl font-display font-bold text-primary">24/7</div>
-                                <div class="text-sm font-label text-on-surface-variant uppercase tracking-wider">Soporte Activo</div>
-                            </div>
-                            <span class="material-symbols-outlined text-4xl text-outline-variant">support_agent</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="px-6 pb-20">
+      <div class="mx-auto max-w-7xl rounded-3xl border border-primary/25 bg-primary/10 p-8 md:p-12" data-motion="fade-up">
+        <p class="text-xs font-label uppercase tracking-[0.18em] text-primary">Solucion</p>
+        <p class="mt-3 text-2xl font-display font-bold leading-relaxed text-on-surface md:text-3xl">
+          En Horizon.gh disenamos sistemas digitales que organizan, automatizan y preparan tu negocio para crecer.
+        </p>
+      </div>
+    </section>
 
-        <!-- Call to Action Banner -->
-        <section class="py-24 bg-surface-container-low">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="cta-gradient rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black/10 z-0"></div>
-                    <div class="relative z-10">
-                        <h2 class="text-4xl md:text-6xl font-display font-bold text-on-primary mb-8 tracking-tighter">¿Listo para construir tu futuro?</h2>
-                        <p class="text-on-primary text-xl mb-12 max-w-2xl mx-auto opacity-90 leading-relaxed">
-                            Únete a la próxima generación de empresas escalando con Horizon.gh. Déjanos que ingenieremos tu éxito digital juntos.
-                        </p>
-                        <button class="cta-gradient text-on-primary font-label font-bold py-4 px-10 rounded-lg text-lg transition-all hover:shadow-[0_0_30px_rgba(56,222,187,0.3)]">
-                            Comienza Ahora
-                        </button>
-                    </div>
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12" data-motion="fade-up">
+          <h2 class="text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">Servicios orientados a valor real</h2>
+        </div>
+        <div class="grid gap-5 md:grid-cols-3" data-motion-group="services">
+          {
+            services.map((service) => (
+              <Card interactive class="micro-hover" data-card>
+                <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-primary/35 bg-primary/10 text-primary">
+                  <span class="material-symbols-outlined">{service.icon}</span>
                 </div>
-            </div>
-        </section>
-    </main>
+                <h3 class="text-2xl font-display font-bold text-on-surface">{service.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-on-surface-variant">{service.copy}</p>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-7xl" data-motion="fade-up">
+        <h2 class="text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">Como trabajamos</h2>
+        <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4" data-motion-group="process">
+          {
+            workSteps.map((step, index) => (
+              <Card interactive class="micro-hover" data-card>
+                <p class="text-xs font-label uppercase tracking-[0.18em] text-primary">Paso {index + 1}</p>
+                <p class="mt-3 text-base text-on-surface">{step}</p>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-7xl rounded-[2rem] border border-outline-variant/30 bg-surface-container-low p-7 md:p-11">
+        <div class="mb-8" data-motion="fade-up">
+          <h2 class="text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">Sistemas reales, no conceptos</h2>
+        </div>
+        <div class="grid gap-5 lg:grid-cols-3" data-motion-group="samples">
+          {
+            samples.map((item) => (
+              <article class="micro-hover rounded-3xl border border-outline-variant/30 bg-[#111827] p-5" data-card>
+                <h3 class="text-xl font-display font-bold text-on-surface">{item.title}</h3>
+                <p class="mt-4 text-sm text-on-surface"><span class="font-semibold text-primary">Problema:</span> {item.problem}</p>
+                <p class="mt-2 text-sm text-on-surface"><span class="font-semibold text-primary">Solucion:</span> {item.solution}</p>
+                <p class="mt-2 text-sm text-on-surface"><span class="font-semibold text-primary">Resultado:</span> {item.result}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-7xl" data-motion="fade-up">
+        <h2 class="text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">Por que Horizon.gh</h2>
+        <div class="mt-8 grid gap-4 md:grid-cols-2" data-motion-group="why">
+          {
+            differentiators.map((item) => (
+              <Card interactive class="micro-hover" data-card>
+                <p class="text-base text-on-surface">{item}</p>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 pb-24 pt-14">
+      <div class="mx-auto max-w-7xl rounded-3xl border border-outline-variant/35 bg-surface-container p-10 text-center md:p-14" data-motion="fade-up">
+        <h2 class="text-3xl font-display font-bold text-on-surface md:text-5xl">Tu negocio necesita mas que presencia digital. Necesita un sistema.</h2>
+        <div class="mt-8">
+          <Button href="/es/contact" size="lg">Reservar llamada estrategica</Button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { animate, inView, stagger } from '@motionone/dom';
+
+    const animateEnter = (target, y = 18) => {
+      animate(
+        target,
+        { opacity: [0, 1], transform: [`translateY(${y}px)`, 'translateY(0px)'] },
+        { duration: 0.65, easing: [0.22, 1, 0.36, 1] }
+      );
+    };
+
+    document.querySelectorAll('[data-motion="fade-up"]').forEach((el) => {
+      inView(el, () => animateEnter(el));
+    });
+
+    document.querySelectorAll('[data-motion-group]').forEach((group) => {
+      const cards = group.querySelectorAll('[data-card]');
+      inView(group, () => {
+        animate(
+          cards,
+          { opacity: [0, 1], transform: ['translateY(18px)', 'translateY(0px)'] },
+          { duration: 0.55, delay: stagger(0.08), easing: [0.22, 1, 0.36, 1] }
+        );
+      });
+    });
+  </script>
 </Layout>

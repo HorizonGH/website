@@ -1,5 +1,6 @@
 ---
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import Logo from '../components/Logo.astro';
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
@@ -13,9 +14,9 @@ const t = useTranslations(locale);
 
 <nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl bg-gradient-to-b from-surface to-transparent">
   <div class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
-    <div class="text-2xl font-display font-bold tracking-tighter text-primary">
-      Horizon.gh
-    </div>
+    <a href={locale === 'en' ? '/' : '/es/'} aria-label="Horizon.gh Home">
+      <Logo />
+    </a>
     <div class="hidden md:flex items-center space-x-8 font-display tracking-tight">
       <a class="text-slate-300 hover:text-primary transition-colors" href={locale === 'en' ? '/' : '/es/'}>
         {t.nav.home}

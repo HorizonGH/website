@@ -173,7 +173,13 @@ const t = useTranslations(locale);
   <footer class="w-full border-t border-slate-800/30 bg-surface">
     <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="col-span-1 md:col-span-1">
-        <div class="text-xl font-bold text-primary mb-4 font-display">Horizon.gh</div>
+        <div class="inline-flex flex-col items-start w-fit hover:opacity-90 transition-opacity mb-4">
+          <div class="flex items-baseline">
+            <span class="text-xl font-display font-black text-on-surface tracking-wide">Horizon</span>
+            <span class="text-accent-cyan text-xl ml-[2px] leading-none" style="font-family: 'Caveat', 'Brush Script MT', cursive; font-weight: 600; transform: translateY(1px) rotate(-2deg); margin-left: 2px;">gh</span>
+          </div>
+          <div class="h-0.5 bg-on-surface w-[78%] mt-[1px] rounded-r-sm"></div>
+        </div>
         <p class="font-body text-sm text-slate-400 leading-relaxed">Engineering the digital frontier for businesses ready to evolve.</p>
       </div>
       <div class="space-y-4">
@@ -201,7 +207,7 @@ const t = useTranslations(locale);
       </div>
     </div>
     <div class="max-w-7xl mx-auto px-6 py-6 border-t border-slate-800/20 text-center md:text-left">
-      <p class="font-body text-xs text-slate-500">© 2024 Horizon.gh. Engineering the Digital Horizon.</p>
+      <p class="font-body text-xs text-slate-500">© 2026 Horizon.gh. Engineering the Digital Horizon.</p>
     </div>
   </footer>
 </Layout>

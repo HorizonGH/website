@@ -1,21 +1,54 @@
 ---
 interface Props {
-  variant?: 'primary' | 'secondary';
+  variant?: 'default' | 'secondary' | 'outline' | 'ghost' | 'primary';
+  size?: 'sm' | 'md' | 'lg';
   type?: 'button' | 'submit' | 'reset';
+  href?: string;
   class?: string;
 }
 
-const { variant = 'primary', type = 'button', class: className = '' } = Astro.props;
+const {
+  variant = 'default',
+  size = 'md',
+  type = 'button',
+  href,
+  class: className = ''
+} = Astro.props;
 
-const baseStyles = "inline-flex items-center justify-center font-label text-sm transition-all duration-300 rounded-[12px] px-6 py-3 cursor-pointer";
+const baseStyles =
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl font-label text-sm font-semibold tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 disabled:pointer-events-none disabled:opacity-50';
 
-const primaryStyles = "bg-signature text-on-primary hover:brightness-110 hover:shadow-ambient-hover hover:-translate-y-0.5";
+const variantStyles: Record<string, string> = {
+  default:
+    'bg-signature text-on-primary shadow-[0_10px_28px_-16px_rgba(56,222,187,0.65)] hover:-translate-y-0.5 hover:brightness-110',
+  primary:
+    'bg-signature text-on-primary shadow-[0_10px_28px_-16px_rgba(56,222,187,0.65)] hover:-translate-y-0.5 hover:brightness-110',
+  secondary:
+    'bg-surface-container-high text-on-surface border border-outline-variant/40 hover:bg-surface-bright hover:-translate-y-0.5',
+  outline:
+    'border border-outline-variant/45 bg-transparent text-on-surface hover:bg-surface-container-low hover:border-primary/55',
+  ghost:
+    'bg-transparent text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface'
+};
 
-const secondaryStyles = "bg-surface-variant/20 ghost-border text-white hover:bg-surface-bright/30 hover:shadow-ambient-hover hover:-translate-y-0.5 backdrop-blur-24";
+const sizeStyles: Record<string, string> = {
+  sm: 'h-9 px-4',
+  md: 'h-11 px-6',
+  lg: 'h-12 px-8 text-base'
+};
 
-const styles = variant === 'primary' ? primaryStyles : secondaryStyles;
+const styles = variantStyles[variant] ?? variantStyles.default;
+const buttonSize = sizeStyles[size] ?? sizeStyles.md;
 ---
 
-<button type={type} class:list={[baseStyles, styles, className]}>
-  <slot />
-</button>
+{
+  href ? (
+    <a href={href} class:list={[baseStyles, styles, buttonSize, className]}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class:list={[baseStyles, styles, buttonSize, className]}>
+      <slot />
+    </button>
+  )
+}

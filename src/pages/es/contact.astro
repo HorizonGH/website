@@ -89,48 +89,116 @@ const t = useTranslations(locale);
                 <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">location_on</span>
                 <div>
                   <p class="font-label text-sm text-slate-500">Ubicación</p>
-                  <p class="text-on-surface font-body">Silicon Roundabout, LATAM</p>
+                  <p class="text-on-surface">12-14 Old Street, London<br />EC1V 9AB, United Kingdom</p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">email</span>
+                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">alternate_email</span>
                 <div>
                   <p class="font-label text-sm text-slate-500">Correo Electrónico</p>
-                  <p class="text-on-surface font-body">contact@horizon.gh</p>
+                  <p class="text-on-surface">hello@horizon.gh</p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">schedule</span>
+                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">call</span>
                 <div>
-                  <p class="font-label text-sm text-slate-500">Horario</p>
-                  <p class="text-on-surface font-body">Lunes - Viernes, 8:00 - 18:00 CST</p>
+                  <p class="font-label text-sm text-slate-500">Teléfono</p>
+                  <p class="text-on-surface">+44 (0) 20 7946 0123</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="bg-surface-container-highest rounded-xl p-8">
-            <h3 class="font-display text-xl font-bold text-on-surface mb-4">Respuesta Rápida</h3>
-            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
-              Típicamente respondemos en menos de 2 horas durante horas de oficina.
-            </p>
-            <div class="space-y-3">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
-                <p class="text-sm text-on-surface">Consulta estratégica gratuita</p>
-              </div>
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
-                <p class="text-sm text-on-surface">Evaluación de necesidades sin compromiso</p>
-              </div>
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
-                <p class="text-sm text-on-surface">Soporte en español y propuestas personalizadas</p>
-              </div>
+          <div class="h-64 bg-surface-container-low rounded-xl relative overflow-hidden group grayscale hover:grayscale-0 transition-all duration-700">
+            <img
+              class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[2000ms]"
+              alt="Stylized city map"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxIwUfZViizse6lY9cdT7PWHAd5JKw9oTSuvuKT9VIHQZ5ipXj4gMFV7431OlCBjLr3-ggHhBfilKBBLUD9yyHuGYa8FsNJpoDr8sM2RZWGTajweotAMsxe1Rv74rCarWTpmKwD2XT2bx9NcpP7gOGUV7bP9XzvjX4Ju-KAzqaZPNz4ch3K_hnLJSL032NzdorxOQqar-qTcK6epYuyIrVynUcEHLQ3rrpRmaKKQCdq8fUb8WSbJ0x6XEXD2M9mTOjJHoFVzxq_B4"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+            <div class="absolute bottom-6 left-6 flex items-center gap-2 bg-primary/20 backdrop-blur-md px-3 py-1 rounded-full border border-primary/30">
+              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span class="text-xs font-label font-bold text-primary tracking-widest uppercase">Live Status: Online</span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-7xl mx-auto mt-24">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-4xl font-bold mb-4">Preguntas <span class="text-tertiary">Frecuentes</span></h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+          <h4 class="font-display font-bold text-lg text-primary mb-2">¿Cuál es el plazo típico de un proyecto?</h4>
+          <p class="text-slate-400 leading-relaxed">
+            La mayoría de los desarrollos MVP tardan entre 8 y 12 semanas, mientras que las transformaciones empresariales más grandes se planifican en fases de más de 6 meses para garantizar estabilidad.
+          </p>
+        </div>
+        <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+          <h4 class="font-display font-bold text-lg text-primary mb-2">¿Ofrecen soporte posterior al lanzamiento?</h4>
+          <p class="text-slate-400 leading-relaxed">
+            Absolutamente. Ofrecemos mantenimientos 24/7 y monitoreo activo para asegurar que tu infraestructura crezca junto con tu negocio.
+          </p>
+        </div>
+        <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+          <h4 class="font-display font-bold text-lg text-primary mb-2">¿Pueden trabajar con nuestra infraestructura actual?</h4>
+          <p class="text-slate-400 leading-relaxed">
+            Nuestros ingenieros son especialistas agnósticos en tecnología. Auditamos tu entorno actual y diseñamos soluciones que se integran sin problemas.
+          </p>
+        </div>
+        <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+          <h4 class="font-display font-bold text-lg text-primary mb-2">¿Cómo manejan la seguridad de los datos?</h4>
+          <p class="text-slate-400 leading-relaxed">
+            La seguridad es nuestra base, no un extra. Cada línea de código sigue estándares OWASP y pasa pruebas automatizadas rigurosas.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-slate-800/30 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="col-span-1 md:col-span-1">
+        <div class="inline-flex flex-col items-start w-fit hover:opacity-90 transition-opacity mb-4">
+          <div class="flex items-baseline">
+            <span class="text-xl font-display font-black text-on-surface tracking-wide">Horizon</span>
+            <span class="text-accent-cyan text-xl ml-[2px] leading-none" style="font-family: 'Caveat', 'Brush Script MT', cursive; font-weight: 600; transform: translateY(1px) rotate(-2deg); margin-left: 2px;">gh</span>
+          </div>
+          <div class="h-0.5 bg-on-surface w-[78%] mt-[1px] rounded-r-sm"></div>
+        </div>
+        <p class="font-body text-sm text-slate-400 leading-relaxed">Ingeniería del horizonte digital para empresas listas para evolucionar.</p>
+      </div>
+      <div class="space-y-4">
+        <h5 class="font-label text-xs uppercase tracking-widest text-primary font-bold">Soluciones</h5>
+        <ul class="space-y-2">
+          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">Cloud Migration</a></li>
+          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">AI Architecture</a></li>
+          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">DevOps Lifecycle</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4">
+        <h5 class="font-label text-xs uppercase tracking-widest text-primary font-bold">Empresa</h5>
+        <ul class="space-y-2">
+          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">Sobre Nosotros</a></li>
+          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="/es/blog">Perspectivas</a></li>
+          <li><a class="text-primary text-sm" href="/es/contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4">
+        <h5 class="font-label text-xs uppercase tracking-widest text-primary font-bold">Legal</h5>
+        <ul class="space-y-2">
+          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">Política de Privacidad</a></li>
+          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">Términos de Servicio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 py-6 border-t border-slate-800/20 text-center md:text-left">
+      <p class="font-body text-xs text-slate-500">© 2026 Horizon.gh. Ingeniería del horizonte digital.</p>
+    </div>
+  </footer>
 </Layout>

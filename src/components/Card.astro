@@ -1,15 +1,20 @@
 ---
 interface Props {
   interactive?: boolean;
+  tone?: 'default' | 'muted';
   class?: string;
 }
 
-const { interactive = false, class: className = '' } = Astro.props;
+const { interactive = false, tone = 'default', class: className = '' } = Astro.props;
 
-const baseStyles = "bg-surface-container-low rounded-xl p-8 transition-all duration-300";
-const hoverStyles = interactive ? "hover:-translate-y-1 hover:bg-surface-bright hover:shadow-ambient-hover cursor-pointer" : "";
+const baseStyles =
+  'rounded-2xl border border-outline-variant/25 bg-surface-container p-7 md:p-8 shadow-[0_12px_40px_-24px_rgba(1,7,15,0.7)] transition-all duration-300';
+const toneStyles = tone === 'muted' ? 'bg-surface-container-low' : 'bg-surface-container';
+const hoverStyles = interactive
+  ? 'cursor-pointer hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_20px_46px_-26px_rgba(76,214,251,0.35)]'
+  : '';
 ---
 
-<div class:list={[baseStyles, hoverStyles, className]}>
+<div class:list={[baseStyles, toneStyles, hoverStyles, className]}>
   <slot />
 </div>
