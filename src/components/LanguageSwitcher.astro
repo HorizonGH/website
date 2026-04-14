@@ -30,9 +30,43 @@ const labels = {
   </span>
   <a 
     href={alternateUrl}
-    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-high hover:bg-primary hover:text-surface transition-colors text-on-surface-variant hover:text-on-surface text-sm font-label font-bold"
+    data-lang-url={alternateUrl}
+    class="language-switcher-button inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-high hover:bg-primary hover:text-surface transition-colors text-on-surface-variant hover:text-on-surface text-sm font-label font-bold"
     title={`Switch to ${labels[alternateLocale]}`}
   >
     {alternateLocale.toUpperCase()}
   </a>
 </div>
+
+<script is:inline>
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('.language-switcher-button');
+    if (!button) return;
+    const url = button.dataset.langUrl;
+    if (!url) return;
+
+    event.preventDefault();
+    if (document.body.classList.contains('language-switching')) return;
+
+    const rect = button.getBoundingClientRect();
+    const diameter = Math.max(window.innerWidth, window.innerHeight) * 2;
+    const bubble = document.createElement('div');
+
+    bubble.className = 'language-switch-bubble';
+    bubble.style.width = `${diameter}px`;
+    bubble.style.height = `${diameter}px`;
+    bubble.style.left = `${rect.left + rect.width / 2}px`;
+    bubble.style.top = `${rect.top + rect.height / 2}px`;
+
+    document.body.append(bubble);
+    document.documentElement.classList.add('language-transitioning');
+    document.body.classList.add('language-switching');
+    button.classList.add('language-switcher-animate');
+
+    requestAnimationFrame(() => bubble.classList.add('language-switch-bubble--expand'));
+
+    window.setTimeout(() => {
+      window.location.href = url;
+    }, 420);
+  });
+</script>
