@@ -1,238 +1,331 @@
 ---
+const t = useTranslations('es') as any;
+
+import { useTranslations } from '../../i18n/utils';
 import Layout from '../../layouts/Layout.astro';
-import Navigation from '../../components/Navigation.astro';
-import Button from '../../components/Button.astro';
-import Card from '../../components/Card.astro';
-
-const locale = 'es';
-
-const painPoints = [
-  'Procesos manuales que no escalan',
-  'Herramientas desconectadas',
-  'Falta de visibilidad sobre el negocio',
-  'Perdida de oportunidades'
-];
-
-const services = [
-  {
-    icon: 'web',
-    title: 'Desarrollo Web',
-    copy: 'Sitios y landing pages disenados para convertir visitas en clientes.'
-  },
-  {
-    icon: 'code_blocks',
-    title: 'Productos de Software',
-    copy: 'Sistemas internos, APIs y plataformas que optimizan tu operacion.'
-  },
-  {
-    icon: 'monitoring',
-    title: 'Dashboards Operativos',
-    copy: 'Visualiza en tiempo real lo que ocurre en tu negocio y toma mejores decisiones.'
-  }
-];
-
-const workSteps = [
-  'Analizamos tu negocio',
-  'Disenamos la arquitectura digital',
-  'Desarrollamos el sistema',
-  'Iteramos y escalamos'
-];
-
-const samples = [
-  {
-    title: 'Landing SaaS',
-    problem: 'Funnel de conversion debil y baja velocidad del sitio.',
-    solution: 'Rediseno del funnel y optimizacion de arquitectura.',
-    result: 'Mayor conversion y mejor rendimiento en campanas.'
-  },
-  {
-    title: 'Portal de Operaciones',
-    problem: 'Solicitudes, reportes y SLA gestionados en herramientas separadas.',
-    solution: 'Plataforma interna unificada con flujos por roles.',
-    result: 'Respuesta mas rapida y visibilidad completa del equipo.'
-  },
-  {
-    title: 'Suite de Automatizacion',
-    problem: 'Equipos dedicando horas a reportes repetitivos.',
-    solution: 'Automatizacion de pipelines de datos y reportes programados.',
-    result: 'Mas tiempo de ejecucion y menos errores operativos.'
-  }
-];
-
-const differentiators = [
-  'No usamos plantillas',
-  'Disenamos sistemas, no solo interfaces',
-  'Pensamos en escalabilidad desde el inicio',
-  'Enfocados en resultados reales, no solo estetica'
-];
+import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 ---
 
-<Layout title="Horizon.gh | Ingenieria del Horizonte Digital" locale={locale}>
-  <Navigation locale={locale} />
+<Layout locale="es" title={t.seo.home_title}>
+  <!-- Add Cursive Font for the signatures -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
 
-  <main>
-    <section class="relative min-h-screen overflow-hidden pt-16 sm:pt-20 md:pt-24">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/85 to-surface/30"></div>
-        <img
-          alt="Conectividad digital"
-          class="h-full w-full object-cover"
-          src="https://res.cloudinary.com/dnta7zbad/image/upload/v1776103096/heroPageImage_rfon1c.png"
-        />
-        <div class="absolute inset-x-0 bottom-0 h-32 sm:h-44 bg-gradient-to-t from-surface to-transparent"></div>
+  <div class="min-h-screen bg-white text-black font-sans relative overflow-hidden">
+    <!-- Abstract Circuit Background in Hero -->
+    <div class="absolute inset-0 pointer-events-none opacity-5 z-0" 
+         style="background-image: radial-gradient(#00E5FF 1px, transparent 1px), radial-gradient(#00E5FF 1px, transparent 1px); background-size: 40px 40px; background-position: 0 0, 20px 20px;">
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 container mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-tighter">
+        Horizon <span class="text-[#00E5FF] font-['Caveat'] text-3xl">-gh</span>
       </div>
-      <div class="relative z-10 mx-auto flex min-h-[70vh] sm:min-h-[78vh] w-full max-w-7xl items-center px-4 sm:px-6">
-        <div class="max-w-3xl space-y-6 sm:space-y-8" data-motion="fade-up">
-          <h1 class="text-3xl sm:text-5xl font-display font-bold leading-[1.05] tracking-tight text-on-surface md:text-7xl lg:text-8xl">
-            Ingenieria del Horizonte Digital
-          </h1>
-          <p class="max-w-2xl text-base sm:text-lg leading-relaxed text-on-surface-variant md:text-2xl">
-            Construimos la base digital de tu negocio con software y sistemas disenados para escalar.
-          </p>
-          <p class="max-w-2xl text-sm sm:text-base leading-relaxed text-on-surface-variant md:text-lg">
-            Webs, plataformas y herramientas internas que convierten tu operacion en un sistema eficiente.
-          </p>
-          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="/es/services" size="lg">Explorar servicios</Button>
-            <Button href="/es/contact" variant="outline" size="lg">Reservar llamada estrategica</Button>
+      <div class="flex items-center space-x-8">
+        <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+          <a href="/es/" class="hover:text-[#00E5FF] transition-colors">{t.nav.home}</a>
+          <a href="/es/services" class="hover:text-[#00E5FF] transition-colors">{t.nav.services}</a>
+          <a href="/es/blog" class="hover:text-[#00E5FF] transition-colors">{t.nav.blog}</a>
+          <a href="/es/contact" class="hover:text-[#00E5FF] transition-colors">{t.nav.contact}</a>
+        </nav>
+        <div class="flex items-center ml-4 z-50">
+          <LanguageSwitcher currentUrl={Astro.url} />
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative z-10 container mx-auto px-6 pt-24 pb-32 text-center">
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6">
+        {t.home_page.hero_title}
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto font-light">
+        {t.home_page.hero_subtitle}
+      </p>
+      <div class="flex justify-center">
+        <a href="#contact" class="group flex items-center bg-[#00E5FF] text-black font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,255,0.6)] hover:-translate-y-1">
+          {t.hero.cta}
+          <svg class="w-6 h-6 ml-3 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-50 py-24 relative border-t border-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">{t.services.title}</h2>
+          <div class="w-24 h-1 bg-[#00E5FF] mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service Card 1 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-300 border border-transparent hover:border-[#00E5FF]/30 group">
+            <div class="w-14 h-14 bg-[#00E5FF]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00E5FF] transition-colors">
+              <svg class="w-8 h-8 text-[#00E5FF] group-hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">{t.services.card1_title}</h3>
+            <p class="text-gray-600">{t.home_page.services_card1_desc}</p>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-300 border border-transparent hover:border-[#00E5FF]/30 group">
+            <div class="w-14 h-14 bg-[#00E5FF]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00E5FF] transition-colors">
+              <svg class="w-8 h-8 text-[#00E5FF] group-hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">{t.services.card2_title}</h3>
+            <p class="text-gray-600">{t.home_page.services_card2_desc}</p>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-300 border border-transparent hover:border-[#00E5FF]/30 group">
+            <div class="w-14 h-14 bg-[#00E5FF]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00E5FF] transition-colors">
+              <svg class="w-8 h-8 text-[#00E5FF] group-hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">{t.services.card3_title}</h3>
+            <p class="text-gray-600">{t.home_page.services_card3_desc}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="px-4 sm:px-6 py-16 sm:py-20">
-      <div class="mx-auto max-w-7xl" data-motion="fade-up">
-        <p class="text-xs font-label uppercase tracking-[0.18em] text-tertiary">El problema</p>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">
-          La mayoria de negocios opera sin una base digital real
-        </h2>
-        <div class="mt-6 sm:mt-8 grid gap-4 md:grid-cols-2" data-motion-group="problem">
-          {
-            painPoints.map((point) => (
-              <Card interactive class="micro-hover" data-card>
-                <p class="text-base text-on-surface">{point}</p>
-              </Card>
-            ))
-          }
+    <!-- Process: Deconstructed 'H' Section -->
+    <section class="py-24 bg-white relative">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-16 text-center text-black">{t.framework.title}</h2>
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 relative">
+          <!-- Background connection lines for desktop -->
+          <div class="hidden md:block absolute top-1/2 left-0 right-0 h-2 bg-gray-100 -z-10 -translate-y-1/2"></div>
+          
+          <!-- H Left Vertical -->
+          <div class="flex-1 text-center bg-gray-50 p-8 rounded-lg shadow-sm w-full md:transform md:-translate-y-8 border-l-4 border-[#00E5FF]">
+            <div class="text-[#00E5FF] font-black text-6xl mb-4">01</div>
+            <h4 class="text-xl font-bold mb-2">{t.framework.step1_title}</h4>
+            <p class="text-gray-600 text-sm">{t.home_page.framework_step1_desc}</p>
+          </div>
+          
+          <!-- H Horizontal Crossbar -->
+          <div class="flex-1 text-center bg-[#00E5FF] text-black p-8 rounded-lg shadow-lg w-full md:scale-110 z-10 transition-transform hover:scale-115">
+            <div class="font-black text-6xl mb-4 opacity-70">02</div>
+            <h4 class="text-xl font-bold mb-2">{t.framework.step2_title}</h4>
+            <p class="text-gray-800 text-sm font-medium">{t.home_page.framework_step2_desc}</p>
+          </div>
+          
+          <!-- H Right Vertical -->
+          <div class="flex-1 text-center bg-gray-50 p-8 rounded-lg shadow-sm w-full md:transform md:translate-y-8 border-r-4 border-[#00E5FF]">
+            <div class="text-[#00E5FF] font-black text-6xl mb-4">03</div>
+            <h4 class="text-xl font-bold mb-2">{t.framework.step3_title}</h4>
+            <p class="text-gray-600 text-sm">{t.home_page.framework_step3_desc}</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="px-6 pb-20">
-      <div class="mx-auto max-w-7xl rounded-3xl border border-primary/25 bg-primary/10 p-8 md:p-12" data-motion="fade-up">
-        <p class="text-xs font-label uppercase tracking-[0.18em] text-primary">Solucion</p>
-        <p class="mt-3 text-2xl font-display font-bold leading-relaxed text-on-surface md:text-3xl">
-          En Horizon.gh disenamos sistemas digitales que organizan, automatizan y preparan tu negocio para crecer.
-        </p>
-      </div>
-    </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-gray-50 border-t border-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div>
+            <h2 class="text-4xl font-bold mb-4">{t.portfolio.title}</h2>
+            <div class="w-24 h-1 bg-[#00E5FF]"></div>
+          </div>
+          <!-- Filter Dropdown (Visual only) -->
+          <div class="mt-6 md:mt-0">
+            <select class="bg-white border text-sm font-medium border-gray-200 text-gray-700 py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E5FF]">
+              <option>{t.home_page.portfolio_filter_all}</option>
+              <option>{t.home_page.portfolio_filter_web}</option>
+              <option>{t.portfolio.category_ecommerce}</option>
+              <option>{t.home_page.portfolio_filter_corporate}</option>
+            </select>
+          </div>
+        </div>
 
-    <section class="px-6 py-20">
-      <div class="mx-auto max-w-7xl">
-        <div class="mb-12" data-motion="fade-up">
-          <h2 class="text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">Servicios orientados a valor real</h2>
-        </div>
-        <div class="grid gap-5 md:grid-cols-3" data-motion-group="services">
-          {
-            services.map((service) => (
-              <Card interactive class="micro-hover" data-card>
-                <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-primary/35 bg-primary/10 text-primary">
-                  <span class="material-symbols-outlined">{service.icon}</span>
-                </div>
-                <h3 class="text-2xl font-display font-bold text-on-surface">{service.title}</h3>
-                <p class="mt-3 text-sm leading-relaxed text-on-surface-variant">{service.copy}</p>
-              </Card>
-            ))
-          }
-        </div>
-      </div>
-    </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Featured Project -->
+          <div class="group relative md:col-span-2 lg:col-span-2 rounded-2xl overflow-hidden bg-gray-900 border border-gray-200 hover:shadow-[0_0_20px_rgba(0,229,255,0.5)] transition-all duration-500 cursor-pointer min-h-[400px] flex flex-col justify-end p-8">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+            <!-- Horizon Logo overlay pattern -->
+            <div class="absolute inset-0 opacity-10 flex items-center justify-center">
+              <span class="text-9xl font-black text-white">HxG</span>
+            </div>
+            <div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <span class="text-[#00E5FF] text-sm font-bold tracking-wider uppercase mb-2 block">{t.home_page.featured_project_category}</span>
+              <h3 class="text-3xl text-white font-bold mb-2">{t.home_page.featured_project_title}</h3>
+              <p class="text-gray-300 text-sm max-w-lg mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">{t.home_page.featured_project_desc}</p>
+            </div>
+          </div>
 
-    <section class="px-6 py-20">
-      <div class="mx-auto max-w-7xl" data-motion="fade-up">
-        <h2 class="text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">Como trabajamos</h2>
-        <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4" data-motion-group="process">
-          {
-            workSteps.map((step, index) => (
-              <Card interactive class="micro-hover" data-card>
-                <p class="text-xs font-label uppercase tracking-[0.18em] text-primary">Paso {index + 1}</p>
-                <p class="mt-3 text-base text-on-surface">{step}</p>
-              </Card>
-            ))
-          }
-        </div>
-      </div>
-    </section>
+          <!-- Project 2 -->
+          <div class="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-[#00E5FF] hover:shadow-[0_0_20px_rgba(0,229,255,0.5)] transition-all duration-500 cursor-pointer min-h-[400px] flex flex-col justify-end p-8">
+            <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-900/90 to-transparent z-10"></div>
+            <div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <span class="text-[#00E5FF] text-sm font-bold tracking-wider uppercase mb-2 block">{t.portfolio.proj2_cat}</span>
+              <h3 class="text-2xl text-white font-bold mb-2">{t.home_page.project2_title}</h3>
+            </div>
+          </div>
 
-    <section class="px-6 py-20">
-      <div class="mx-auto max-w-7xl rounded-[2rem] border border-outline-variant/30 bg-surface-container-low p-7 md:p-11">
-        <div class="mb-8" data-motion="fade-up">
-          <h2 class="text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">Sistemas reales, no conceptos</h2>
-        </div>
-        <div class="grid gap-5 lg:grid-cols-3" data-motion-group="samples">
-          {
-            samples.map((item) => (
-              <article class="micro-hover rounded-3xl border border-outline-variant/30 bg-[#111827] p-5" data-card>
-                <h3 class="text-xl font-display font-bold text-on-surface">{item.title}</h3>
-                <p class="mt-4 text-sm text-on-surface"><span class="font-semibold text-primary">Problema:</span> {item.problem}</p>
-                <p class="mt-2 text-sm text-on-surface"><span class="font-semibold text-primary">Solucion:</span> {item.solution}</p>
-                <p class="mt-2 text-sm text-on-surface"><span class="font-semibold text-primary">Resultado:</span> {item.result}</p>
-              </article>
-            ))
-          }
+          <!-- Project 3 -->
+          <div class="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-[#00E5FF] hover:shadow-[0_0_20px_rgba(0,229,255,0.5)] transition-all duration-500 cursor-pointer min-h-[300px] flex flex-col justify-end p-8">
+             <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-900/90 to-transparent z-10"></div>
+            <div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <span class="text-[#00E5FF] text-sm font-bold tracking-wider uppercase mb-2 block">{t.home_page.project3_category}</span>
+              <h3 class="text-2xl text-white font-bold mb-2">{t.home_page.project3_title}</h3>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="group relative md:col-span-2 rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-[#00E5FF] hover:shadow-[0_0_20px_rgba(0,229,255,0.5)] transition-all duration-500 cursor-pointer min-h-[300px] flex flex-col justify-end p-8">
+            <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-900/90 to-transparent z-10"></div>
+            <div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <span class="text-[#00E5FF] text-sm font-bold tracking-wider uppercase mb-2 block">{t.home_page.project4_category}</span>
+              <h3 class="text-3xl text-white font-bold mb-2">{t.home_page.project4_title}</h3>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="px-6 py-20">
-      <div class="mx-auto max-w-7xl" data-motion="fade-up">
-        <h2 class="text-4xl font-display font-bold tracking-tight text-on-surface md:text-5xl">Por que Horizon.gh</h2>
-        <div class="mt-8 grid gap-4 md:grid-cols-2" data-motion-group="why">
-          {
-            differentiators.map((item) => (
-              <Card interactive class="micro-hover" data-card>
-                <p class="text-base text-on-surface">{item}</p>
-              </Card>
-            ))
-          }
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-16 text-center text-black">{t.testimonials.title}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-gray-900 rounded-2xl p-8 text-white relative flex flex-col shadow-xl">
+            <svg class="w-8 h-8 text-[#00E5FF] mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+            <p class="text-gray-300 italic mb-8 flex-grow">"{t.home_page.testimonial1_quote}"</p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-gray-700 rounded-full mr-4 flex items-center justify-center overflow-hidden border-2 border-[#00E5FF]">
+                <img src="https://ui-avatars.com/api/?name=Kwame+M&background=00E5FF&color=000" alt="Kwame M" class="w-full h-full object-cover"/>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">{t.testimonials.t1_name}</h4>
+                <span class="text-sm text-gray-400">{t.testimonials.t1_role}</span>
+              </div>
+            </div>
+            <div class="absolute bottom-6 right-8 opacity-40 transform rotate-[-10deg]">
+               <span class="text-[#00E5FF] font-['Caveat'] text-2xl">-gh</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-gray-900 rounded-2xl p-8 text-white relative flex flex-col shadow-xl">
+            <svg class="w-8 h-8 text-[#00E5FF] mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+            <p class="text-gray-300 italic mb-8 flex-grow">"{t.home_page.testimonial2_quote}"</p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-gray-700 rounded-full mr-4 flex items-center justify-center overflow-hidden border-2 border-[#00E5FF]">
+                 <img src="https://ui-avatars.com/api/?name=Sarah+A&background=00E5FF&color=000" alt="Sarah A" class="w-full h-full object-cover"/>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">{t.testimonials.t2_name}</h4>
+                <span class="text-sm text-gray-400">{t.home_page.testimonial2_role}</span>
+              </div>
+            </div>
+            <div class="absolute bottom-6 right-8 opacity-40 transform rotate-[-10deg]">
+               <span class="text-[#00E5FF] font-['Caveat'] text-2xl">-gh</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-gray-900 rounded-2xl p-8 text-white relative flex flex-col shadow-xl">
+            <svg class="w-8 h-8 text-[#00E5FF] mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+            <p class="text-gray-300 italic mb-8 flex-grow">"{t.home_page.testimonial3_quote}"</p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-gray-700 rounded-full mr-4 flex items-center justify-center overflow-hidden border-2 border-[#00E5FF]">
+                 <img src="https://ui-avatars.com/api/?name=David+O&background=00E5FF&color=000" alt="David O" class="w-full h-full object-cover"/>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">{t.testimonials.t3_name}</h4>
+                <span class="text-sm text-gray-400">{t.home_page.testimonial3_role}</span>
+              </div>
+            </div>
+             <div class="absolute bottom-6 right-8 opacity-40 transform rotate-[-10deg]">
+               <span class="text-[#00E5FF] font-['Caveat'] text-2xl">-gh</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="px-6 pb-24 pt-14">
-      <div class="mx-auto max-w-7xl rounded-3xl border border-outline-variant/35 bg-surface-container p-10 text-center md:p-14" data-motion="fade-up">
-        <h2 class="text-3xl font-display font-bold text-on-surface md:text-5xl">Tu negocio necesita mas que presencia digital. Necesita un sistema.</h2>
-        <div class="mt-8">
-          <Button href="/es/contact" size="lg">Reservar llamada estrategica</Button>
+    <!-- Footer & Contact -->
+    <footer id="contact" class="bg-black text-white py-20 border-t-4 border-[#00E5FF]">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          
+          <!-- Contact Form -->
+          <div>
+            <h2 class="text-3xl font-bold mb-8">{t.contact.title}</h2>
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-400 mb-2">{t.home_page.form_name}</label>
+                <input type="text" id="name" class="w-full bg-gray-900 border border-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#00E5FF] transition-colors" placeholder={t.home_page.form_name_placeholder}>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-400 mb-2">{t.home_page.form_email}</label>
+                <input type="email" id="email" class="w-full bg-gray-900 border border-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#00E5FF] transition-colors" placeholder={t.home_page.form_email_placeholder}>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-400 mb-2">{t.home_page.form_message}</label>
+                <textarea id="message" rows="4" class="w-full bg-gray-900 border border-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#00E5FF] transition-colors" placeholder={t.home_page.form_message_placeholder}></textarea>
+              </div>
+              <button type="submit" class="bg-[#00E5FF] text-black font-bold py-3 px-8 rounded-lg hover:bg-cyan-400 transition-colors w-full md:w-auto">
+                {t.contact.submit}
+              </button>
+            </form>
+          </div>
+
+          <!-- Footer Information -->
+          <div class="flex flex-col justify-between">
+            <div>
+              <div class="text-3xl font-bold mb-6">
+                Horizon <span class="text-[#00E5FF] font-['Caveat'] text-4xl ml-1">-gh</span>
+              </div>
+              <p class="text-gray-400 mb-8 max-w-sm">
+                {t.home_page.footer_description}
+              </p>
+              
+              <div class="space-y-4 text-sm text-gray-400">
+                <p class="flex items-center">
+                  <svg class="w-5 h-5 mr-3 text-[#00E5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  Accra, Ghana
+                </p>
+                <p class="flex items-center">
+                  <svg class="w-5 h-5 mr-3 text-[#00E5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                  hello@horizon.gh
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-12 md:mt-0 flex flex-col md:flex-row justify-between items-start md:items-end">
+              <!-- Social Links -->
+              <div class="flex space-x-4 mb-6 md:mb-0">
+                <a href="#" class="text-gray-400 hover:text-[#00E5FF] transition-colors p-2 bg-gray-900 rounded-full">
+                  <span class="sr-only">{t.home_page.social_x}</span>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-[#00E5FF] transition-colors p-2 bg-gray-900 rounded-full">
+                  <span class="sr-only">{t.home_page.social_github}</span>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-[#00E5FF] transition-colors p-2 bg-gray-900 rounded-full">
+                  <span class="sr-only">{t.home_page.social_linkedin}</span>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+              </div>
+              <p class="text-sm text-gray-500">
+                &copy; {new Date().getFullYear()} Horizon gh. {t.home_page.footer_rights}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
-
-  <script type="module">
-    import { animate, inView, stagger } from '@motionone/dom';
-
-    const animateEnter = (target, y = 18) => {
-      animate(
-        target,
-        { opacity: [0, 1], transform: [`translateY(${y}px)`, 'translateY(0px)'] },
-        { duration: 0.65, easing: [0.22, 1, 0.36, 1] }
-      );
-    };
-
-    document.querySelectorAll('[data-motion="fade-up"]').forEach((el) => {
-      inView(el, () => animateEnter(el));
-    });
-
-    document.querySelectorAll('[data-motion-group]').forEach((group) => {
-      const cards = group.querySelectorAll('[data-card]');
-      inView(group, () => {
-        animate(
-          cards,
-          { opacity: [0, 1], transform: ['translateY(18px)', 'translateY(0px)'] },
-          { duration: 0.55, delay: stagger(0.08), easing: [0.22, 1, 0.36, 1] }
-        );
-      });
-    });
-  </script>
+    </footer>
+  </div>
 </Layout>

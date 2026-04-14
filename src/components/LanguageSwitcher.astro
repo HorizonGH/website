@@ -1,5 +1,5 @@
 ---
-import { getLocaleFromUrl, getAlternateLocale, getLocalePath } from '../i18n/utils';
+import { getLocaleFromUrl } from '../i18n/utils';
 
 interface Props {
   currentUrl: URL;
@@ -7,66 +7,117 @@ interface Props {
 
 const { currentUrl } = Astro.props;
 const currentLocale = getLocaleFromUrl(currentUrl);
-const alternateLocale = getAlternateLocale(currentLocale);
 
-// Get base path without locale prefix
 const pathname = currentUrl.pathname;
-const cleanPath = pathname.replace(/^\/(es|en)/, '') || '/';
+const cleanPath = pathname.replace(/^\/(es|en)(?=$|\/)/, '') || '/';
 
-// Build alternate language URL
-const alternateUrl = alternateLocale === 'en' 
-  ? cleanPath 
-  : `/es${cleanPath}`;
-
-const labels = {
-  en: 'English',
-  es: 'Español'
+const getLangUrl = (lang: string) => {
+  if (lang === 'en') return cleanPath;
+  if (lang === 'es') return `/es${cleanPath === '/' ? '' : cleanPath}`;
+  return cleanPath;
 };
+
+const languages = [
+  { code: 'en', label: 'EN' },
+  { code: 'es', label: 'ES' }
+];
+
+// Reorder so current language is not duplicated in the list, or keep all.
 ---
 
-<div class="flex items-center gap-2">
-  <span class="text-xs uppercase tracking-widest text-on-surface-variant font-label">
-    {labels[currentLocale]}
-  </span>
-  <a 
-    href={alternateUrl}
-    data-lang-url={alternateUrl}
-    class="language-switcher-button inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-high hover:bg-primary hover:text-surface transition-colors text-on-surface-variant hover:text-on-surface text-sm font-label font-bold"
-    title={`Switch to ${labels[alternateLocale]}`}
+<div class="relative z-50 flex items-center overflow-visible" id="lang-switcher-container">
+  {/* The main circuit node */}
+  <button 
+    id="lang-node"
+    class="relative z-10 w-8 h-8 rounded-full bg-[#0a0a0a] border border-[#00E5FF]/30 flex items-center justify-center cursor-pointer transition-all duration-300 hover:border-[#00E5FF] hover:shadow-[0_0_15px_rgba(0,229,255,0.6)] group"
+    aria-label="Switch Language"
   >
-    {alternateLocale.toUpperCase()}
-  </a>
+    <span class="text-[#00E5FF] text-xs font-bold tracking-widest font-mono group-hover:drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]">
+      {currentLocale.toUpperCase()}
+    </span>
+    {/* Inner glow pulse */}
+    <div class="absolute inset-0 rounded-full bg-[#00E5FF]/5 opacity-0 group-hover:animate-pulse"></div>
+  </button>
+
+  {/* Connecting Circuit Lines and Language Options */}
+  <div id="lang-options" class="absolute right-full top-1/2 -translate-y-1/2 z-50 flex flex-row-reverse items-center opacity-0 pointer-events-none transition-opacity duration-300 mr-2">
+    {languages.map((lang, index) => (
+      <div class="flex items-center lang-option-group" style={`transition-delay: ${index * 75}ms`}>
+        {/* Language Option Node */}
+        <a 
+          href={getLangUrl(lang.code)}
+          class={`w-7 h-7 rounded-full bg-[#0a0a0a] border ${currentLocale === lang.code ? 'border-[#00E5FF] shadow-[0_0_10px_rgba(0,229,255,0.4)]' : 'border-[#00E5FF]/20'} flex items-center justify-center hover:border-[#00E5FF] hover:shadow-[0_0_15px_rgba(0,229,255,0.6)] transition-all duration-300 mx-1 relative z-10 hover:z-20`}
+        >
+          <span class={`text-[10px] font-bold font-mono ${currentLocale === lang.code ? 'text-[#00E5FF]' : 'text-[#00E5FF]/50 hover:text-[#00E5FF]'}`}>
+            {lang.label}
+          </span>
+        </a>
+        
+        {/* Horizontal Circuit Line */}
+        <div class="circuit-line w-4 h-[1px] bg-[#00E5FF]/40 relative overflow-hidden">
+          <div class="absolute inset-0 w-full h-full bg-[#00E5FF] line-glow"></div>
+        </div>
+      </div>
+    ))}
+  </div>
 </div>
 
-<script is:inline>
-  document.addEventListener('click', (event) => {
-    const button = event.target.closest('.language-switcher-button');
-    if (!button) return;
-    const url = button.dataset.langUrl;
-    if (!url) return;
+<style>
+  /* Base state */
+  #lang-options .lang-option-group {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  /* Open state */
+  #lang-switcher-container.is-open #lang-options {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  #lang-switcher-container.is-open .lang-option-group {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
-    event.preventDefault();
-    if (document.body.classList.contains('language-switching')) return;
+  /* Circuit line animation */
+  #lang-switcher-container.is-open .line-glow {
+    animation: flow-left 1.5s linear infinite;
+  }
 
-    const rect = button.getBoundingClientRect();
-    const diameter = Math.max(window.innerWidth, window.innerHeight) * 2;
-    const bubble = document.createElement('div');
+  @keyframes flow-left {
+    0% { transform: translateX(100%); }
+    50% { transform: translateX(-100%); }
+    100% { transform: translateX(-100%); }
+  }
+</style>
 
-    bubble.className = 'language-switch-bubble';
-    bubble.style.width = `${diameter}px`;
-    bubble.style.height = `${diameter}px`;
-    bubble.style.left = `${rect.left + rect.width / 2}px`;
-    bubble.style.top = `${rect.top + rect.height / 2}px`;
+<script>
+  // Script runs on client. Need to wrap in standard Astro script strategy.
+  // Astro runs this script exactly once if not enclosed in a component loaded dynamically,
+  // but with view transitions, we use astro:page-load
+  const setupLangSwitcher = () => {
+    const container = document.getElementById('lang-switcher-container');
+    const btn = document.getElementById('lang-node');
 
-    document.body.append(bubble);
-    document.documentElement.classList.add('language-transitioning');
-    document.body.classList.add('language-switching');
-    button.classList.add('language-switcher-animate');
+    if (!container || !btn) return;
 
-    requestAnimationFrame(() => bubble.classList.add('language-switch-bubble--expand'));
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      container.classList.toggle('is-open');
+    });
 
-    window.setTimeout(() => {
-      window.location.href = url;
-    }, 420);
-  });
+    document.addEventListener('click', (e) => {
+      if (!container.contains(e.target as Node)) {
+        container.classList.remove('is-open');
+      }
+    });
+  };
+
+  // Run on first load
+  setupLangSwitcher();
+
+  // Run on view transitions
+  document.addEventListener('astro:page-load', setupLangSwitcher);
 </script>

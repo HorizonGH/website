@@ -3,65 +3,216 @@
     "home": "Inicio",
     "services": "Servicios",
     "blog": "Blog",
-    "contact": "Contacto",
-    "getStarted": "Comenzar"
+    "contact": "Contacto"
   },
-  "home": {
-    "tagline": "Redefiniendo la Innovación",
-    "headline": "Ingenería del Horizonte Digital",
-    "subheadline": "Soluciones empresariales de TI diseñadas para organizaciones con visión de futuro que exigen más que el status quo.",
-    "cta": "Explorar Nuestros Servicios"
+  "hero": {
+    "title_part1": "TRANSFORMANDO EL",
+    "title_part2": "HORIZONTE D",
+    "title_part3": "GITAL.",
+    "subtitle": "Pioneros en Experiencias Web con Innovación Ghanesa.",
+    "cta": "Eleva tu Presencia"
   },
   "services": {
     "title": "Nuestros Servicios",
-    "description": "Soluciones empresariales de TI construidas sobre excelencia técnica y visión estratégica.",
-    "consulting": {
-      "title": "Consultoría de TI",
-      "description": "Orientación estratégica para transformación digital y modernización de infraestructura."
-    },
-    "cloudServices": {
-      "title": "Servicios en la Nube",
-      "description": "Migración y gestión transparente en AWS, Azure y Google Cloud."
-    },
-    "security": {
-      "title": "Soluciones de Seguridad",
-      "description": "Arquitectura de confianza cero y gestión integral de amenazas."
-    },
-    "devops": {
-      "title": "DevOps y Automatización",
-      "description": "Canalizaciones CI/CD e infraestructura como código para máxima velocidad."
-    },
-    "webDevelopment": {
-      "title": "Desarrollo Web",
-      "description": "Landing pages que convierten, webs profesionales y una presencia digital sólida."
-    },
-    "softwareDevelopment": {
-      "title": "Desarrollo de Software",
-      "description": "Sistemas internos, APIs, dashboards y automatización básica para operaciones más inteligentes."
-    }
+    "card1_title": "Arquitectura Web",
+    "card1_desc": "Construyendo bases web escalables, resilientes y de alto rendimiento utilizando los frameworks más avanzados.",
+    "card2_title": "Plataformas a Medida",
+    "card2_desc": "Soluciones de software personalizadas diseñadas para optimizar operaciones y ofrecer experiencias de usuario únicas.",
+    "card3_title": "Aceleración Digital",
+    "card3_desc": "Optimización de flujos de trabajo y modernización de sistemas heredados con ciclos de implementación rápidos."
   },
-  "blog": {
-    "title": "Perspectivas Técnicas",
-    "description": "Análisis de la industria y perspectivas estratégicas de nuestro equipo de ingeniería.",
-    "readMore": "Leer Artículo",
-    "publishedOn": "Publicado el",
-    "backToBlog": "Volver al Blog"
+  "framework": {
+    "title": "El Marco de Trabajo",
+    "step1_title": "Descubrimiento",
+    "step1_desc": "Mapeando el terreno digital y definiendo caminos estratégicos.",
+    "step2_title": "Síntesis",
+    "step2_desc": "Fusionando la innovación en diseño con la excelencia en ingeniería ghanesa.",
+    "step3_title": "Despliegue",
+    "step3_desc": "Lanzando soluciones escalables al ecosistema moderno."
+  },
+  "portfolio": {
+    "title": "Proyectos Destacados",
+    "category_all": "Todos los Proyectos",
+    "category_web": "Apps Web",
+    "category_ecommerce": "E-Commerce",
+    "category_corp": "Sitios Corporativos",
+    "proj1_cat": "Plataforma Fintech",
+    "proj1_title": "Dashboard AccraPay",
+    "proj1_desc": "Un dashboard financiero de vanguardia diseñado para altos volúmenes de transacciones, con análisis en tiempo real y protocolos de seguridad bancaria.",
+    "proj2_cat": "E-Commerce",
+    "proj2_title": "Mercado Kente",
+    "proj3_cat": "Corporativo",
+    "proj3_title": "Logística Oasis",
+    "proj4_cat": "Plataforma SaaS",
+    "proj4_title": "Sistemas AgriTrack"
+  },
+  "testimonials": {
+    "title": "Perspectivas de Clientes",
+    "t1_quote": "Horizon transformó totalmente nuestra infraestructura backend. Su enfoque en arquitectura robusta combinado con interfaces asombrosas no tiene paralelo en la región.",
+    "t1_name": "Kwame Mensah",
+    "t1_role": "CEO, TechHub Accra",
+    "t2_quote": "La atención al detalle y la optimización de rendimiento que aplicaron a nuestra plataforma de e-commerce generó un aumento del 40% en conversiones en semanas.",
+    "t2_name": "Sarah Ansah",
+    "t2_role": "Directora, Estilo Kente",
+    "t3_quote": "Un verdadero aliado en innovación digital. No solo construyen sitios web; diseñan plataformas digitales que escalan sin esfuerzo.",
+    "t3_name": "David Osei",
+    "t3_role": "Fundador, Red Vibe"
   },
   "contact": {
-    "title": "Conectemos",
-    "description": "¿Listo para transformar tu infraestructura? Ponte en contacto con nuestro equipo.",
-    "form": {
-      "name": "Nombre Completo",
-      "email": "Correo Electrónico",
-      "company": "Empresa",
-      "message": "Mensaje",
-      "send": "Enviar Mensaje",
-      "success": "¡Mensaje enviado exitosamente!"
-    }
+    "title": "Inicia una Conversación",
+    "name_label": "Nombre",
+    "name_placeholder": "Juan Pérez",
+    "email_label": "Correo Electrónico",
+    "email_placeholder": "juan@ejemplo.com",
+    "message_label": "Mensaje",
+    "message_placeholder": "Cuéntanos sobre tu proyecto...",
+    "submit": "Enviar Mensaje",
+    "hq_title": "Sede Central",
+    "social_title": "Nuestras Redes"
   },
-  "footer": {
-    "mission": "Ingenería del Horizonte Digital",
-    "rights": "Todos los derechos reservados.",
-    "language": "Idioma"
+  "seo": {
+    "home_title": "Horizon gh - Transformando el Horizonte Digital",
+    "services_title": "Servicios | Horizon.gh - Transformando el Horizonte Digital",
+    "blog_title": "Blog | Horizon.gh - Transformando el Horizonte Digital",
+    "contact_title": "Contacto | Horizon.gh - Transformando el Horizonte Digital"
+  },
+  "home_page": {
+    "hero_title": "TRANSFORMANDO EL HORIZONTE DIGITAL.",
+    "hero_subtitle": "Pioneros en experiencias web con innovación ghanesa.",
+    "services_card1_desc": "Construyendo bases web escalables, resilientes y de alto rendimiento con frameworks de vanguardia.",
+    "services_card2_desc": "Soluciones de software a medida para optimizar operaciones y ofrecer experiencias de usuario unicas.",
+    "services_card3_desc": "Optimizamos flujos de trabajo y modernizamos sistemas heredados con ciclos de implementacion rapidos.",
+    "framework_step1_desc": "Mapeamos el terreno digital y definimos caminos estrategicos.",
+    "framework_step2_desc": "Fusionamos innovacion en diseno con excelencia en ingenieria ghanesa.",
+    "framework_step3_desc": "Lanzamos soluciones escalables en el ecosistema moderno.",
+    "portfolio_filter_all": "Todos los proyectos",
+    "portfolio_filter_web": "Apps web",
+    "portfolio_filter_corporate": "Sitios corporativos",
+    "featured_project_category": "Plataforma fintech",
+    "featured_project_title": "Dashboard AccraPay",
+    "featured_project_desc": "Un dashboard financiero de vanguardia para altos volumenes de transacciones, con analitica en tiempo real y protocolos de seguridad bancaria.",
+    "project2_title": "Mercado Kente",
+    "project3_category": "Corporativo",
+    "project3_title": "Logistica Oasis",
+    "project4_category": "Plataforma SaaS",
+    "project4_title": "Sistemas AgriTrack",
+    "testimonial1_quote": "Horizon transformo totalmente nuestra infraestructura backend. Su enfoque en arquitectura robusta combinado con interfaces asombrosas no tiene paralelo en la region.",
+    "testimonial2_quote": "La atencion al detalle y la optimizacion de rendimiento que aplicaron a nuestra plataforma de e-commerce genero un aumento del 40% en conversiones en semanas.",
+    "testimonial2_role": "Directora, Estilo Kente",
+    "testimonial3_quote": "Un verdadero aliado en innovacion digital. No solo construyen sitios web; disenan plataformas digitales que escalan sin esfuerzo.",
+    "testimonial3_role": "Fundador, Red Vibe",
+    "form_name": "Nombre",
+    "form_name_placeholder": "Juan Perez",
+    "form_email": "Correo electronico",
+    "form_email_placeholder": "juan@ejemplo.com",
+    "form_message": "Mensaje",
+    "form_message_placeholder": "Cuentanos sobre tu proyecto...",
+    "social_x": "Perfil en X",
+    "social_github": "Perfil en GitHub",
+    "social_linkedin": "Perfil en LinkedIn",
+    "footer_description": "Impulsamos la proxima generacion de aplicaciones web desde el corazon de Ghana hacia el mundo.",
+    "footer_rights": "Todos los derechos reservados."
+  },
+  "services_page": {
+    "badge": "Nuestro ecosistema",
+    "hero_title": "ARQUITECTANDO EL FUTURO",
+    "hero_subtitle": "Construimos infraestructuras robustas y escalables que aceleran tu transformacion digital.",
+    "web_title": "Desarrollo Web",
+    "web_desc": "Aplicaciones web de alto rendimiento, sitios corporativos y landing pages optimizadas para trafico y conversion.",
+    "web_feature1": "Frontend altamente responsivo",
+    "web_feature2": "Integraciones CMS escalables",
+    "web_feature3": "Optimizacion de Core Web Vitals",
+    "web_cta": "Comenzar ahora",
+    "software_title": "Software a medida",
+    "software_desc": "Herramientas internas, sistemas de automatizacion y plataformas SaaS disenadas para acelerar flujos operativos.",
+    "software_feature1": "APIs REST/GraphQL seguras",
+    "software_feature2": "Dashboards complejos",
+    "software_feature3": "Sistemas cloud y backend",
+    "software_cta": "Solicitar demo",
+    "stack_title": "Nuestro arsenal",
+    "stack_cloud": "Nativo en la nube",
+    "stack_frontend": "Frontend",
+    "stack_data_backend": "Datos y backend",
+    "stack_containers": "Contenedores",
+    "footer_description": "Impulsamos la proxima generacion de aplicaciones web desde el corazon de Ghana hacia el mundo.",
+    "footer_rights": "Todos los derechos reservados."
+  },
+  "blog_page": {
+    "hero_title": "PERSPECTIVAS DE INGENIERIA",
+    "hero_emphasis": "Tecnologia",
+    "hero_subtitle": "Analisis profundos sobre arquitectura de software, transformacion digital y el panorama tecnologico del futuro.",
+    "read_cta": "Leer",
+    "posts": {
+      "autonomous-it-ops": {
+        "title": "El futuro de las operaciones TI autonomas",
+        "excerpt": "Como AIOps esta transformando la respuesta a incidentes y el mantenimiento predictivo en entornos de mision critica.",
+        "category": "Automatizacion",
+        "read_time": "6 min de lectura"
+      },
+      "blockchain-beyond-currency": {
+        "title": "Blockchain: mas alla de la moneda",
+        "excerpt": "Uso de registros inmutables para la transparencia en la cadena de suministro y la gestion de identidad descentralizada en TI.",
+        "category": "Seguridad",
+        "read_time": "5 min de lectura"
+      },
+      "generative-ai-enterprise": {
+        "title": "IA generativa en la empresa: mas alla del hype",
+        "excerpt": "Una hoja de ruta practica para implementar LLMs en ecosistemas de datos propietarios manteniendo un cumplimiento estricto de seguridad.",
+        "category": "IA y ML",
+        "read_time": "10 min de lectura"
+      },
+      "optimizing-cicd": {
+        "title": "Optimizando CI/CD para entornos multicloud",
+        "excerpt": "Como navegar la complejidad del despliegue automatizado en AWS, Azure y GCP sin dependencia de proveedor.",
+        "category": "DevOps",
+        "read_time": "9 min de lectura"
+      },
+      "quantum-sovereignty": {
+        "title": "Soberania cuantica: la proxima decada de computacion en la nube",
+        "excerpt": "Exploramos la interseccion entre resistencia cuantica e infraestructura distribuida y como las empresas se preparan para demandas computacionales hiperescalables.",
+        "category": "Nube",
+        "read_time": "12 min de lectura"
+      },
+      "roi-technical-debt": {
+        "title": "El ROI de resolver deuda tecnica",
+        "excerpt": "Cuantificando el costo del codigo heredado y construyendo un caso de negocio para modernizar la infraestructura de forma sistemica.",
+        "category": "Estrategia",
+        "read_time": "7 min de lectura"
+      },
+      "zero-trust-architecture": {
+        "title": "Arquitectura Zero Trust: un imperativo de seguridad",
+        "excerpt": "Por que el perimetro tradicional ya no funciona y como migrar tu infraestructura a un modelo de nunca confiar, siempre verificar.",
+        "category": "Seguridad",
+        "read_time": "8 min de lectura"
+      }
+    },
+    "footer_description": "Impulsamos la proxima generacion de aplicaciones web.",
+    "footer_rights": "Todos los derechos reservados."
+  },
+  "contact_page": {
+    "hero_title": "HABLEMOS",
+    "hero_emphasis": "Hoy",
+    "hero_subtitle": "Estamos listos para disenar tu proximo salto en transformacion digital.",
+    "info_title": "Operaciones centrales",
+    "location_label": "Ubicacion",
+    "location_value": "Accra, Ghana",
+    "location_subvalue": "Centro de innovacion digital",
+    "email_label": "Correo electronico",
+    "availability": "Estamos abiertos a nuevos proyectos",
+    "form_title": "Consulta directa",
+    "form_name": "Nombre",
+    "form_name_placeholder": "Kwame Mensah",
+    "form_email": "Correo",
+    "form_email_placeholder": "kwame@empresa.com",
+    "form_scope": "Alcance del proyecto",
+    "form_scope_placeholder": "Selecciona una opcion",
+    "form_scope_web": "Plataforma web / E-commerce",
+    "form_scope_software": "Software a medida / SaaS",
+    "form_scope_other": "Otro",
+    "form_details": "Detalles",
+    "form_details_placeholder": "Como podemos ayudarte a acelerar tu vision?",
+    "form_submit": "Enviar solicitud",
+    "footer_description": "Impulsamos la proxima generacion de aplicaciones web.",
+    "footer_rights": "Todos los derechos reservados."
   }
 }

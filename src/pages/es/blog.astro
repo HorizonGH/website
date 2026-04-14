@@ -1,11 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Navigation from '../../components/Navigation.astro';
+import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 import { useTranslations } from '../../i18n/utils';
 import { getCollection } from 'astro:content';
-
-const locale = 'es';
-const t = useTranslations(locale);
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -13,67 +10,112 @@ const posts = (await getCollection('blog')).sort(
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('es-ES', { month: 'long', day: '2-digit', year: 'numeric' });
+const t = useTranslations('es') as any;
 ---
 
-<Layout title="Blog | Horizon.gh" locale={locale}>
-  <Navigation locale={locale} />
 
-  <main class="pt-16 sm:pt-20 md:pt-32 pb-20 sm:pb-24">
-    <!-- Page Header -->
-    <header class="max-w-7xl mx-auto px-4 sm:px-6 mb-16 sm:mb-20">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-container text-tertiary font-label text-xs font-bold uppercase tracking-widest mb-6">
-        <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
-        {t.blog.title}
+<Layout locale="es" title={t.seo.blog_title}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <div class="min-h-screen bg-white text-black font-sans relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-5 z-0" 
+         style="background-image: radial-gradient(#00E5FF 1px, transparent 1px), radial-gradient(#00E5FF 1px, transparent 1px); background-size: 40px 40px; background-position: 0 0, 20px 20px;">
+    </div>
+
+    <header class="relative z-10 container mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-tighter">
+        <a href="/es/">Horizon <span class="text-[#00E5FF] font-['Caveat'] text-3xl">-gh</span></a>
       </div>
-      <h1 class="text-4xl sm:text-6xl md:text-8xl font-display font-bold text-on-surface tracking-tighter mb-6 leading-tight">
-        {t.blog.title}
-      </h1>
-      <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
-        {t.blog.description}
-      </p>
+      <div class="flex items-center space-x-4 md:space-x-8">
+        <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+          <a href="/es/" class="hover:text-[#00E5FF] transition-colors">{t.nav.home}</a>
+          <a href="/es/services" class="hover:text-[#00E5FF] transition-colors">{t.nav.services}</a>
+          <a href="/es/blog" class="hover:text-[#00E5FF] transition-colors">{t.nav.blog}</a>
+          <a href="/es/contact" class="hover:text-[#00E5FF] transition-colors">{t.nav.contact}</a>
+        </nav>
+        <div class="flex items-center ml-4 z-50">
+          <LanguageSwitcher currentUrl={Astro.url} />
+        </div>
+      </div>
     </header>
 
-    <!-- Articles Grid -->
-    <section class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <article class="group relative overflow-hidden rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 h-full flex flex-col">
-            {post.data.coverImage && (
-              <div class="h-48 overflow-hidden">
-                <img
-                  alt={post.data.title}
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  src={post.data.coverImage}
-                />
-              </div>
-            )}
-            <div class="p-8 flex flex-col flex-grow">
-              <div class="flex gap-2 mb-4 flex-wrap">
-                <span class="px-3 py-1 rounded-full bg-primary/20 text-primary font-label text-xs uppercase tracking-widest">
-                  {post.data.category}
-                </span>
-                <span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label text-xs">
-                  {post.data.readTime}
-                </span>
-              </div>
-              <h3 class="text-xl font-display font-bold text-on-surface mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                {post.data.title}
-              </h3>
-              <p class="text-sm text-on-surface-variant mb-4 flex-grow line-clamp-2">
-                {post.data.excerpt}
-              </p>
-              <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
-                <span class="text-xs text-on-surface-variant font-label">
-                  {formatDate(post.data.date)}
-                </span>
-                <a href={`/es/blog/${post.id}`} class="text-primary font-label font-bold text-xs hover:gap-2 transition-all group/link">
-                  {t.blog.readMore} →
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
+    <section class="relative z-10 container mx-auto px-6 pt-24 pb-20">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-tight mb-6">
+          {t.blog_page.hero_title} <span class="text-[#00E5FF] font-['Caveat'] text-6xl md:text-8xl italic font-normal ml-2">{t.blog_page.hero_emphasis}</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 font-light max-w-2xl">
+          {t.blog_page.hero_subtitle}
+        </p>
       </div>
     </section>
-  </main>
+
+    <section class="pb-32 bg-white relative z-10">
+      <div class="container mx-auto px-6 max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            (() => {
+              const translatedPost = t.blog_page.posts?.[post.id] || {};
+              return (
+            <article class="group relative overflow-hidden rounded-2xl bg-gray-50 hover:bg-white border border-gray-100 hover:border-[#00E5FF] hover:shadow-[0_0_30px_rgba(0,229,255,0.15)] transition-all duration-300 h-full flex flex-col">
+              {post.data.coverImage && (
+                <div class="h-48 overflow-hidden bg-gray-200 border-b border-gray-100">
+                  <img
+                    alt={translatedPost.title || post.data.title}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+                    src={post.data.coverImage}
+                  />
+                </div>
+              )}
+              <div class="p-8 flex flex-col flex-grow">
+                <div class="flex gap-3 mb-6">
+                  <span class="px-3 py-1 rounded-full bg-[#00E5FF]/10 text-black font-bold text-xs uppercase tracking-widest transition-colors">
+                    {translatedPost.category || post.data.category}
+                  </span>
+                  <span class="px-3 py-1 rounded-full bg-gray-200 text-gray-600 font-bold text-xs uppercase tracking-widest">
+                    {translatedPost.read_time || post.data.readTime}
+                  </span>
+                </div>
+                <a href={"/blog/" + post.id} class="block">
+                  <h3 class="text-2xl font-black tracking-tight text-black mb-4 line-clamp-2 group-hover:text-[#00E5FF] transition-colors">
+                    {translatedPost.title || post.data.title}
+                  </h3>
+                </a>
+                <p class="text-gray-600 mb-6 flex-grow line-clamp-3 leading-relaxed">
+                  {translatedPost.excerpt || post.data.excerpt}
+                </p>
+                <div class="flex items-center justify-between pt-6 border-t border-gray-200 mt-auto">
+                  <span class="text-sm text-gray-500 font-medium tracking-wide uppercase">
+                    {formatDate(post.data.date)}
+                  </span>
+                  <a href={"/blog/" + post.id} class="text-black font-black text-sm uppercase tracking-widest hover:text-[#00E5FF] flex items-center gap-2 group/link">
+                    {t.blog_page.read_cta}
+                    <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+              );
+            })()
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-black text-white py-20 border-t-4 border-[#00E5FF] relative z-10">
+      <div class="container mx-auto px-6 text-center">
+        <div class="text-3xl font-bold mb-6">
+          Horizon <span class="text-[#00E5FF] font-['Caveat'] text-4xl ml-1">-gh</span>
+        </div>
+        <p class="text-gray-400 mb-8 max-w-sm mx-auto">
+          {t.blog_page.footer_description}
+        </p>
+        <p class="text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} Horizon gh. {t.blog_page.footer_rights}
+        </p>
+      </div>
+    </footer>
+  </div>
 </Layout>

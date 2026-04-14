@@ -1,204 +1,140 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Navigation from '../../components/Navigation.astro';
+import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 import { useTranslations } from '../../i18n/utils';
-
-const locale = 'es';
-const t = useTranslations(locale);
+const t = useTranslations('es') as any;
 ---
 
-<Layout title="Contacto | Horizon.gh" locale={locale}>
-  <Navigation locale={locale} />
 
-  <main class="pt-16 sm:pt-20 md:pt-32 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden">
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto mb-16 sm:mb-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-end">
-        <div>
-          <h1 class="font-display text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-6 leading-[0.9]">
-            Ponte en <span class="text-primary italic">Contacto</span>
-          </h1>
-          <p class="font-body text-base sm:text-xl text-on-surface-variant max-w-lg leading-relaxed">
-            {t.contact.description}
-          </p>
-        </div>
-        <div class="hidden lg:block relative">
-          <div class="absolute -top-24 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-          <div class="w-full h-1 bg-gradient-to-r from-primary to-transparent opacity-30"></div>
-        </div>
-      </div>
-    </section>
+<Layout locale="es" title={t.seo.contact_title}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
 
-    <!-- Main Grid -->
-    <section class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <!-- Contact Form Section -->
-        <div class="lg:col-span-7 bg-surface-container-low rounded-xl p-8 md:p-12 relative overflow-hidden group">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-700"></div>
-          <form action="#" class="relative z-10 space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="space-y-2">
-                <label class="font-label text-xs uppercase tracking-widest text-slate-500 ml-1">{t.contact.form.name}</label>
-                <input
-                  class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all duration-300 placeholder:text-slate-600"
-                  placeholder="Juan Pérez"
-                  type="text"
-                />
-              </div>
-              <div class="space-y-2">
-                <label class="font-label text-xs uppercase tracking-widest text-slate-500 ml-1">{t.contact.form.email}</label>
-                <input
-                  class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all duration-300 placeholder:text-slate-600"
-                  placeholder="juan@empresa.com"
-                  type="email"
-                />
-              </div>
-            </div>
-            <div class="space-y-2">
-              <label class="font-label text-xs uppercase tracking-widest text-slate-500 ml-1">{t.contact.form.company}</label>
-              <input
-                class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all duration-300 placeholder:text-slate-600"
-                placeholder="Tu Empresa"
-                type="text"
-              />
-            </div>
-            <div class="space-y-2">
-              <label class="font-label text-xs uppercase tracking-widest text-slate-500 ml-1">{t.contact.form.message}</label>
-              <textarea
-                class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all duration-300 placeholder:text-slate-600 resize-none"
-                placeholder="Cuéntanos tu visión..."
-                rows="6"
-              ></textarea>
-            </div>
-            <button
-              class="w-full md:w-auto cta-gradient text-on-primary font-bold px-10 py-4 rounded-lg hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 group"
-              type="submit"
-            >
-              {t.contact.form.send}
-              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
-            </button>
-          </form>
-        </div>
-
-        <!-- Info & Sidebar Section -->
-        <div class="lg:col-span-5 space-y-8">
-          <div class="bg-surface-container-high rounded-xl p-8 border-l-4 border-primary">
-            <h3 class="font-display text-2xl font-bold text-on-surface mb-6">Oficina Principal</h3>
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">location_on</span>
-                <div>
-                  <p class="font-label text-sm text-slate-500">Ubicación</p>
-                  <p class="text-on-surface">12-14 Old Street, London<br />EC1V 9AB, United Kingdom</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">alternate_email</span>
-                <div>
-                  <p class="font-label text-sm text-slate-500">Correo Electrónico</p>
-                  <p class="text-on-surface">hello@horizon.gh</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">call</span>
-                <div>
-                  <p class="font-label text-sm text-slate-500">Teléfono</p>
-                  <p class="text-on-surface">+44 (0) 20 7946 0123</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="h-64 bg-surface-container-low rounded-xl relative overflow-hidden group grayscale hover:grayscale-0 transition-all duration-700">
-            <img
-              class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[2000ms]"
-              alt="Stylized city map"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxIwUfZViizse6lY9cdT7PWHAd5JKw9oTSuvuKT9VIHQZ5ipXj4gMFV7431OlCBjLr3-ggHhBfilKBBLUD9yyHuGYa8FsNJpoDr8sM2RZWGTajweotAMsxe1Rv74rCarWTpmKwD2XT2bx9NcpP7gOGUV7bP9XzvjX4Ju-KAzqaZPNz4ch3K_hnLJSL032NzdorxOQqar-qTcK6epYuyIrVynUcEHLQ3rrpRmaKKQCdq8fUb8WSbJ0x6XEXD2M9mTOjJHoFVzxq_B4"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
-            <div class="absolute bottom-6 left-6 flex items-center gap-2 bg-primary/20 backdrop-blur-md px-3 py-1 rounded-full border border-primary/30">
-              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              <span class="text-xs font-label font-bold text-primary tracking-widest uppercase">Live Status: Online</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="max-w-7xl mx-auto mt-24">
-      <div class="text-center mb-16">
-        <h2 class="font-display text-4xl font-bold mb-4">Preguntas <span class="text-tertiary">Frecuentes</span></h2>
-        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
-          <h4 class="font-display font-bold text-lg text-primary mb-2">¿Cuál es el plazo típico de un proyecto?</h4>
-          <p class="text-slate-400 leading-relaxed">
-            La mayoría de los desarrollos MVP tardan entre 8 y 12 semanas, mientras que las transformaciones empresariales más grandes se planifican en fases de más de 6 meses para garantizar estabilidad.
-          </p>
-        </div>
-        <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
-          <h4 class="font-display font-bold text-lg text-primary mb-2">¿Ofrecen soporte posterior al lanzamiento?</h4>
-          <p class="text-slate-400 leading-relaxed">
-            Absolutamente. Ofrecemos mantenimientos 24/7 y monitoreo activo para asegurar que tu infraestructura crezca junto con tu negocio.
-          </p>
-        </div>
-        <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
-          <h4 class="font-display font-bold text-lg text-primary mb-2">¿Pueden trabajar con nuestra infraestructura actual?</h4>
-          <p class="text-slate-400 leading-relaxed">
-            Nuestros ingenieros son especialistas agnósticos en tecnología. Auditamos tu entorno actual y diseñamos soluciones que se integran sin problemas.
-          </p>
-        </div>
-        <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
-          <h4 class="font-display font-bold text-lg text-primary mb-2">¿Cómo manejan la seguridad de los datos?</h4>
-          <p class="text-slate-400 leading-relaxed">
-            La seguridad es nuestra base, no un extra. Cada línea de código sigue estándares OWASP y pasa pruebas automatizadas rigurosas.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="w-full border-t border-slate-800/30 bg-surface">
-    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div class="col-span-1 md:col-span-1">
-        <div class="inline-flex flex-col items-start w-fit hover:opacity-90 transition-opacity mb-4">
-          <div class="flex items-baseline">
-            <span class="text-xl font-display font-black text-on-surface tracking-wide">Horizon</span>
-            <span class="text-accent-cyan text-xl ml-[2px] leading-none" style="font-family: 'Caveat', 'Brush Script MT', cursive; font-weight: 600; transform: translateY(1px) rotate(-2deg); margin-left: 2px;">gh</span>
-          </div>
-          <div class="h-0.5 bg-on-surface w-[78%] mt-[1px] rounded-r-sm"></div>
-        </div>
-        <p class="font-body text-sm text-slate-400 leading-relaxed">Ingeniería del horizonte digital para empresas listas para evolucionar.</p>
-      </div>
-      <div class="space-y-4">
-        <h5 class="font-label text-xs uppercase tracking-widest text-primary font-bold">Soluciones</h5>
-        <ul class="space-y-2">
-          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">Cloud Migration</a></li>
-          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">AI Architecture</a></li>
-          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">DevOps Lifecycle</a></li>
-        </ul>
-      </div>
-      <div class="space-y-4">
-        <h5 class="font-label text-xs uppercase tracking-widest text-primary font-bold">Empresa</h5>
-        <ul class="space-y-2">
-          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">Sobre Nosotros</a></li>
-          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="/es/blog">Perspectivas</a></li>
-          <li><a class="text-primary text-sm" href="/es/contact">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="space-y-4">
-        <h5 class="font-label text-xs uppercase tracking-widest text-primary font-bold">Legal</h5>
-        <ul class="space-y-2">
-          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">Política de Privacidad</a></li>
-          <li><a class="text-sm text-slate-400 hover:text-tertiary transition-colors" href="#">Términos de Servicio</a></li>
-        </ul>
-      </div>
+  <div class="min-h-screen bg-white text-black font-sans relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-5 z-0" 
+         style="background-image: radial-gradient(#00E5FF 1px, transparent 1px), radial-gradient(#00E5FF 1px, transparent 1px); background-size: 40px 40px; background-position: 0 0, 20px 20px;">
     </div>
-    <div class="max-w-7xl mx-auto px-6 py-6 border-t border-slate-800/20 text-center md:text-left">
-      <p class="font-body text-xs text-slate-500">© 2026 Horizon.gh. Ingeniería del horizonte digital.</p>
-    </div>
-  </footer>
+
+    <!-- Header -->
+    <header class="relative z-10 container mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-tighter">
+        <a href="/es/">Horizon <span class="text-[#00E5FF] font-['Caveat'] text-3xl">-gh</span></a>
+      </div>
+      <div class="flex items-center space-x-4 md:space-x-8">
+        <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+          <a href="/es/" class="hover:text-[#00E5FF] transition-colors">{t.nav.home}</a>
+          <a href="/es/services" class="hover:text-[#00E5FF] transition-colors">{t.nav.services}</a>
+          <a href="/es/blog" class="hover:text-[#00E5FF] transition-colors">{t.nav.blog}</a>
+          <a href="/es/contact" class="hover:text-[#00E5FF] transition-colors">{t.nav.contact}</a>
+        </nav>
+        <div class="flex items-center ml-4 z-50">
+          <LanguageSwitcher currentUrl={Astro.url} />
+        </div>
+      </div>
+    </header>
+
+    <!-- Contact Head -->
+    <section class="relative z-10 container mx-auto px-6 pt-24 pb-12 text-center">
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-tight mb-6">
+        {t.contact_page.hero_title} <span class="text-[#00E5FF] font-['Caveat'] text-6xl md:text-8xl italic font-normal">{t.contact_page.hero_emphasis}</span>
+      </h1>
+      <div class="w-24 h-1 bg-[#00E5FF] mx-auto mb-8"></div>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+        {t.contact_page.hero_subtitle}
+      </p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="pb-32 bg-white relative z-10">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          <!-- Contact Info Box -->
+          <div class="bg-gray-50 border border-gray-100 p-12 rounded-3xl relative overflow-hidden">
+            <div class="absolute -right-8 -top-8 w-40 h-40 bg-[#00E5FF]/10 rounded-full blur-3xl"></div>
+            
+            <h3 class="text-3xl font-black mb-8">{t.contact_page.info_title}</h3>
+            <div class="space-y-8 relative z-10">
+              <div class="flex items-start gap-6">
+                <div class="w-12 h-12 bg-white border-2 border-[#00E5FF] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold tracking-widest uppercase text-sm mb-1 text-gray-500">{t.contact_page.location_label}</h4>
+                  <p class="text-lg font-medium">{t.contact_page.location_value}<br/>{t.contact_page.location_subvalue}</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-6">
+                <div class="w-12 h-12 bg-white border-2 border-[#00E5FF] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold tracking-widest uppercase text-sm mb-1 text-gray-500">{t.contact_page.email_label}</h4>
+                  <p class="text-lg font-medium">hello@horizon.gh</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-200">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="w-3 h-3 rounded-full bg-[#00E5FF] animate-pulse"></span>
+                <span class="text-sm font-bold tracking-widest uppercase text-gray-500">{t.contact_page.availability}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Extended Contact Form -->
+          <div class="bg-white rounded-3xl border border-gray-200 p-12 shadow-[0_10px_50px_rgba(0,0,0,0.05)]">
+            <h3 class="text-3xl font-black mb-8">{t.contact_page.form_title}</h3>
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">{t.contact_page.form_name}</label>
+                  <input type="text" class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder={t.contact_page.form_name_placeholder}>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">{t.contact_page.form_email}</label>
+                  <input type="email" class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder={t.contact_page.form_email_placeholder}>
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">{t.contact_page.form_scope}</label>
+                <select class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors appearance-none">
+                  <option value="">{t.contact_page.form_scope_placeholder}</option>
+                  <option value="web">{t.contact_page.form_scope_web}</option>
+                  <option value="software">{t.contact_page.form_scope_software}</option>
+                  <option value="other">{t.contact_page.form_scope_other}</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">{t.contact_page.form_details}</label>
+                <textarea rows="5" class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors resize-none" placeholder={t.contact_page.form_details_placeholder}></textarea>
+              </div>
+              <button type="submit" class="w-full bg-black text-white hover:bg-[#00E5FF] hover:text-black font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_10px_20px_rgba(0,229,255,0.3)] text-lg">
+                {t.contact_page.form_submit}
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-20 border-t-4 border-[#00E5FF] relative z-10">
+      <div class="container mx-auto px-6 text-center">
+        <div class="text-3xl font-bold mb-6">
+          Horizon <span class="text-[#00E5FF] font-['Caveat'] text-4xl ml-1">-gh</span>
+        </div>
+        <p class="text-gray-400 mb-8 max-w-sm mx-auto">
+          {t.contact_page.footer_description}
+        </p>
+        <p class="text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} Horizon gh. {t.contact_page.footer_rights}
+        </p>
+      </div>
+    </footer>
+  </div>
 </Layout>

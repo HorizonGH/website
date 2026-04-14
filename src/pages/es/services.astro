@@ -1,108 +1,145 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Navigation from '../../components/Navigation.astro';
+import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 import { useTranslations } from '../../i18n/utils';
-
-const locale = 'es';
-const t = useTranslations(locale);
+const t = useTranslations('es') as any;
 ---
 
-<Layout title="Nuestros Servicios | Horizon.gh" locale={locale}>
-  <Navigation locale={locale} />
 
-  <main class="pt-16 sm:pt-20 md:pt-32">
-    <!-- Page Header -->
-    <header class="max-w-7xl mx-auto px-4 sm:px-6 mb-16 sm:mb-24">
-      <div class="relative inline-block mb-4">
-        <span class="bg-tertiary-container text-tertiary px-4 py-1 rounded-full font-label text-xs tracking-widest uppercase">Ecosistema</span>
+<Layout locale="es" title={t.seo.services_title}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <div class="min-h-screen bg-white text-black font-sans relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-5 z-0" 
+         style="background-image: radial-gradient(#00E5FF 1px, transparent 1px), radial-gradient(#00E5FF 1px, transparent 1px); background-size: 40px 40px; background-position: 0 0, 20px 20px;">
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 container mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-tighter">
+        <a href="/es/">Horizon <span class="text-[#00E5FF] font-['Caveat'] text-3xl">-gh</span></a>
       </div>
-      <h1 class="text-4xl sm:text-6xl md:text-8xl font-display font-bold tracking-tighter mb-8 bg-gradient-to-r from-on-surface to-primary bg-clip-text text-transparent">
-        {t.services.title}
-      </h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed">
-        {t.services.description}
-      </p>
+      <div class="flex items-center space-x-4 md:space-x-8">
+        <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+          <a href="/es/" class="hover:text-[#00E5FF] transition-colors">{t.nav.home}</a>
+          <a href="/es/services" class="hover:text-[#00E5FF] transition-colors">{t.nav.services}</a>
+          <a href="/es/blog" class="hover:text-[#00E5FF] transition-colors">{t.nav.blog}</a>
+          <a href="/es/contact" class="hover:text-[#00E5FF] transition-colors">{t.nav.contact}</a>
+        </nav>
+        <div class="flex items-center justify-end z-50 ml-4">
+          <LanguageSwitcher currentUrl={Astro.url} />
+        </div>
+      </div>
     </header>
 
-    <!-- Detailed Service List -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 mb-24 sm:mb-32">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-        <div class="md:col-span-7 group relative overflow-hidden rounded-xl bg-surface-container-low p-8 border-none transition-all duration-300 hover:bg-surface-container">
-          <div class="flex flex-col h-full">
-            <div class="mb-8">
-              <span class="material-symbols-outlined text-5xl text-primary mb-4">web</span>
-              <h3 class="text-3xl font-display font-bold text-on-surface mb-4">{t.services.webDevelopment.title}</h3>
-              <p class="text-on-surface-variant mb-6 text-lg">
-                {t.services.webDevelopment.description}
-              </p>
-              <ul class="grid grid-cols-1 gap-4 mb-8">
-                <li class="flex items-center gap-3 text-sm text-slate-300">
-                  <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                  Landing pages que convierten
-                </li>
-                <li class="flex items-center gap-3 text-sm text-slate-300">
-                  <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                  Webs profesionales
-                </li>
-                <li class="flex items-center gap-3 text-sm text-slate-300">
-                  <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                  Presencia digital sólida
-                </li>
-              </ul>
+    <!-- Services Hero -->
+    <section class="relative z-10 container mx-auto px-6 pt-24 pb-12 text-center">
+      <div class="inline-block mb-4 px-4 py-1 border-2 border-[#00E5FF] rounded-full text-sm font-bold tracking-widest uppercase">{t.services_page.badge}</div>
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-tight mb-6">
+        {t.services_page.hero_title}
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
+        {t.services_page.hero_subtitle}
+      </p>
+    </section>
+
+    <!-- Core Solutions -->
+    <section class="py-24 relative">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Web Development -->
+          <div class="bg-gray-50 border border-gray-100 p-12 rounded-2xl hover:border-[#00E5FF] hover:shadow-[0_0_30px_rgba(0,229,255,0.2)] transition-all duration-500 group">
+            <div class="w-16 h-16 bg-white border-2 border-gray-200 rounded-xl flex items-center justify-center mb-8 group-hover:border-[#00E5FF] transition-colors">
+              <svg class="w-8 h-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
             </div>
-            <a class="mt-auto flex items-center gap-2 text-primary font-label font-bold group-hover:gap-4 transition-all" href="#">
-              Aprende Más <span class="material-symbols-outlined">arrow_forward</span>
+            <h3 class="text-4xl font-black tracking-tighter mb-4">{t.services_page.web_title}</h3>
+            <p class="text-gray-600 text-lg mb-8">
+              {t.services_page.web_desc}
+            </p>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center text-gray-800 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> {t.services_page.web_feature1}</li>
+              <li class="flex items-center text-gray-800 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> {t.services_page.web_feature2}</li>
+              <li class="flex items-center text-gray-800 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> {t.services_page.web_feature3}</li>
+            </ul>
+            <a href="/es/contact" class="inline-flex items-center font-bold pb-1 border-b-2 border-black hover:border-[#00E5FF] hover:text-[#00E5FF] transition-colors">
+              {t.services_page.web_cta} &rarr;
             </a>
           </div>
-        </div>
 
-        <div class="md:col-span-5 group relative overflow-hidden rounded-xl bg-surface-container-highest p-8 transition-all duration-300 hover:bg-surface-bright">
-          <span class="material-symbols-outlined text-5xl text-tertiary mb-4">code_blocks</span>
-          <h3 class="text-2xl font-display font-bold text-on-surface mb-4">{t.services.softwareDevelopment.title}</h3>
-          <p class="text-on-surface-variant mb-6">
-            {t.services.softwareDevelopment.description}
-          </p>
-          <ul class="grid grid-cols-1 gap-4 mb-8">
-            <li class="flex items-center gap-3 text-sm text-slate-300">
-              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
-              Sistemas internos
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-300">
-              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
-              APIs
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-300">
-              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
-              Dashboards
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-300">
-              <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
-              Automatización básica
-            </li>
-          </ul>
-          <a class="flex items-center gap-2 text-tertiary font-label font-bold group-hover:gap-4 transition-all" href="#">
-            Aprende Más <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-24 bg-surface-container-low">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="cta-gradient rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
-          <div class="absolute inset-0 bg-black/10 z-0"></div>
-          <div class="relative z-10">
-            <h2 class="text-4xl md:text-6xl font-display font-bold text-on-primary mb-8 tracking-tighter">Listo para Transformar</h2>
-            <p class="text-on-primary text-xl mb-12 max-w-2xl mx-auto opacity-90 leading-relaxed">
-              Déjanos diseñar la solución perfecta para tu negocio.
-            </p>
-            <button class="cta-gradient text-on-primary font-label font-bold py-4 px-10 rounded-lg text-lg transition-all hover:shadow-[0_0_30px_rgba(56,222,187,0.3)]">
-              Contáctanos Hoy
-            </button>
+          <!-- Software Development -->
+          <div class="bg-gray-900 border border-gray-800 p-12 rounded-2xl text-white hover:border-[#00E5FF] hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] transition-all duration-500 group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+              <span class="text-[#00E5FF] font-['Caveat'] text-8xl">sys</span>
+            </div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 bg-black border-2 border-gray-700 rounded-xl flex items-center justify-center mb-8 group-hover:border-[#00E5FF] transition-colors">
+                <svg class="w-8 h-8 text-[#00E5FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 class="text-4xl font-black tracking-tighter mb-4 text-white">{t.services_page.software_title}</h3>
+              <p class="text-gray-400 text-lg mb-8">
+                {t.services_page.software_desc}
+              </p>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center text-gray-300 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> {t.services_page.software_feature1}</li>
+                <li class="flex items-center text-gray-300 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> {t.services_page.software_feature2}</li>
+                <li class="flex items-center text-gray-300 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> {t.services_page.software_feature3}</li>
+              </ul>
+              <a href="/es/contact" class="inline-flex items-center font-bold pb-1 border-b-2 border-white hover:border-[#00E5FF] text-[#00E5FF] hover:text-white transition-colors">
+                {t.services_page.software_cta} &rarr;
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  </main>
+
+    <!-- Tech Stack -->
+    <section class="py-24 bg-gray-50 border-t border-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-black mb-4">{t.services_page.stack_title}</h2>
+          <div class="w-24 h-1 bg-[#00E5FF] mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center opacity-60">
+          <div class="flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:text-[#00E5FF] transition-all cursor-crosshair">
+            <div class="text-2xl font-black uppercase tracking-widest mb-2">AWS</div>
+            <p class="text-xs font-bold font-['Caveat'] text-gray-500">{t.services_page.stack_cloud}</p>
+          </div>
+          <div class="flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:text-[#00E5FF] transition-all cursor-crosshair">
+            <div class="text-2xl font-black uppercase tracking-widest mb-2">React</div>
+            <p class="text-xs font-bold font-['Caveat'] text-gray-500">{t.services_page.stack_frontend}</p>
+          </div>
+          <div class="flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:text-[#00E5FF] transition-all cursor-crosshair">
+            <div class="text-2xl font-black uppercase tracking-widest mb-2">Python</div>
+            <p class="text-xs font-bold font-['Caveat'] text-gray-500">{t.services_page.stack_data_backend}</p>
+          </div>
+          <div class="flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:text-[#00E5FF] transition-all cursor-crosshair">
+            <div class="text-2xl font-black uppercase tracking-widest mb-2">Docker</div>
+            <p class="text-xs font-bold font-['Caveat'] text-gray-500">{t.services_page.stack_containers}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-20 border-t-4 border-[#00E5FF] relative z-10">
+      <div class="container mx-auto px-6 text-center">
+        <div class="text-3xl font-bold mb-6">
+          Horizon <span class="text-[#00E5FF] font-['Caveat'] text-4xl ml-1">-gh</span>
+        </div>
+        <p class="text-gray-400 mb-8 max-w-sm mx-auto">
+          {t.services_page.footer_description}
+        </p>
+        <p class="text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} Horizon gh. {t.services_page.footer_rights}
+        </p>
+      </div>
+    </footer>
+  </div>
 </Layout>
