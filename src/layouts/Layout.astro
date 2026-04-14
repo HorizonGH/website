@@ -1,10 +1,11 @@
 ---
 import '../styles/global.css';
 import type { Locale } from '../i18n/utils';
+import Navigation from '../components/Navigation.astro';
 
 interface Props {
-title?: string;
-locale?: Locale;
+  title?: string;
+  locale?: Locale;
 }
 const { title = "Horizon.gh", locale = 'en' } = Astro.props;
 ---
@@ -13,7 +14,7 @@ const { title = "Horizon.gh", locale = 'en' } = Astro.props;
 <html lang={locale}>
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/x-icon" href="/icon.ico" />
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
@@ -25,6 +26,7 @@ const { title = "Horizon.gh", locale = 'en' } = Astro.props;
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen overflow-x-hidden">
-<slot />
+  <Navigation locale={locale} />
+  <slot />
 </body>
 </html>

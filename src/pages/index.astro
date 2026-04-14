@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 ---
 
 <Layout title="Horizon gh - Transforming the Digital Horizon">
@@ -15,29 +14,11 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
          style="background-image: radial-gradient(#00E5FF 1px, transparent 1px), radial-gradient(#00E5FF 1px, transparent 1px); background-size: 40px 40px; background-position: 0 0, 20px 20px;">
     </div>
 
-    <!-- Header -->
-    <header class="relative z-10 container mx-auto px-6 py-6 flex items-center justify-between">
-      <div class="text-2xl font-bold tracking-tighter">
-        Horizon <span class="text-[#00E5FF] font-['Caveat'] text-3xl">-gh</span>
-      </div>
-      <div class="flex items-center space-x-8">
-        <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
-          <a href="/" class="hover:text-[#00E5FF] transition-colors">Home</a>
-          <a href="/services" class="hover:text-[#00E5FF] transition-colors">Services</a>
-          <a href="/blog" class="hover:text-[#00E5FF] transition-colors">Blog</a>
-          <a href="/contact" class="hover:text-[#00E5FF] transition-colors">Contact</a>
-        </nav>
-        <div class="flex items-center ml-4 z-50">
-          <LanguageSwitcher currentUrl={Astro.url} />
-        </div>
-      </div>
-    </header>
-
     <!-- Hero Section -->
-    <section class="relative z-10 container mx-auto px-6 pt-24 pb-32 text-center">
+    <section class="relative z-10 container mx-auto px-6 pt-40 pb-32 md:pt-52 md:pb-40 text-center">
       <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6">
         TRANSFORMING THE <br />
-        D<span class="inline-block relative w-[0.6em] h-[1em] mx-1 align-baseline text-[#00E5FF]">
+        D<span class="inline-block relative w-[0.6em] h-[1em] mx-1 align-baseline translate-y-[0.12em] text-[#00E5FF]">
           <!-- Circuit 'I' -->
           <svg viewBox="0 0 24 100" class="absolute inset-0 w-full h-full fill-current" preserveAspectRatio="xMidYMid meet">
             <rect x="10" y="10" width="4" height="80" />
@@ -45,7 +26,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
             <circle cx="12" cy="90" r="6" />
             <circle cx="12" cy="50" r="4" class="text-white fill-current" />
           </svg>
-        </span>GITAL H<span class="inline-block relative w-[0.8em] h-[1em] mx-1 align-baseline text-[#00E5FF]">
+        </span>GITAL H<span class="inline-block relative w-[0.8em] h-[1em] mx-1 align-baseline translate-y-[0.12em] text-[#00E5FF]">
           <!-- Circuit 'O' -->
           <svg viewBox="0 0 100 100" class="absolute inset-0 w-full h-full fill-none stroke-current" stroke-width="8" preserveAspectRatio="xMidYMid meet">
             <circle cx="50" cy="50" r="40" stroke-dasharray="25 10 15 10" />
@@ -58,7 +39,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
         </span>RIZON.
       </h1>
       <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto font-light">
-        Pioneering Web Experiences with Ghanaian Innovation.
+        Pioneering Web Experiences with American Innovation.
       </p>
       <div class="flex justify-center">
         <a href="#contact" class="group flex items-center bg-[#00E5FF] text-black font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,255,0.6)] hover:-translate-y-1">
@@ -131,7 +112,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
           <div class="flex-1 text-center bg-[#00E5FF] text-black p-8 rounded-lg shadow-lg w-full md:scale-110 z-10 transition-transform hover:scale-115">
             <div class="font-black text-6xl mb-4 opacity-70">02</div>
             <h4 class="text-xl font-bold mb-2">Synthesis</h4>
-            <p class="text-gray-800 text-sm font-medium">Fusing design innovation with Ghanaian engineering excellence.</p>
+            <p class="text-gray-800 text-sm font-medium">Fusing design innovation with American engineering excellence.</p>
           </div>
           
           <!-- H Right Vertical -->
@@ -173,7 +154,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
             </div>
             <div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
               <span class="text-[#00E5FF] text-sm font-bold tracking-wider uppercase mb-2 block">Fintech Platform</span>
-              <h3 class="text-3xl text-white font-bold mb-2">AccraPay Dashboard</h3>
+              <h3 class="text-3xl text-white font-bold mb-2">HorizonPay Dashboard</h3>
               <p class="text-gray-300 text-sm max-w-lg mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A cutting-edge financial dashboard engineered for high-volume transactions, featuring real-time analytics and bank-grade security protocols.</p>
             </div>
           </div>
@@ -223,7 +204,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
               </div>
               <div>
                 <h4 class="font-bold text-white">Kwame Mensah</h4>
-                <span class="text-sm text-gray-400">CEO, TechHub Accra</span>
+                <span class="text-sm text-gray-400">CEO, TechHub</span>
               </div>
             </div>
             <div class="absolute bottom-6 right-8 opacity-40 transform rotate-[-10deg]">
@@ -304,13 +285,13 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
                 Horizon <span class="text-[#00E5FF] font-['Caveat'] text-4xl ml-1">-gh</span>
               </div>
               <p class="text-gray-400 mb-8 max-w-sm">
-                Engineering the next generation of web applications from the heart of Ghana to the world.
+                  Engineering the next generation of web applications from the heart of America to the world.
               </p>
               
               <div class="space-y-4 text-sm text-gray-400">
                 <p class="flex items-center">
                   <svg class="w-5 h-5 mr-3 text-[#00E5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                  Accra, Ghana
+                  America
                 </p>
                 <p class="flex items-center">
                   <svg class="w-5 h-5 mr-3 text-[#00E5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>

@@ -3,7 +3,6 @@ const t = useTranslations('es') as any;
 
 import { useTranslations } from '../../i18n/utils';
 import Layout from '../../layouts/Layout.astro';
-import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 ---
 
 <Layout locale="es" title={t.seo.home_title}>
@@ -18,28 +17,29 @@ import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
          style="background-image: radial-gradient(#00E5FF 1px, transparent 1px), radial-gradient(#00E5FF 1px, transparent 1px); background-size: 40px 40px; background-position: 0 0, 20px 20px;">
     </div>
 
-    <!-- Header -->
-    <header class="relative z-10 container mx-auto px-6 py-6 flex items-center justify-between">
-      <div class="text-2xl font-bold tracking-tighter">
-        Horizon <span class="text-[#00E5FF] font-['Caveat'] text-3xl">-gh</span>
-      </div>
-      <div class="flex items-center space-x-8">
-        <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
-          <a href="/es/" class="hover:text-[#00E5FF] transition-colors">{t.nav.home}</a>
-          <a href="/es/services" class="hover:text-[#00E5FF] transition-colors">{t.nav.services}</a>
-          <a href="/es/blog" class="hover:text-[#00E5FF] transition-colors">{t.nav.blog}</a>
-          <a href="/es/contact" class="hover:text-[#00E5FF] transition-colors">{t.nav.contact}</a>
-        </nav>
-        <div class="flex items-center ml-4 z-50">
-          <LanguageSwitcher currentUrl={Astro.url} />
-        </div>
-      </div>
-    </header>
-
     <!-- Hero Section -->
-    <section class="relative z-10 container mx-auto px-6 pt-24 pb-32 text-center">
+    <section class="relative z-10 container mx-auto px-6 pt-40 pb-32 md:pt-52 md:pb-40 text-center">
       <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6">
-        {t.home_page.hero_title}
+        TRANSFORMANDO EL <br />
+        H<span class="inline-block relative w-[0.8em] h-[1em] mx-1 align-baseline translate-y-[0.12em] text-[#00E5FF]">
+          <!-- Circuit 'O' -->
+          <svg viewBox="0 0 100 100" class="absolute inset-0 w-full h-full fill-none stroke-current" stroke-width="8" preserveAspectRatio="xMidYMid meet">
+            <circle cx="50" cy="50" r="40" stroke-dasharray="25 10 15 10" />
+            <circle cx="50" cy="50" r="25" />
+            <circle cx="50" cy="10" r="5" class="fill-current" />
+            <circle cx="90" cy="50" r="5" class="fill-current" />
+            <circle cx="50" cy="90" r="5" class="fill-current" />
+            <circle cx="10" cy="50" r="5" class="fill-current" />
+          </svg>
+        </span>RIZONTE D<span class="inline-block relative w-[0.6em] h-[1em] mx-1 align-baseline translate-y-[0.12em] text-[#00E5FF]">
+          <!-- Circuit 'I' -->
+          <svg viewBox="0 0 24 100" class="absolute inset-0 w-full h-full fill-current" preserveAspectRatio="xMidYMid meet">
+            <rect x="10" y="10" width="4" height="80" />
+            <circle cx="12" cy="10" r="6" />
+            <circle cx="12" cy="90" r="6" />
+            <circle cx="12" cy="50" r="4" class="text-white fill-current" />
+          </svg>
+        </span>GITAL.
       </h1>
       <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto font-light">
         {t.home_page.hero_subtitle}
@@ -294,7 +294,7 @@ import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
               <div class="space-y-4 text-sm text-gray-400">
                 <p class="flex items-center">
                   <svg class="w-5 h-5 mr-3 text-[#00E5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                  Accra, Ghana
+                  America
                 </p>
                 <p class="flex items-center">
                   <svg class="w-5 h-5 mr-3 text-[#00E5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>

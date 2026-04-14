@@ -83,13 +83,14 @@ const languages = [
 
   /* Circuit line animation */
   #lang-switcher-container.is-open .line-glow {
-    animation: flow-left 1.5s linear infinite;
+    animation: flow-left 1.5s ease-in-out infinite;
   }
 
   @keyframes flow-left {
-    0% { transform: translateX(100%); }
-    50% { transform: translateX(-100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(100%); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translateX(-100%); opacity: 0; }
   }
 </style>
 

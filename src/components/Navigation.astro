@@ -34,9 +34,6 @@ const t = useTranslations(locale);
     </div>
     <div class="flex items-center gap-2 sm:gap-4">
       <LanguageSwitcher currentUrl={Astro.url} />
-      <button class="hidden sm:inline-block cta-gradient text-on-primary font-label font-bold py-2.5 px-6 rounded-lg scale-95 active:scale-90 transition-transform hover:opacity-80">
-        {t.nav.getStarted}
-      </button>
       <!-- Mobile Menu Toggle -->
       <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-surface-container-highest rounded-lg transition-colors">
         <span class="material-symbols-outlined">menu</span>
