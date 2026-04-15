@@ -26,3 +26,5 @@ pnpm-debug.log*
 
 add_lang_*
 update.js
+
+.env.local

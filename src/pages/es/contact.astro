@@ -69,29 +69,25 @@ const t = useTranslations('es') as any;
           <!-- Extended Contact Form -->
           <div class="bg-white rounded-3xl border border-gray-200 p-12 shadow-[0_10px_50px_rgba(0,0,0,0.05)]">
             <h3 class="text-3xl font-black mb-8">{t.contact_page.form_title}</h3>
-            <form class="space-y-6">
+            <form method="post" action="/api/contact" class="space-y-6">
+              <input type="hidden" name="locale" value="es" />
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">{t.contact_page.form_name}</label>
-                  <input type="text" class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder={t.contact_page.form_name_placeholder}>
+                  <input name="name" type="text" required class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder={t.contact_page.form_name_placeholder}>
                 </div>
                 <div>
                   <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">{t.contact_page.form_email}</label>
-                  <input type="email" class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder={t.contact_page.form_email_placeholder}>
+                  <input name="email" type="email" required class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder={t.contact_page.form_email_placeholder}>
                 </div>
               </div>
               <div>
-                <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">{t.contact_page.form_scope}</label>
-                <select class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors appearance-none">
-                  <option value="">{t.contact_page.form_scope_placeholder}</option>
-                  <option value="web">{t.contact_page.form_scope_web}</option>
-                  <option value="software">{t.contact_page.form_scope_software}</option>
-                  <option value="other">{t.contact_page.form_scope_other}</option>
-                </select>
+                <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">Tema</label>
+                <input name="topic" type="text" required class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder="¿Cuál es el tema principal?">
               </div>
               <div>
                 <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">{t.contact_page.form_details}</label>
-                <textarea rows="5" class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors resize-none" placeholder={t.contact_page.form_details_placeholder}></textarea>
+                <textarea name="message" rows="5" required class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors resize-none" placeholder={t.contact_page.form_details_placeholder}></textarea>
               </div>
               <button type="submit" class="w-full bg-black text-white hover:bg-[#00E5FF] hover:text-black font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_10px_20px_rgba(0,229,255,0.3)] text-lg">
                 {t.contact_page.form_submit}

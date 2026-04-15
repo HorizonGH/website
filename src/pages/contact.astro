@@ -66,29 +66,25 @@ import Layout from '../layouts/Layout.astro';
           <!-- Extended Contact Form -->
           <div class="bg-white rounded-3xl border border-gray-200 p-12 shadow-[0_10px_50px_rgba(0,0,0,0.05)]">
             <h3 class="text-3xl font-black mb-8">Direct Inquiry</h3>
-            <form class="space-y-6">
+            <form method="post" action="/api/contact" class="space-y-6">
+              <input type="hidden" name="locale" value="en" />
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">Name</label>
-                  <input type="text" class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder="Jhon Snow">
+                  <input name="name" type="text" required class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder="Jhon Snow">
                 </div>
                 <div>
                   <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">Email</label>
-                  <input type="email" class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder="jhon@company.com">
+                  <input name="email" type="email" required class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder="jhon@company.com">
                 </div>
               </div>
               <div>
-                <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">Project Scope</label>
-                <select class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors appearance-none">
-                  <option value="">Select an option</option>
-                  <option value="web">Web Platform / E-Commerce</option>
-                  <option value="software">Custom Software / SaaS</option>
-                  <option value="other">Other</option>
-                </select>
+                <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">Topic</label>
+                <input name="topic" type="text" required class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors" placeholder="What is the main topic?">
               </div>
               <div>
                 <label class="block text-xs font-bold tracking-widest uppercase text-gray-500 mb-2">Details</label>
-                <textarea rows="5" class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors resize-none" placeholder="How can we help accelerate your vision?"></textarea>
+                <textarea name="message" rows="5" required class="w-full bg-gray-50 border-2 border-gray-100 text-black px-4 py-4 rounded-xl focus:outline-none focus:border-[#00E5FF] focus:bg-white transition-colors resize-none" placeholder="How can we help accelerate your vision?"></textarea>
               </div>
               <button type="submit" class="w-full bg-black text-white hover:bg-[#00E5FF] hover:text-black font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_10px_20px_rgba(0,229,255,0.3)] text-lg">
                 Transmit Request

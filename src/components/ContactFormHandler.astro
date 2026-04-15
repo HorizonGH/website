@@ -1,0 +1,176 @@
+---
+// Shared modal component to handle contact form submissions via fetch
+---
+<div id="contact-modal" class="fixed inset-0 z-50 hidden bg-black/80 items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+  <div id="contact-modal-content" class="bg-gray-900 border border-gray-800 rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl transform transition-transform scale-95 opacity-0 duration-300">
+    <div id="contact-modal-loading" class="hidden flex-col items-center">
+      <svg class="animate-spin h-12 w-12 text-[#00E5FF] mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      <h3 class="text-xl font-bold text-white mb-2" id="loading-title">Sending Message</h3>
+      <p class="text-gray-400 text-sm" id="loading-desc">Please wait a moment...</p>
+    </div>
+    
+    <div id="contact-modal-success" class="hidden flex-col items-center">
+      <div class="h-16 w-16 bg-[#00E5FF]/20 rounded-full flex items-center justify-center mb-6">
+        <svg class="h-8 w-8 text-[#00E5FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-2" id="success-title">Message Sent!</h3>
+      <p class="text-gray-400 mb-6" id="success-desc">We'll get back to you shortly.</p>
+      <button id="contact-modal-close" class="bg-[#00E5FF] text-black font-bold py-3 px-8 rounded-lg hover:bg-cyan-400 transition-colors w-full">
+        Close
+      </button>
+    </div>
+
+    <div id="contact-modal-error" class="hidden flex-col items-center">
+      <div class="h-16 w-16 bg-red-500/20 rounded-full flex items-center justify-center mb-6">
+        <svg class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-2" id="error-title">Submission Failed</h3>
+      <p class="text-gray-400 mb-6" id="error-desc">There was a problem sending your message.</p>
+      <button id="contact-modal-err-close" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-700 border border-gray-700 transition-colors w-full">
+        Try Again
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // @ts-nocheck
+  document.addEventListener('DOMContentLoaded', () => {
+    // Remove any old modal overlays left by previous inline implementations.
+    // This guarantees only the dark shared modal is ever shown.
+    const cleanupLegacyModals = () => {
+      const legacyLoading = document.getElementById('loadingNotification');
+      const legacySuccess = document.getElementById('successNotification');
+      if (legacyLoading) legacyLoading.remove();
+      if (legacySuccess) legacySuccess.remove();
+    };
+
+    cleanupLegacyModals();
+
+    const forms = document.querySelectorAll('form[action="/api/contact"]');
+    const modal = document.getElementById('contact-modal');
+    const modalContent = document.getElementById('contact-modal-content');
+    const loadingView = document.getElementById('contact-modal-loading');
+    const successView = document.getElementById('contact-modal-success');
+    const errorView = document.getElementById('contact-modal-error');
+    const closeBtn = document.getElementById('contact-modal-close');
+    const errCloseBtn = document.getElementById('contact-modal-err-close');
+
+    // i18n translations
+    const i18n = {
+      en: {
+        loadingTitle: 'Sending Message',
+        loadingDesc: 'Please wait a moment...',
+        successTitle: 'Message Sent!',
+        successDesc: "We'll get back to you shortly.",
+        errorTitle: 'Submission Failed',
+        errorDesc: 'There was a problem sending your message.',
+        close: 'Close',
+        tryAgain: 'Try Again'
+      },
+      es: {
+        loadingTitle: 'Enviando Mensaje',
+        loadingDesc: 'Por favor espera un momento...',
+        successTitle: '¡Mensaje Enviado!',
+        successDesc: 'Nos pondremos en contacto contigo pronto.',
+        errorTitle: 'Error al enviar',
+        errorDesc: 'Hubo un problema procesando tu petición.',
+        close: 'Cerrar',
+        tryAgain: 'Intentar Nuevamente'
+      }
+    };
+
+    function showModal(viewId, locale) {
+      if (!modal || !modalContent) return;
+      
+      const t = i18n[locale] || i18n.en;
+      
+      const loadingTitle = document.getElementById('loading-title');
+      if (loadingTitle) loadingTitle.textContent = t.loadingTitle;
+      const loadingDesc = document.getElementById('loading-desc');
+      if (loadingDesc) loadingDesc.textContent = t.loadingDesc;
+      const successTitle = document.getElementById('success-title');
+      if (successTitle) successTitle.textContent = t.successTitle;
+      const successDesc = document.getElementById('success-desc');
+      if (successDesc) successDesc.textContent = t.successDesc;
+      const errorTitle = document.getElementById('error-title');
+      if (errorTitle) errorTitle.textContent = t.errorTitle;
+      const errorDesc = document.getElementById('error-desc');
+      if (errorDesc) errorDesc.textContent = t.errorDesc;
+      if (closeBtn) closeBtn.textContent = t.close;
+      if (errCloseBtn) errCloseBtn.textContent = t.tryAgain;
+
+      if (loadingView) loadingView.classList.add('hidden');
+      if (successView) successView.classList.add('hidden');
+      if (errorView) errorView.classList.add('hidden');
+
+      const view = document.getElementById(viewId);
+      if (view) view.classList.remove('hidden');
+      
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      // Small delay to allow browser to render block before fading in
+      setTimeout(() => {
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
+
+    function hideModal() {
+      if (!modal || !modalContent) return;
+      modalContent.classList.remove('scale-100', 'opacity-100');
+      modalContent.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        cleanupLegacyModals();
+      }, 300); // Matches transition duration
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', hideModal);
+    if (errCloseBtn) errCloseBtn.addEventListener('click', hideModal);
+
+    forms.forEach(form => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formElement = e.currentTarget;
+        if (!(formElement instanceof HTMLFormElement)) {
+          return;
+        }
+
+        const formData = new FormData(formElement);
+        const localeValue = String(formData.get('locale') || 'en');
+        const locale = localeValue === 'es' ? 'es' : 'en';
+        
+        showModal('contact-modal-loading', locale);
+
+        try {
+          const response = await fetch(formElement.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok || response.status === 303) {
+            showModal('contact-modal-success', locale);
+            formElement.reset();
+          } else {
+            showModal('contact-modal-error', locale);
+          }
+        } catch (error) {
+          showModal('contact-modal-error', locale);
+        }
+      });
+    });
+  });
+</script>
