@@ -25,10 +25,10 @@ const t = useTranslations('es') as any;
 
     <section class="relative z-10 container mx-auto px-6 pt-24 pb-20">
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-tight mb-6">
-          {t.blog_page.hero_title} <span class="text-[#00E5FF] font-['Caveat'] text-6xl md:text-8xl italic font-normal ml-2">{t.blog_page.hero_emphasis}</span>
+        <h1 class="text-4xl leading-[1.1] sm:text-5xl sm:leading-tight md:text-7xl font-black tracking-tighter mb-6 break-words">
+          {t.blog_page.hero_title} <span class="text-[#00E5FF] font-['Caveat'] text-5xl sm:text-6xl md:text-8xl italic font-normal sm:ml-2">{t.blog_page.hero_emphasis}</span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-600 font-light max-w-2xl">
+        <p class="text-lg leading-relaxed sm:text-xl sm:leading-relaxed md:text-2xl text-gray-600 font-light max-w-2xl">
           {t.blog_page.hero_subtitle}
         </p>
       </div>
@@ -52,12 +52,12 @@ const t = useTranslations('es') as any;
                 </div>
               )}
               <div class="p-8 flex flex-col flex-grow">
-                <div class="flex gap-3 mb-6">
-                  <span class="px-3 py-1 rounded-full bg-[#00E5FF]/10 text-black font-bold text-xs uppercase tracking-widest transition-colors">
+                <div class="flex flex-col md:flex-row gap-3 mb-6 justify-center items-center">
+                  <span class="px-3 py-1 rounded-full bg-[#00E5FF]/10 text-black font-bold text-xs uppercase tracking-widest transition-colors text-center w-auto">
                     {translatedPost.category || post.data.category}
                   </span>
-                  <span class="px-3 py-1 rounded-full bg-gray-200 text-gray-600 font-bold text-xs uppercase tracking-widest">
-                    {translatedPost.read_time || post.data.readTime}
+                  <span class="px-3 py-1 rounded-full bg-gray-200 text-gray-600 font-bold text-xs uppercase tracking-widest text-center w-auto">
+                    {(translatedPost.read_time || post.data.readTime).split(' ').slice(0, 2).join(' ')}
                   </span>
                 </div>
                 <a href={`/es/blog/${post.id}`} class="block">

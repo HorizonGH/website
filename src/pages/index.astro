@@ -16,9 +16,9 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- Hero Section -->
     <section class="relative z-10 container mx-auto px-6 pt-40 pb-32 md:pt-52 md:pb-40 text-center">
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6">
+      <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight font-black tracking-tighter mb-6 break-words">
         TRANSFORMING THE <br />
-        D<span class="inline-block relative w-[0.6em] h-[1em] mx-1 align-baseline translate-y-[0.12em] text-[#00E5FF]">
+        <span class="whitespace-nowrap">D<span class="inline-block relative w-[0.6em] h-[1em] mx-1 align-middle text-[#00E5FF]">
           <!-- Circuit 'I' -->
           <svg viewBox="0 0 24 100" class="absolute inset-0 w-full h-full fill-current" preserveAspectRatio="xMidYMid meet">
             <rect x="10" y="10" width="4" height="80" />
@@ -26,7 +26,7 @@ import Layout from '../layouts/Layout.astro';
             <circle cx="12" cy="90" r="6" />
             <circle cx="12" cy="50" r="4" class="text-white fill-current" />
           </svg>
-        </span>GITAL H<span class="inline-block relative w-[0.8em] h-[1em] mx-1 align-baseline translate-y-[0.12em] text-[#00E5FF]">
+        </span>GITAL</span> <span class="whitespace-nowrap">H<span class="inline-block relative w-[0.8em] h-[1em] mx-1 align-middle text-[#00E5FF]">
           <!-- Circuit 'O' -->
           <svg viewBox="0 0 100 100" class="absolute inset-0 w-full h-full fill-none stroke-current" stroke-width="8" preserveAspectRatio="xMidYMid meet">
             <circle cx="50" cy="50" r="40" stroke-dasharray="25 10 15 10" />
@@ -36,13 +36,13 @@ import Layout from '../layouts/Layout.astro';
             <circle cx="50" cy="90" r="5" class="fill-current" />
             <circle cx="10" cy="50" r="5" class="fill-current" />
           </svg>
-        </span>RIZON.
+        </span>RIZON.</span>
       </h1>
-      <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto font-light">
+      <p class="text-lg leading-relaxed sm:text-xl sm:leading-relaxed md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto font-light">
         Pioneering Web Experiences with American Innovation.
       </p>
-      <div class="flex justify-center">
-        <a href="#contact" class="group flex items-center bg-[#00E5FF] text-black font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,255,0.6)] hover:-translate-y-1">
+      <div class="flex justify-center px-4 sm:px-0">
+        <a href="#contact" class="group flex items-center justify-center w-full sm:w-auto bg-[#00E5FF] text-black font-bold text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,255,0.6)] hover:-translate-y-1">
           Elevate Your Presence
           <svg class="w-6 h-6 ml-3 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -97,9 +97,11 @@ import Layout from '../layouts/Layout.astro';
     <section class="py-24 bg-white relative">
       <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold mb-16 text-center text-black">The Framework</h2>
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 relative">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-8 relative">
           <!-- Background connection lines for desktop -->
           <div class="hidden md:block absolute top-1/2 left-0 right-0 h-2 bg-gray-100 -z-10 -translate-y-1/2"></div>
+          <!-- Background connection line for mobile -->
+          <div class="md:hidden absolute top-0 bottom-0 left-1/2 w-1 bg-gray-100 -z-10 -translate-x-1/2"></div>
           
           <!-- H Left Vertical -->
           <div class="flex-1 text-center bg-gray-50 p-8 rounded-lg shadow-sm w-full md:transform md:-translate-y-8 border-l-4 border-[#00E5FF]">
@@ -128,7 +130,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-24 bg-gray-50 border-t border-gray-100">
       <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 md:gap-0">
           <div>
             <h2 class="text-4xl font-bold mb-4">Selected Works</h2>
             <div class="w-24 h-1 bg-[#00E5FF]"></div>

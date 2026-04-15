@@ -33,7 +33,9 @@ const t = useTranslations(locale);
       </a>
     </div>
     <div class="flex items-center gap-2 sm:gap-4">
-      <LanguageSwitcher currentUrl={Astro.url} />
+      <div class="hidden md:block">
+        <LanguageSwitcher currentUrl={Astro.url} />
+      </div>
       <!-- Mobile Menu Toggle -->
       <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-surface-container-highest rounded-lg transition-colors">
         <span class="material-symbols-outlined">menu</span>

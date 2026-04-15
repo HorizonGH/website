@@ -50,6 +50,18 @@ const t = useTranslations(locale);
           {t.nav.contact}
         </a>
       </nav>
+
+      <div class="border-t border-outline-variant/20 pt-6 mt-6">
+        <p class="text-sm text-on-surface-variant font-medium mb-4 px-4 uppercase tracking-wider">Language</p>
+        <div class="flex gap-4 px-4">
+          <a href="/" class={`flex-1 py-2 text-center rounded-lg border font-medium transition-colors ${locale === 'en' ? 'bg-[#00E5FF] text-black border-transparent' : 'border-outline-variant hover:bg-surface-container text-on-surface-variant'}`}>
+            English
+          </a>
+          <a href="/es/" class={`flex-1 py-2 text-center rounded-lg border font-medium transition-colors ${locale === 'es' ? 'bg-[#00E5FF] text-black border-transparent' : 'border-outline-variant hover:bg-surface-container text-on-surface-variant'}`}>
+            Español
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
