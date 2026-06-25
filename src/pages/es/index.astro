@@ -1,8 +1,8 @@
 ﻿---
-const t = useTranslations('es') as any;
-
 import { useTranslations } from '../../i18n/utils';
 import Layout from '../../layouts/Layout.astro';
+import HeroCircuitBackdrop from '../../components/HeroCircuitBackdrop.astro';
+const t = useTranslations('es') as any;
 ---
 
 <Layout locale="es" title={t.seo.home_title}>
@@ -11,46 +11,27 @@ import Layout from '../../layouts/Layout.astro';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
 
-  <div class="min-h-screen bg-white text-black font-sans relative overflow-hidden">
-    <!-- Abstract Circuit Background in Hero -->
-    <div class="absolute inset-0 pointer-events-none opacity-5 z-0" 
-         style="background-image: radial-gradient(#00E5FF 1px, transparent 1px), radial-gradient(#00E5FF 1px, transparent 1px); background-size: 40px 40px; background-position: 0 0, 20px 20px;">
-    </div>
+  <div class="bg-[#f4f7fb] text-black font-sans">
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24">
+      <HeroCircuitBackdrop />
 
-    <!-- Hero Section -->
-    <section class="relative z-10 container mx-auto px-6 pt-40 pb-32 md:pt-52 md:pb-40 text-center">
-      <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight font-black tracking-tighter mb-6 break-words">
-        Transformando el <br />
-        <span class="whitespace-nowrap">H<span class="inline-block relative -top-1 md:-top-2 w-[0.8em] h-[1em] mx-1 align-middle text-[#00E5FF]">
-          <!-- Circuit 'O' -->
-          <svg viewBox="0 0 100 100" class="absolute inset-0 w-full h-full fill-none stroke-current" stroke-width="8" preserveAspectRatio="xMidYMid meet">
-            <circle cx="50" cy="50" r="40" stroke-dasharray="25 10 15 10" />
-            <circle cx="50" cy="50" r="25" />
-            <circle cx="50" cy="10" r="5" class="fill-current" />
-            <circle cx="90" cy="50" r="5" class="fill-current" />
-            <circle cx="50" cy="90" r="5" class="fill-current" />
-            <circle cx="10" cy="50" r="5" class="fill-current" />
-          </svg>
-        </span>orizonte</span> <br class="sm:hidden" /><span class="whitespace-nowrap">D<span class="inline-block relative -top-1 md:-top-2 w-[0.4em] h-[1em] mx-1 align-middle text-[#00E5FF]">
-          <!-- Circuit 'I' -->
-          <svg viewBox="0 0 24 100" class="absolute inset-0 w-full h-full fill-current" preserveAspectRatio="xMidYMid meet">
-            <rect x="10" y="10" width="4" height="80" />
-            <circle cx="12" cy="10" r="6" />
-            <circle cx="12" cy="90" r="6" />
-            <circle cx="12" cy="50" r="4" class="text-white fill-current" />
-          </svg>
-        </span>igital.</span>
-      </h1>
-      <p class="text-lg leading-relaxed sm:text-xl sm:leading-relaxed md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto font-light">
-        {t.home_page.hero_subtitle}
-      </p>
-      <div class="flex justify-center px-4 sm:px-0">
-        <a href="#contact" class="group flex items-center justify-center w-full sm:w-auto bg-[#00E5FF] text-black font-bold text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,255,0.6)] hover:-translate-y-1">
-          {t.hero.cta}
-          <svg class="w-6 h-6 ml-3 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        </a>
+      <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+          <h1 class="mx-auto max-w-5xl font-display text-5xl font-black uppercase tracking-[-0.08em] leading-[0.9] sm:text-6xl md:text-7xl lg:text-[5.8rem] xl:text-[6.8rem]">
+            <span class="block">{t.hero.title_part1}</span>
+            <span class="block">EL <span class="text-[#18d9eb] drop-shadow-[0_0_16px_rgba(76,214,251,0.45)]">{t.hero.title_part2}</span></span>
+            <span class="block">{t.hero.title_part3}</span>
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl md:text-2xl">
+            {t.hero.subtitle}
+          </p>
+          <div class="mt-10 flex w-full justify-center px-4 sm:px-0">
+            <a href="#contact" class="group inline-flex w-full items-center justify-center rounded-full bg-[#00E5FF] px-6 py-3 text-lg font-bold text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(0,229,255,0.55)] sm:w-auto sm:px-8 sm:py-4">
+              {t.hero.cta}
+              <svg class="ml-3 h-6 w-6 transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </a>
+          </div>
       </div>
     </section>
 
