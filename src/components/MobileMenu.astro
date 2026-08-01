@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 interface Props {
   locale: Locale;
@@ -46,7 +47,7 @@ const isActive = (to: string) => {
       <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">
         {locale === 'en' ? 'Language' : 'Idioma'}
       </span>
-      <div class="flex gap-2">
+      <div class="flex items-center gap-2">
         <a
           href="/"
           class={`px-4 py-1.5 rounded-full border text-sm font-medium transition-colors ${
@@ -67,6 +68,7 @@ const isActive = (to: string) => {
         >
           ES
         </a>
+        <ThemeToggle locale={locale} class="w-9 h-9" />
       </div>
     </div>
 
