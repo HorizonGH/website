@@ -53,10 +53,10 @@ const isActive = (to: string) => {
 
     <div class="flex items-center gap-3">
       <div class="hidden md:block">
-        <ThemeToggle locale={locale} />
+        <LanguageSwitcher currentUrl={Astro.url} />
       </div>
       <div class="hidden md:block">
-        <LanguageSwitcher currentUrl={Astro.url} />
+        <ThemeToggle locale={locale} />
       </div>
       <a
         href={contactHref}
