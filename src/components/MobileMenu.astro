@@ -32,7 +32,6 @@ const isActive = (to: string) => {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col">
     {NAV.map((item) => (
       <a
-        key={item.to}
         href={item.to}
         class={`border-b border-gray-200 py-4 text-lg font-semibold transition-colors last:border-0 ${
           isActive(item.to) ? 'text-cyan-600' : 'text-gray-900 hover:text-cyan-600'
@@ -68,7 +67,7 @@ const isActive = (to: string) => {
         >
           ES
         </a>
-        <ThemeToggle locale={locale} class="w-9 h-9" />
+        <ThemeToggle locale={locale} class="w-11 h-11 shrink-0" />
       </div>
     </div>
 
@@ -86,7 +85,7 @@ const isActive = (to: string) => {
   const mobileMenu = document.getElementById('mobile-menu');
   const menuLinks = mobileMenu?.querySelectorAll('a');
 
-  function setMenuOpen(open) {
+  function setMenuOpen(open: boolean) {
     if (!mobileMenu || !menuToggle) return;
     mobileMenu.classList.toggle('hidden', !open);
     const icon = menuToggle.querySelector('.material-symbols-outlined');
