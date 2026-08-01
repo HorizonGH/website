@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { useTranslations } from '../../i18n/utils';
+import Footer from '../../components/Footer.astro';
 const t = useTranslations('es') as any;
 ---
 
@@ -53,7 +54,7 @@ const t = useTranslations('es') as any;
                 </div>
                 <div>
                   <h4 class="font-bold tracking-widest uppercase text-sm mb-1 text-gray-500">{t.contact_page.email_label}</h4>
-                  <p class="text-lg font-medium">hello@horizon.gh</p>
+                  <p class="text-lg font-medium">contact@horizon-gh.com</p>
                 </div>
               </div>
             </div>
@@ -99,19 +100,6 @@ const t = useTranslations('es') as any;
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-20 border-t-4 border-[#00E5FF] relative z-10">
-      <div class="container mx-auto px-6 text-center">
-        <div class="text-3xl font-bold mb-6">
-          Horizon <span class="text-[#00E5FF] font-['Caveat'] text-4xl ml-1">-gh</span>
-        </div>
-        <p class="text-gray-400 mb-8 max-w-sm mx-auto">
-          {t.contact_page.footer_description}
-        </p>
-        <p class="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Horizon gh. {t.contact_page.footer_rights}
-        </p>
-      </div>
-    </footer>
+  <Footer locale="es" />
   </div>
 </Layout>

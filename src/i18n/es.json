@@ -50,14 +50,14 @@
   "testimonials": {
     "title": "Perspectivas de Clientes",
     "t1_quote": "Horizon transformó totalmente nuestra infraestructura backend. Su enfoque en arquitectura robusta combinado con interfaces asombrosas no tiene paralelo en la región.",
-    "t1_name": "Jhon Snow",
+    "t1_name": "Jhon Marsh",
     "t1_role": "CEO, TechHub",
     "t2_quote": "La atención al detalle y la optimización de rendimiento que aplicaron a nuestra plataforma de e-commerce generó un aumento del 40% en conversiones en semanas.",
-    "t2_name": "Sarah Ansah",
-    "t2_role": "Directora, Estilo Kente",
+    "t2_name": "Sarah Aldridge",
+    "t2_role": "Director of Digital, Northline Retail",
     "t3_quote": "Un verdadero aliado en innovación digital. No solo construyen sitios web; diseñan plataformas digitales que escalan sin esfuerzo.",
-    "t3_name": "David Osei",
-    "t3_role": "Fundador, Red Vibe"
+    "t3_name": "Daniel Quesada",
+    "t3_role": "Fundador, QuesaData"
   },
   "contact": {
     "title": "Inicia una Conversación",
@@ -108,9 +108,8 @@
     "form_email_placeholder": "juan@ejemplo.com",
     "form_message": "Mensaje",
     "form_message_placeholder": "Cuentanos sobre tu proyecto...",
-    "social_x": "Perfil en X",
     "social_github": "Perfil en GitHub",
-    "social_linkedin": "Perfil en LinkedIn",
+    "social_instagram": "Perfil en Instagram",
     "footer_description": "Impulsamos la proxima generacion de aplicaciones web desde el corazon de America hacia el mundo.",
     "footer_rights": "Todos los derechos reservados."
   },

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Contact | Horizon.gh - Transforming the Digital Horizon">
@@ -50,7 +51,7 @@ import Layout from '../layouts/Layout.astro';
                 </div>
                 <div>
                   <h4 class="font-bold tracking-widest uppercase text-sm mb-1 text-gray-500">Electronic Mail</h4>
-                  <p class="text-lg font-medium">hello@horizon.gh</p>
+                  <p class="text-lg font-medium">contact@horizon-gh.com</p>
                 </div>
               </div>
             </div>
@@ -96,19 +97,6 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-20 border-t-4 border-[#00E5FF] relative z-10">
-      <div class="container mx-auto px-6 text-center">
-        <div class="text-3xl font-bold mb-6">
-          Horizon <span class="text-[#00E5FF] font-['Caveat'] text-4xl ml-1">-gh</span>
-        </div>
-        <p class="text-gray-400 mb-8 max-w-sm mx-auto">
-          Engineering the next generation of web applications.
-        </p>
-        <p class="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Horizon gh. All rights reserved.
-        </p>
-      </div>
-    </footer>
+  <Footer />
   </div>
 </Layout>

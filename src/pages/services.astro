@@ -1,124 +1,206 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const SERVICES = [
+  {
+    icon: "globe",
+    title: "Web",
+    accent: "Dev",
+    body: "High-performance web applications, corporate sites, and landing pages built for heavy traffic and measurable conversion.",
+    points: [
+      "Responsive front ends with a performance budget",
+      "Scalable CMS and content model integrations",
+      "Core Web Vitals tracked in production, not just in dev",
+    ],
+    cta: "Start building",
+    dark: false,
+  },
+  {
+    icon: "code",
+    title: "Custom",
+    accent: "Software",
+    body: "Internal tools, automation systems, and SaaS platforms engineered around distinct operational workflows.",
+    points: [
+      "Secure REST and GraphQL APIs with typed contracts",
+      "Complex dashboards over live operational data",
+      "Cloud and backend systems designed for failure",
+    ],
+    cta: "Request a demo",
+    dark: true,
+  },
+  {
+    icon: "zap",
+    title: "Digital",
+    accent: "Acceleration",
+    body: "Legacy modernization in short, shippable increments, so the business keeps running while the platform changes underneath it.",
+    points: [
+      "Incremental migration with no big-bang cutover",
+      "Observability and rollback on every release",
+      "Knowledge transfer to your in-house team",
+    ],
+    cta: "Plan a migration",
+    dark: false,
+  },
+];
+
+const ENGAGEMENTS = [
+  {
+    title: "Sprint",
+    duration: "2–4 weeks",
+    body: "A focused build or audit with a single deliverable: a prototype, a performance rescue, an architecture review.",
+  },
+  {
+    title: "Build",
+    duration: "2–6 months",
+    body: "A full platform delivered end to end, from data model and infrastructure through to the shipped interface.",
+  },
+  {
+    title: "Partner",
+    duration: "Ongoing",
+    body: "An embedded team working alongside yours on a continuous release cadence with shared roadmap ownership.",
+  },
+];
+
+const STACK = [
+  { name: "AWS", role: "Cloud Native" },
+  { name: "React", role: "Frontend" },
+  { name: "TypeScript", role: "Type safety" },
+  { name: "Python", role: "Data & Backend" },
+  { name: "Postgres", role: "Persistence" },
+  { name: "Docker", role: "Containers" },
+];
 ---
 
 <Layout title="Services | Horizon.gh - Transforming the Digital Horizon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
 
-  <div class="min-h-screen bg-white text-black font-sans relative overflow-hidden">
-    <div class="absolute inset-0 pointer-events-none opacity-5 z-0" 
-         style="background-image: radial-gradient(#00E5FF 1px, transparent 1px), radial-gradient(#00E5FF 1px, transparent 1px); background-size: 40px 40px; background-position: 0 0, 20px 20px;">
-    </div>
-
+  <div class="bg-[#f4f7fb] text-gray-900 font-sans">
     <!-- Services Hero -->
-    <section class="relative z-10 container mx-auto px-6 pt-24 pb-12 text-center">
-      <div class="inline-block mb-4 px-4 py-1 border-2 border-[#00E5FF] rounded-full text-sm font-bold tracking-widest uppercase">Our Ecosystem</div>
-      <h1 class="text-4xl leading-[1.1] sm:text-5xl sm:leading-tight md:text-7xl font-black tracking-tighter mb-6 break-words">
-        ARCHITECTING THE <br />
-        <span class="text-[#00E5FF]">FUTURE</span>
-      </h1>
-      <p class="text-lg leading-relaxed sm:text-xl sm:leading-relaxed md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
-        We build robust, scalable infrastructures that accelerate your digital transformation.
-      </p>
+    <section class="border-b border-gray-200 py-24 text-center">
+      <div class="shell mx-auto max-w-7xl px-6">
+        <p class="label-sm inline-block rounded-full border-2 border-[var(--color-accent-cyan)] px-4 py-1.5 text-[var(--color-accent-cyan)]">
+          Our Ecosystem
+        </p>
+        <h1 class="display-xl mx-auto mt-8 max-w-4xl font-display text-5xl font-black uppercase tracking-[-0.08em] leading-[0.9] sm:text-6xl md:text-7xl">
+          Architecting the <span class="text-accent-cyan drop-shadow-[0_0_16px_rgba(76,214,251,0.45)]">future</span>
+        </h1>
+        <p class="body-lg mx-auto mt-8 max-w-xl text-gray-600">
+          We build robust, scalable infrastructures that accelerate your digital transformation.
+        </p>
+      </div>
     </section>
 
     <!-- Core Solutions -->
-    <section class="py-24 relative">
-      <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Web Development -->
-          <div class="bg-gray-50 border border-gray-100 p-12 rounded-2xl hover:border-[#00E5FF] hover:shadow-[0_0_30px_rgba(0,229,255,0.2)] transition-all duration-500 group">
-            <div class="w-16 h-16 bg-white border-2 border-gray-200 rounded-xl flex items-center justify-center mb-8 group-hover:border-[#00E5FF] transition-colors">
-              <svg class="w-8 h-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
-            </div>
-            <h3 class="text-4xl font-black tracking-tighter mb-4">Web <span class="text-[#00E5FF] font-['Caveat'] text-5xl">Dev</span></h3>
-            <p class="text-gray-600 text-lg mb-8">
-              High-performance web applications, corporate websites, and landing pages optimized for immense traffic and conversion.
-            </p>
-            <ul class="space-y-4 mb-8">
-              <li class="flex items-center text-gray-800 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> Highly responsive frontend</li>
-              <li class="flex items-center text-gray-800 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> Scalable CMS integrations</li>
-              <li class="flex items-center text-gray-800 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> Core Web Vitals optimized</li>
-            </ul>
-            <a href="/contact" class="inline-flex items-center font-bold pb-1 border-b-2 border-black hover:border-[#00E5FF] hover:text-[#00E5FF] transition-colors">
-              Start Building &rarr;
-            </a>
-          </div>
-
-          <!-- Software Development -->
-          <div class="bg-gray-900 border border-gray-800 p-12 rounded-2xl text-white hover:border-[#00E5FF] hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] transition-all duration-500 group relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 opacity-10">
-              <span class="text-[#00E5FF] font-['Caveat'] text-8xl">sys</span>
-            </div>
-            <div class="relative z-10">
-              <div class="w-16 h-16 bg-black border-2 border-gray-700 rounded-xl flex items-center justify-center mb-8 group-hover:border-[#00E5FF] transition-colors">
-                <svg class="w-8 h-8 text-[#00E5FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <h3 class="text-4xl font-black tracking-tighter mb-4 text-white">Custom <span class="text-[#00E5FF]">Software</span></h3>
-              <p class="text-gray-400 text-lg mb-8">
-                Bespoke internal tools, automation systems, and SaaS platforms engineered to accelerate distinct operational workflows.
+    <section class="border-b border-gray-200 bg-white py-24" aria-labelledby="offerings-heading">
+      <div class="shell mx-auto max-w-7xl px-6">
+        <h2 id="offerings-heading" class="sr-only">Service offerings</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          {SERVICES.map((service) => (
+            <article
+              class={`group flex flex-col rounded-2xl border p-8 transition-all hover:-translate-y-1 ${
+                service.dark
+                  ? 'border-gray-800 bg-gray-900 text-white'
+                  : 'border-gray-200 bg-white shadow-sm hover:border-[var(--color-accent-cyan)] hover:shadow-[0_24px_40px_-24px_rgba(76,214,251,0.5)]'
+              }`}
+            >
+              <span
+                class={`inline-flex w-12 h-12 items-center justify-center rounded-xl ${
+                  service.dark
+                    ? 'bg-white/10 text-[var(--color-accent-cyan)]'
+                    : 'bg-[var(--color-accent-cyan)]/10 text-[var(--color-accent-cyan)]'
+                }`}
+              >
+                {service.icon === 'globe' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                )}
+                {service.icon === 'code' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                )}
+                {service.icon === 'zap' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                )}
+              </span>
+              <h3 class="mt-8 text-3xl font-display font-bold">
+                {service.title} <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-4xl">{service.accent}</span>
+              </h3>
+              <p class={`mt-4 ${service.dark ? 'text-gray-400' : 'text-gray-600'}`}>
+                {service.body}
               </p>
-              <ul class="space-y-4 mb-8">
-                <li class="flex items-center text-gray-300 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> Secure REST/GraphQL APIs</li>
-                <li class="flex items-center text-gray-300 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> Complex Dashboards</li>
-                <li class="flex items-center text-gray-300 font-medium"><span class="text-[#00E5FF] mr-3">&#10003;</span> Cloud & Backend Systems</li>
+              <ul class="mt-8 flex-1 space-y-3">
+                {service.points.map((point) => (
+                  <li class="flex gap-3 text-sm">
+                    <span class="mt-0.5 text-[var(--color-accent-cyan)]">&#10003;</span>
+                    <span class={service.dark ? 'text-gray-300' : 'text-gray-800'}>{point}</span>
+                  </li>
+                ))}
               </ul>
-              <a href="/contact" class="inline-flex items-center font-bold pb-1 border-b-2 border-white hover:border-[#00E5FF] text-[#00E5FF] hover:text-white transition-colors">
-                Request a Demo &rarr;
+              <a
+                href="/contact"
+                class={`mt-10 inline-flex items-center gap-2 self-start border-b-2 pb-1 font-bold transition-colors ${
+                  service.dark
+                    ? 'border-[var(--color-accent-cyan)] text-[var(--color-accent-cyan)] hover:text-white'
+                    : 'border-gray-900 hover:border-[var(--color-accent-cyan)] hover:text-[var(--color-accent-cyan)]'
+                }`}
+              >
+                {service.cta}
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </a>
-            </div>
-          </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagements Section -->
+    <section class="border-b border-gray-200 bg-gray-50 py-24" aria-labelledby="engagements-heading">
+      <div class="shell mx-auto max-w-7xl px-6">
+        <h2 id="engagements-heading" class="display-lg text-gray-900">
+          How we <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">engage</span>
+        </h2>
+        <div class="mt-14 grid gap-10 md:grid-cols-3">
+          {ENGAGEMENTS.map((item) => (
+            <article class="border-t-2 border-gray-900 pt-6">
+              <div class="flex items-baseline justify-between gap-4">
+                <h3 class="text-2xl font-display font-bold">{item.title}</h3>
+                <span class="label-sm text-[var(--color-accent-cyan)]">{item.duration}</span>
+              </div>
+              <p class="mt-3 text-gray-600">{item.body}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
 
     <!-- Tech Stack -->
-    <section class="py-24 bg-gray-50 border-t border-gray-100">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-black mb-4">Our Arsenal</h2>
-          <div class="w-24 h-1 bg-[#00E5FF] mx-auto"></div>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center opacity-60">
-          <div class="flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:text-[#00E5FF] transition-all cursor-crosshair">
-            <div class="text-2xl font-black uppercase tracking-widest mb-2">AWS</div>
-            <p class="text-xs font-bold font-['Caveat'] text-gray-500">Cloud Native</p>
-          </div>
-          <div class="flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:text-[#00E5FF] transition-all cursor-crosshair">
-            <div class="text-2xl font-black uppercase tracking-widest mb-2">React</div>
-            <p class="text-xs font-bold font-['Caveat'] text-gray-500">Frontend</p>
-          </div>
-          <div class="flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:text-[#00E5FF] transition-all cursor-crosshair">
-            <div class="text-2xl font-black uppercase tracking-widest mb-2">Python</div>
-            <p class="text-xs font-bold font-['Caveat'] text-gray-500">Data & Backend</p>
-          </div>
-          <div class="flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:text-[#00E5FF] transition-all cursor-crosshair">
-            <div class="text-2xl font-black uppercase tracking-widest mb-2">Docker</div>
-            <p class="text-xs font-bold font-['Caveat'] text-gray-500">Containers</p>
-          </div>
-        </div>
+    <section class="border-b border-gray-200 bg-white py-24" aria-labelledby="stack-heading">
+      <div class="shell mx-auto max-w-7xl px-6">
+        <h2 id="stack-heading" class="display-lg text-gray-900">
+          Our <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">arsenal</span>
+        </h2>
+        <ul class="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+          {STACK.map((tool) => (
+            <li
+              class="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-colors hover:border-[var(--color-accent-cyan)]"
+            >
+              <span class="block font-display text-xl font-extrabold">{tool.name}</span>
+              <span class="mt-1 block text-xs text-gray-600">{tool.role}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-black text-white py-20 border-t-4 border-[#00E5FF] relative z-10">
-      <div class="container mx-auto px-6 text-center">
-        <div class="text-3xl font-bold mb-6">
-          Horizon <span class="text-[#00E5FF] font-['Caveat'] text-4xl ml-1">-gh</span>
-        </div>
-        <p class="text-gray-400 mb-8 max-w-sm mx-auto">
-          Engineering the next generation of web applications from the heart of America to the world.
-        </p>
-        <p class="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Horizon gh. All rights reserved.
-        </p>
-      </div>
-    </footer>
   </div>
+
+  <Footer />
 </Layout>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
+import Footer from '../../components/Footer.astro';
 
 export const prerender = true;
 
@@ -23,139 +24,112 @@ const formatDate = (date: Date) =>
 ---
 
 <Layout title={`${post.data.title} | Horizon.gh`}>
-  <main class="pt-24 sm:pt-28 pb-20">
-    <section class="relative overflow-hidden">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(76,214,251,0.14),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_24%)] pointer-events-none"></div>
-      <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="relative overflow-hidden rounded-[2rem] border border-surface-container-highest bg-surface-container p-8 shadow-ambient">
-          <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-surface-container-high/90 to-transparent pointer-events-none"></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
 
-          <div class="relative z-10 space-y-6">
-            <a class="inline-flex items-center gap-2 text-accent-cyan text-sm uppercase tracking-[0.28em] font-label hover:text-primary transition-colors" href="/blog">
-              <span class="material-symbols-outlined text-base">arrow_back</span>
-              Back to insights
-            </a>
+  <div class="bg-[#f4f7fb] text-gray-900 font-sans">
+    <!-- Article Header -->
+    <section class="border-b border-gray-200 py-20">
+      <div class="shell mx-auto max-w-4xl px-6">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-sm font-bold text-gray-600 transition-colors hover:text-[var(--color-accent-cyan)]"
+        >
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+          Back to insights
+        </a>
 
-            <div class="flex flex-wrap items-center gap-3 sm:gap-4">
-              <span class="px-3 py-1.5 rounded-full glass-panel text-tertiary text-xs sm:text-sm font-bold tracking-widest uppercase">
-                {post.data.category}
-              </span>
-              <span class="px-3 py-1.5 rounded-full glass-panel text-on-surface-variant text-xs sm:text-sm font-label">
-                {post.data.readTime}
-              </span>
-              <span class="text-on-surface-variant text-xs sm:text-sm font-label">
-                {formatDate(post.data.date)}
-              </span>
-            </div>
-
-            <div class="max-w-3xl">
-              <h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-on-surface tracking-tight">
-                {post.data.title}
-              </h1>
-              <p class="mt-4 text-lg sm:text-xl text-on-surface-variant leading-relaxed">
-                {post.data.excerpt}
-              </p>
-            </div>
-
-            <div class="grid gap-6 lg:grid-cols-[auto_280px] items-start">
-              <div class="flex items-center gap-4 bg-surface-container-highest rounded-3xl p-4 border border-surface-container-high">
-                <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-display font-bold">
-                  {post.data.author
-                    .split(' ')
-                    .map((word: string) => word[0])
-                    .join('')}
-                </div>
-                <div>
-                  <p class="text-on-surface font-display font-bold">{post.data.author}</p>
-                  <p class="text-on-surface-variant text-sm font-label">{post.data.category}</p>
-                </div>
-              </div>
-
-              <div class="rounded-3xl overflow-hidden border border-surface-container-highest bg-surface-container-high p-6">
-                <div class="text-xs uppercase tracking-[0.28em] text-on-surface-variant font-label mb-3">Feature</div>
-                <p class="text-sm leading-6 text-on-surface-variant">
-                  An immersive reading experience combining the site's visual style with clear technical content presentation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
-      <article class="rounded-[2rem] border border-surface-container-highest bg-surface-container-low p-10 shadow-ambient overflow-hidden">
-        <div class="relative overflow-hidden rounded-[2rem] mb-10">
-          <img
-            alt={post.data.title}
-            class="w-full h-[420px] object-cover"
-            src={post.data.coverImage}
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/10 to-transparent"></div>
+        <div class="mt-10 flex flex-wrap items-center gap-3">
+          <span class="label-sm rounded-full bg-[var(--color-accent-cyan)]/10 px-3 py-1 text-[var(--color-accent-cyan)]">
+            {post.data.category}
+          </span>
+          <span class="text-xs text-gray-600">{post.data.readTime}</span>
+          <span class="text-xs text-gray-600">{formatDate(post.data.date)}</span>
         </div>
 
-        <div class="blog-content">
-          <Content />
-        </div>
-      </article>
-
-      <aside class="space-y-6">
-        <div class="rounded-[2rem] border border-surface-container-highest bg-surface-container-high p-6 shadow-ambient">
-          <h2 class="text-lg font-display font-bold text-on-surface mb-4">Article details</h2>
-          <div class="space-y-3 text-sm text-on-surface-variant">
-            <div>
-              <p class="font-semibold text-on-surface">Category</p>
-              <p>{post.data.category}</p>
-            </div>
-            <div>
-              <p class="font-semibold text-on-surface">Reading time</p>
-              <p>{post.data.readTime}</p>
-            </div>
-            <div>
-              <p class="font-semibold text-on-surface">Published</p>
-              <p>{formatDate(post.data.date)}</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="rounded-[2rem] border border-surface-container-highest bg-surface-container-high p-6 shadow-ambient">
-          <h2 class="text-lg font-display font-bold text-on-surface mb-4">Related</h2>
-          <p class="text-sm text-on-surface-variant">
-            Visita la página de insights para ver más artículos y descubrimientos de ingeniería digital.
-          </p>
-        </div>
-      </aside>
-    </section>
-  </main>
-
-  <footer class="w-full border-t border-slate-800/30 bg-surface">
-    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div class="col-span-1 md:col-span-2">
-        <div class="text-xl font-bold text-primary mb-4 font-display">Horizon.gh</div>
-        <p class="font-body text-sm text-slate-400 max-w-xs">
-          Architecting the digital landscape with precision engineering and creative intuition.
+        <h1 class="mt-8 max-w-3xl font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl leading-[1.05]">
+          {post.data.title}
+        </h1>
+        <p class="body-lg mt-6 max-w-2xl text-gray-600">
+          {post.data.excerpt}
         </p>
-      </div>
-      <div>
-        <h4 class="text-on-surface font-label font-bold mb-4">Explore</h4>
-        <div class="flex flex-col space-y-2">
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/services">Services</a>
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/blog">Insights</a>
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="/contact">Contact</a>
+
+        <div class="mt-10 flex items-center gap-4 border-t border-gray-200 pt-6">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-accent-cyan)]/10 font-display text-sm font-bold text-[var(--color-accent-cyan)]">
+            {post.data.author
+              .split(' ')
+              .map((word: string) => word[0])
+              .join('')}
+          </div>
+          <div>
+            <p class="font-display font-bold text-gray-900">{post.data.author}</p>
+            <p class="text-sm text-gray-600">{post.data.category}</p>
+          </div>
         </div>
       </div>
-      <div>
-        <h4 class="text-on-surface font-label font-bold mb-4">Legal</h4>
-        <div class="flex flex-col space-y-2">
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
-          <a class="font-body text-sm text-slate-500 hover:text-tertiary transition-colors" href="#">Terms of Service</a>
-        </div>
+    </section>
+
+    <!-- Article Body -->
+    <section class="py-20">
+      <div class="shell mx-auto max-w-4xl px-6">
+        <article class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+          {post.data.coverImage && (
+            <img
+              alt={post.data.title}
+              src={post.data.coverImage}
+              class="h-64 w-full object-cover sm:h-96"
+            />
+          )}
+          <div class="p-8 sm:p-12">
+            <div class="blog-content">
+              <Content />
+            </div>
+          </div>
+        </article>
+
+        <aside class="mt-8 grid gap-6 sm:grid-cols-2">
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h2 class="text-lg font-display font-bold text-gray-900">Article details</h2>
+            <div class="mt-4 space-y-3 text-sm text-gray-600">
+              <div>
+                <p class="font-semibold text-gray-900">Category</p>
+                <p>{post.data.category}</p>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">Reading time</p>
+                <p>{post.data.readTime}</p>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">Published</p>
+                <p>{formatDate(post.data.date)}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h2 class="text-lg font-display font-bold text-gray-900">Related</h2>
+            <p class="mt-4 text-sm text-gray-600">
+              Explore more articles and engineering discoveries on the insights page.
+            </p>
+            <a
+              href="/blog"
+              class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900 transition-colors hover:text-[var(--color-accent-cyan)]"
+            >
+              View all articles
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </aside>
       </div>
-    </div>
-    <div class="max-w-7xl mx-auto px-6 py-8 border-t border-slate-800/20 text-center">
-      <p class="font-body text-sm text-slate-400">© 2026 Horizon.gh. Engineering the Digital Horizon.</p>
-    </div>
-  </footer>
+    </section>
+  </div>
+
+  <Footer />
 </Layout>
 
 <style>
@@ -216,9 +190,9 @@ const formatDate = (date: Date) =>
 
   .blog-content :global(code) {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(76, 214, 251, 0.12);
     padding: 0.2rem 0.35rem;
     border-radius: 0.45rem;
-    color: var(--color-primary);
+    color: var(--color-accent-cyan);
   }
 </style>

@@ -29,3 +29,5 @@ add_lang_*
 update.js
 
 .env.local
+
+pnpm-lock.yaml

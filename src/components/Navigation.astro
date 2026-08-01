@@ -11,37 +11,66 @@ interface Props {
 
 const { locale = 'en' } = Astro.props;
 const t = useTranslations(locale);
+
+const pathname = Astro.url.pathname;
+
+const NAV = [
+  { to: locale === 'en' ? '/' : '/es/', label: t.nav.home },
+  { to: locale === 'en' ? '/services' : '/es/services', label: t.nav.services },
+  { to: locale === 'en' ? '/blog' : '/es/blog', label: t.nav.blog },
+  { to: locale === 'en' ? '/contact' : '/es/contact', label: t.nav.contact },
+];
+
+const contactHref = locale === 'en' ? '/contact' : '/es/contact';
+const ctaLabel = locale === 'en' ? 'Start a project' : 'Comenzar un proyecto';
+
+const isActive = (to: string) => {
+  if (to.endsWith('/')) return pathname === to;
+  return pathname === to || pathname.startsWith(to + '/');
+};
 ---
 
-<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl bg-gradient-to-b from-surface to-transparent">
-  <div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-    <a href={locale === 'en' ? '/' : '/es/'} aria-label="Horizon.gh Home">
+<header class="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-xl">
+  <div class="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+    <a href={NAV[0].to} class="group flex items-baseline gap-1" aria-label="Horizon gh Home">
       <Logo />
     </a>
-    <div class="hidden md:flex items-center space-x-8 font-display tracking-tight">
-      <a class="text-slate-300 hover:text-primary transition-colors" href={locale === 'en' ? '/' : '/es/'}>
-        {t.nav.home}
-      </a>
-      <a class="text-slate-300 hover:text-primary transition-colors" href={locale === 'en' ? '/services' : '/es/services'}>
-        {t.nav.services}
-      </a>
-      <a class="text-slate-300 hover:text-primary transition-colors" href={locale === 'en' ? '/blog' : '/es/blog'}>
-        {t.nav.blog}
-      </a>
-      <a class="text-slate-300 hover:text-primary transition-colors" href={locale === 'en' ? '/contact' : '/es/contact'}>
-        {t.nav.contact}
-      </a>
-    </div>
-    <div class="flex items-center gap-2 sm:gap-4">
+
+    <nav aria-label="Main" class="hidden items-center gap-8 md:flex">
+      {NAV.map((item) => (
+        <a
+          key={item.to}
+          href={item.to}
+          class={`text-sm font-medium transition-colors ${
+            isActive(item.to) ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-3">
       <div class="hidden md:block">
         <LanguageSwitcher currentUrl={Astro.url} />
       </div>
-      <!-- Mobile Menu Toggle -->
-      <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-surface-container-highest rounded-lg transition-colors">
+      <a
+        href={contactHref}
+        class="hidden rounded-full bg-[var(--color-accent-cyan)] px-5 py-2.5 text-sm font-bold text-black transition-shadow hover:shadow-[0_0_24px_rgba(76,214,251,0.55)] md:inline-flex"
+      >
+        {ctaLabel}
+      </a>
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="Open menu"
+        class="inline-flex w-10 h-10 items-center justify-center rounded-full border border-gray-300 md:hidden text-gray-900"
+      >
         <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
   </div>
-</nav>
 
-<MobileMenu locale={locale} />
+  <MobileMenu locale={locale} />
+</header>

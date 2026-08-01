@@ -8,92 +8,101 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+
+const pathname = Astro.url.pathname;
+
+const NAV = [
+  { to: locale === 'en' ? '/' : '/es/', label: t.nav.home },
+  { to: locale === 'en' ? '/services' : '/es/services', label: t.nav.services },
+  { to: locale === 'en' ? '/blog' : '/es/blog', label: t.nav.blog },
+  { to: locale === 'en' ? '/contact' : '/es/contact', label: t.nav.contact },
+];
+
+const contactHref = locale === 'en' ? '/contact' : '/es/contact';
+const ctaLabel = locale === 'en' ? 'Start a project' : 'Comenzar un proyecto';
+
+const isActive = (to: string) => {
+  if (to.endsWith('/')) return pathname === to;
+  return pathname === to || pathname.startsWith(to + '/');
+};
 ---
 
-<div id="mobile-menu" class="hidden fixed inset-0 z-40 md:hidden">
-  <!-- Backdrop -->
-  <div class="absolute inset-0 bg-surface/80 backdrop-blur-sm"></div>
-  
-  <!-- Menu Content -->
-  <div class="absolute inset-y-0 right-0 w-64 bg-surface-container-high border-l border-outline-variant/20 shadow-lg overflow-y-auto">
-    <div class="p-6 space-y-6">
-      <div class="flex justify-between items-center mb-8">
-        <h2 class="font-display font-bold text-lg">Menu</h2>
-        <button id="close-mobile-menu" class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-      
-      <nav class="space-y-4">
-        <a 
-          href={locale === 'en' ? '/' : '/es/'} 
-          class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"
-        >
-          {t.nav.home}
-        </a>
-        <a 
-          href={locale === 'en' ? '/services' : '/es/services'} 
-          class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"
-        >
-          {t.nav.services}
-        </a>
-        <a 
-          href={locale === 'en' ? '/blog' : '/es/blog'} 
-          class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"
-        >
-          {t.nav.blog}
-        </a>
-        <a 
-          href={locale === 'en' ? '/contact' : '/es/contact'} 
-          class="block px-4 py-3 text-on-surface rounded-lg hover:bg-surface-container transition-colors"
-        >
-          {t.nav.contact}
-        </a>
-      </nav>
+<div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col">
+    {NAV.map((item) => (
+      <a
+        key={item.to}
+        href={item.to}
+        class={`border-b border-gray-200 py-4 text-lg font-semibold transition-colors last:border-0 ${
+          isActive(item.to) ? 'text-cyan-600' : 'text-gray-900 hover:text-cyan-600'
+        }`}
+      >
+        {item.label}
+      </a>
+    ))}
 
-      <div class="border-t border-outline-variant/20 pt-6 mt-6">
-        <p class="text-sm text-on-surface-variant font-medium mb-4 px-4 uppercase tracking-wider">Language</p>
-        <div class="flex gap-4 px-4">
-          <a href="/" class={`flex-1 py-2 text-center rounded-lg border font-medium transition-colors ${locale === 'en' ? 'bg-[#00E5FF] text-black border-transparent' : 'border-outline-variant hover:bg-surface-container text-on-surface-variant'}`}>
-            English
-          </a>
-          <a href="/es/" class={`flex-1 py-2 text-center rounded-lg border font-medium transition-colors ${locale === 'es' ? 'bg-[#00E5FF] text-black border-transparent' : 'border-outline-variant hover:bg-surface-container text-on-surface-variant'}`}>
-            Español
-          </a>
-        </div>
+    <!-- Language switcher for mobile -->
+    <div class="flex items-center justify-between py-4 border-b border-gray-200">
+      <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">
+        {locale === 'en' ? 'Language' : 'Idioma'}
+      </span>
+      <div class="flex gap-2">
+        <a
+          href="/"
+          class={`px-4 py-1.5 rounded-full border text-sm font-medium transition-colors ${
+            locale === 'en'
+              ? 'bg-[var(--color-accent-cyan)] text-black border-transparent'
+              : 'border-gray-300 text-gray-600 hover:text-gray-900'
+          }`}
+        >
+          EN
+        </a>
+        <a
+          href="/es/"
+          class={`px-4 py-1.5 rounded-full border text-sm font-medium transition-colors ${
+            locale === 'es'
+              ? 'bg-[var(--color-accent-cyan)] text-black border-transparent'
+              : 'border-gray-300 text-gray-600 hover:text-gray-900'
+          }`}
+        >
+          ES
+        </a>
       </div>
     </div>
+
+    <a
+      href={contactHref}
+      class="my-4 rounded-full bg-[var(--color-accent-cyan)] px-5 py-3 text-center text-sm font-bold text-black transition-shadow hover:shadow-[0_0_24px_rgba(76,214,251,0.55)]"
+    >
+      {ctaLabel}
+    </a>
   </div>
 </div>
 
 <script>
-  // Mobile menu toggle
   const menuToggle = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  const closeMenuBtn = document.getElementById('close-mobile-menu');
   const menuLinks = mobileMenu?.querySelectorAll('a');
+
+  function setMenuOpen(open) {
+    if (!mobileMenu || !menuToggle) return;
+    mobileMenu.classList.toggle('hidden', !open);
+    const icon = menuToggle.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = open ? 'close' : 'menu';
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
 
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    closeMenuBtn?.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
+      setMenuOpen(mobileMenu.classList.contains('hidden'));
     });
 
     // Close menu when clicking on a link
-    menuLinks?.forEach(link => {
+    menuLinks?.forEach((link) => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        setMenuOpen(false);
       });
-    });
-
-    // Close menu when clicking on backdrop
-    mobileMenu.addEventListener('click', (e) => {
-      if (e.target === mobileMenu) {
-        mobileMenu.classList.add('hidden');
-      }
     });
   }
 </script>
