@@ -7,12 +7,9 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: cloudflare(),
-  image: {
-    service: {
-      entrypoint: '@astrojs/cloudflare/image-service',
-    },
-  },
+  adapter: cloudflare({
+    imageService: 'passthrough',
+  }),
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],
