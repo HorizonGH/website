@@ -1,11 +1,24 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
-// Use the RESEND_API_KEY environment variable for authentication.
-// The `!` tells TypeScript we know the value will be defined at runtime.
-const resend = new Resend(import.meta.env.RESEND_API_KEY!);
-
 export const prerender = false;
+
+// Resolve the Resend API key at runtime from the Worker's bindings.
+// Astro inlines `import.meta.env.*` at build time, which breaks secrets that the
+// CI build server may not have in its local `.env`. Reading via `locals.runtime.env`
+// guarantees we use the live secret/binding instead.
+function getResendApiKey(locals: any): string {
+  const fromRuntime = locals?.runtime?.env?.RESEND_API_KEY;
+  if (typeof fromRuntime === 'string' && fromRuntime.length > 0) {
+    return fromRuntime;
+  }
+  // Fallback to build-time env in local development.
+  const fromEnv = import.meta.env.RESEND_API_KEY;
+  if (typeof fromEnv === 'string' && fromEnv.length > 0) {
+    return fromEnv;
+  }
+  return '';
+}
 
 function escapeHtml(value: string) {
   return value
@@ -31,7 +44,7 @@ function buildReturnUrl(referer: string | null, locale: string) {
   }
 }
 
-export const ALL: APIRoute = async ({ request }) => {
+export const ALL: APIRoute = async ({ request, locals }) => {
   if (request.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {
       status: 405,
@@ -39,14 +52,30 @@ export const ALL: APIRoute = async ({ request }) => {
     });
   }
 
-  const EMAIL_FROM = import.meta.env.EMAIL_FROM;
-  const EMAIL_TO = import.meta.env.EMAIL_TO;
+  const runtimeEnv = (locals as any)?.runtime?.env as
+    | Record<string, string | undefined>
+    | undefined;
 
-if (!EMAIL_FROM || !EMAIL_TO) {
-  return new Response(JSON.stringify({ error: 'Missing required email configuration (EMAIL_FROM or EMAIL_TO)' }), {
-    status: 500,
-  });
-}
+  // Read config from the live Worker bindings first; fallback to build-time env.
+  const EMAIL_FROM =
+    runtimeEnv?.EMAIL_FROM ?? (import.meta.env.EMAIL_FROM as string | undefined);
+  const EMAIL_TO =
+    runtimeEnv?.EMAIL_TO ?? (import.meta.env.EMAIL_TO as string | undefined);
+
+  if (!EMAIL_FROM || !EMAIL_TO) {
+    return new Response(JSON.stringify({ error: 'Missing required email configuration (EMAIL_FROM or EMAIL_TO)' }), {
+      status: 500,
+    });
+  }
+
+  const apiKey = getResendApiKey(locals);
+  if (!apiKey) {
+    return new Response(
+      JSON.stringify({ error: 'Missing Resend API key configuration' }),
+      { status: 500 }
+    );
+  }
+  const resend = new Resend(apiKey);
 
   const form = await request.formData();
   const name = String(form.get('name') ?? '').trim();
