@@ -1,10 +1,9 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
-import 'dotenv/config';
 
 // Use the RESEND_API_KEY environment variable for authentication.
 // The `!` tells TypeScript we know the value will be defined at runtime.
-const resend = new Resend(process.env.RESEND_API_KEY!);
+const resend = new Resend(import.meta.env.RESEND_API_KEY!);
 
 export const prerender = false;
 

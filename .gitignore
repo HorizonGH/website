@@ -31,3 +31,5 @@ update.js
 .env.local
 
 pnpm-lock.yaml
+
+.wrangler/

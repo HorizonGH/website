@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
-    "@astrojs/vercel": "^10.0.4",
+    "@astrojs/cloudflare": "^12.6.13",
     "@motionone/dom": "^10.18.0",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.4",
