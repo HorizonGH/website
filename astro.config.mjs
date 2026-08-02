@@ -8,6 +8,11 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'server',
   adapter: cloudflare(),
+  image: {
+    service: {
+      entrypoint: '@astrojs/cloudflare/image-service',
+    },
+  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],

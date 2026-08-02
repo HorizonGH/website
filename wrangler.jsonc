@@ -1,0 +1,32 @@
+{
+  "name": "horizon-website",
+  "compatibility_date": "2026-08-02",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./dist/_worker.js/index.js",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    {
+      "pattern": "horizon-gh.com",
+      "zone_name": "horizon-gh.com",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "EMAIL_FROM": "Horizon <contact@horizon-gh.com>",
+    "EMAIL_TO": "contact@horizon-gh.com"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "72e68b6aa36e4ea1b29f98abd5ba7175"
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  },
+  "workers_dev": true,
+  "preview_urls": true
+}
