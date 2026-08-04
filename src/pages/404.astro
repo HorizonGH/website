@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroCircuitBackdrop from '../components/HeroCircuitBackdrop.astro';
+
+const TITLE = '404 | Horizon.gh - Transforming the Digital Horizon';
+const DESCRIPTION =
+  "The page you were looking for could not be found. Head back to the Horizon gh homepage or start a conversation about your next project.";
+---
+
+<Layout title={TITLE} description={DESCRIPTION} robots="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
+
+  <div class="bg-surface text-gray-900 font-sans">
+    <!-- 404 Hero -->
+    <section class="relative overflow-hidden border-b border-gray-200">
+      <HeroCircuitBackdrop />
+      <div class="shell relative flex min-h-[78vh] flex-col items-center justify-center py-24 text-center">
+        <p class="label-sm inline-block rounded-full border-2 border-[var(--color-accent-cyan)] px-4 py-1.5 text-[var(--color-accent-cyan)]">
+          Error 404
+        </p>
+        <h1
+          class="display-xl mt-10 font-display text-[7rem] font-black leading-[0.85] tracking-[-0.08em] text-[var(--color-accent-cyan)] drop-shadow-[0_0_32px_rgba(76,214,251,0.45)] sm:text-[10rem] md:text-[12rem]"
+        >
+          404
+        </h1>
+        <h2 class="display-lg mt-6 max-w-2xl text-gray-900">
+          Lost on the <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">horizon</span>
+        </h2>
+        <p class="body-lg mx-auto mt-6 max-w-xl text-gray-600">
+          The page you're looking for doesn't exist, or it has drifted beyond the horizon.
+          Let's get you back on course.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="/"
+            class="group inline-flex items-center gap-2 rounded-full bg-[var(--color-accent-cyan)] px-7 py-3.5 text-base font-bold text-black transition-all hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(76,214,251,0.55)]"
+          >
+            Back to home
+            <svg class="h-5 w-5 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10" />
+            </svg>
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 border-b-2 border-gray-900 pb-1 text-base font-bold transition-colors hover:border-[var(--color-accent-cyan)] hover:text-[var(--color-accent-cyan)]"
+          >
+            Start a conversation
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

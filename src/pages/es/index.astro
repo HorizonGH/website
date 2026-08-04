@@ -2,7 +2,6 @@
 import { useTranslations } from '../../i18n/utils';
 import Layout from '../../layouts/Layout.astro';
 import HeroCircuitBackdrop from '../../components/HeroCircuitBackdrop.astro';
-import Footer from '../../components/Footer.astro';
 const t = useTranslations('es') as any;
 
 const SERVICES = [
@@ -91,7 +90,7 @@ const TESTIMONIALS = [
 ];
 ---
 
-<Layout locale="es" title={t.seo.home_title}>
+<Layout locale="es" title={t.seo.home_title} description={t.seo.home_desc}>
   <!-- Add Cursive Font for the signatures -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -271,6 +270,4 @@ const TESTIMONIALS = [
       </div>
     </section>
   </div>
-
-  <Footer locale="es" />
 </Layout>

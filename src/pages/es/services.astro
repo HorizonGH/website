@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { useTranslations } from '../../i18n/utils';
-import Footer from '../../components/Footer.astro';
 const t = useTranslations('es') as any;
 
 const SERVICES = [
@@ -75,7 +74,7 @@ const STACK = [
 ---
 
 
-<Layout locale="es" title={t.seo.services_title}>
+<Layout locale="es" title={t.seo.services_title} description={t.seo.services_desc}>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
@@ -204,6 +203,4 @@ const STACK = [
       </div>
     </section>
   </div>
-
-  <Footer locale="es" />
 </Layout>

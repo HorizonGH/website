@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
-import Footer from '../../components/Footer.astro';
 
 export const prerender = true;
 
@@ -23,7 +22,7 @@ const formatDate = (date: Date) =>
   date.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
 ---
 
-<Layout title={`${post.data.title} | Horizon.gh`}>
+<Layout title={`${post.data.title} | Horizon.gh`} description={post.data.excerpt}>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
@@ -128,8 +127,6 @@ const formatDate = (date: Date) =>
       </div>
     </section>
   </div>
-
-  <Footer />
 </Layout>
 
 <style>

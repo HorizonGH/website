@@ -2,6 +2,7 @@
   "nav": {
     "home": "Inicio",
     "services": "Servicios",
+    "pricing": "Precios",
     "blog": "Blog",
     "contact": "Contacto",
     "getStarted": "Comenzar"
@@ -73,9 +74,25 @@
   },
   "seo": {
     "home_title": "Horizon gh - Transformando el Horizonte Digital",
+    "home_desc": "Horizon gh construye plataformas web escalables y software a medida: arquitectura resiliente, rendimiento medible y sistemas diseñados para soportar la carga real.",
     "services_title": "Servicios | Horizon.gh - Transformando el Horizonte Digital",
+    "services_desc": "Horizon gh entrega aplicaciones web de alto rendimiento, software a medida y aceleración digital sobre infraestructura robusta y escalable.",
+    "pricing_title": "Precios | Horizon.gh - Transformando el Horizonte Digital",
+    "pricing_desc": "Precios transparentes para sitios web profesionales, ERPs para pequeños negocios y software a medida, con cada proyecto definido antes de empezar.",
     "blog_title": "Blog | Horizon.gh - Transformando el Horizonte Digital",
-    "contact_title": "Contacto | Horizon.gh - Transformando el Horizonte Digital"
+    "blog_desc": "Análisis profundos sobre arquitectura de software, transformación digital y el panorama tecnológico para el que construye Horizon gh.",
+    "contact_title": "Contacto | Horizon.gh - Transformando el Horizonte Digital",
+    "contact_desc": "¿Listo para transformar tu infraestructura? Ponte en contacto con Horizon gh para tu próximo proyecto.",
+    "not_found_title": "404 | Horizon.gh - Transformando el Horizonte Digital",
+    "not_found_desc": "No se encontró la página que buscabas. Vuelve al inicio de Horizon gh o inicia una conversación sobre tu próximo proyecto."
+  },
+  "not_found": {
+    "badge": "Error 404",
+    "title": "Perdido en el",
+    "title_emphasis": "horizonte",
+    "subtitle": "La página que buscas no existe o se ha alejado del horizonte. Volvamos a poner el rumbo.",
+    "cta_home": "Volver al inicio",
+    "cta_contact": "Inicia una conversación"
   },
   "home_page": {
     "hero_title": "TRANSFORMANDO EL HORIZONTE DIGITAL.",

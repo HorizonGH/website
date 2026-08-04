@@ -1,11 +1,10 @@
 ﻿---
 import Layout from '../layouts/Layout.astro';
 import HeroCircuitBackdrop from '../components/HeroCircuitBackdrop.astro';
-import Footer from '../components/Footer.astro';
 
 const TITLE = "Horizon gh — Transforming the Digital Horizon";
 const DESCRIPTION =
-  "Horizon gh engineers scalable web platforms and custom software: resilient architecture, measurable performance, and systems built to hold under real load.";
+  "Horizon gh builds scalable web platforms and custom software: resilient architecture, measurable performance, and systems built for real traffic.";
 
 const SERVICES = [
   {
@@ -99,7 +98,7 @@ const TESTIMONIALS = [
 ];
 ---
 
-<Layout title={TITLE}>
+<Layout title={TITLE} description={DESCRIPTION}>
   <!-- Add Cursive Font for the signatures -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -280,6 +279,4 @@ const TESTIMONIALS = [
       </div>
     </section>
   </div>
-
-  <Footer />
 </Layout>

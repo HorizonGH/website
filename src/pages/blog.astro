@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import Footer from '../components/Footer.astro';
 
 const posts = (await getCollection('blog_en')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -14,7 +13,7 @@ const formatDate = (date: Date) =>
   date.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
 ---
 
-<Layout title="Insights | Horizon.gh - Transforming the Digital Horizon">
+<Layout title="Insights | Horizon.gh - Transforming the Digital Horizon" description="Deep dives into software architecture, digital transformation, and the technology landscape Horizon gh builds for.">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
@@ -59,7 +58,7 @@ const formatDate = (date: Date) =>
               <div class="mt-8 flex items-center justify-between border-t border-gray-200 pt-6">
                 <time class="text-xs text-gray-600">{formatDate(featured.data.date)}</time>
                 <a href={`/blog/${featured.id}`} class="inline-flex items-center gap-2 text-sm font-bold text-gray-900 transition-colors group-hover:text-[var(--color-accent-cyan)]">
-                  Read
+                  Read <span class="sr-only">{featured.data.title}</span>
                   <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -95,7 +94,7 @@ const formatDate = (date: Date) =>
                   <div class="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
                     <time class="text-xs text-gray-600">{formatDate(post.data.date)}</time>
                     <a href={`/blog/${post.id}`} class="inline-flex items-center gap-2 text-sm font-bold text-gray-900 transition-colors group-hover:text-[var(--color-accent-cyan)]">
-                      Read
+                      Read <span class="sr-only">{post.data.title}</span>
                       <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -109,6 +108,4 @@ const formatDate = (date: Date) =>
       </div>
     </section>
   </div>
-
-  <Footer />
 </Layout>

@@ -2,13 +2,64 @@
 import '../styles/global.css';
 import type { Locale } from '../i18n/utils';
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import ContactFormHandler from '../components/ContactFormHandler.astro';
 
 interface Props {
   title?: string;
+  description?: string;
   locale?: Locale;
+  robots?: string;
+  ogType?: 'website' | 'article';
 }
-const { title = "Horizon.gh", locale = 'en' } = Astro.props;
+
+const { title = "Horizon.gh", locale = 'en', description, robots = 'index, follow', ogType = 'website' } = Astro.props;
+
+// Canonical URL: always resolve against the production site so every page
+// points search engines at a single preferred URL.
+const site = Astro.site ?? new URL('https://horizon-gh.com/');
+const canonicalURL = new URL(Astro.url.pathname, site);
+
+// hreflang alternates for the bilingual routing (EN default, ES under /es).
+const pathname = Astro.url.pathname;
+const cleanPath = pathname.replace(/^\/es(?=\/|$)/, '') || '/';
+const enURL = new URL(cleanPath, site);
+const esURL = new URL(`/es${cleanPath === '/' ? '' : cleanPath}`, site);
+
+const DEFAULT_DESCRIPTIONS: Record<Locale, string> = {
+  en: "Horizon gh engineers scalable web platforms and custom software: resilient architecture, measurable performance, and systems built to hold under real load.",
+  es: "Horizon gh construye plataformas web escalables y software a medida: arquitectura resiliente, rendimiento medible y sistemas diseñados para soportar la carga real.",
+};
+const metaDescription = (description ?? DEFAULT_DESCRIPTIONS[locale]).trim();
+
+// Structured data so crawlers understand the site's organization and language.
+const schemaOrganization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Horizon gh',
+  url: site.href,
+  logo: new URL('/favicon.svg', site).href,
+  email: 'contact@horizon-gh.com',
+  sameAs: [
+    'https://github.com/HorizonGH',
+    'https://www.instagram.com/_horizon.gh',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'contact@horizon-gh.com',
+    contactType: 'customer support',
+    availableLanguage: ['English', 'Spanish'],
+  },
+};
+
+const schemaWebSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Horizon gh',
+  url: site.href,
+  inLanguage: locale === 'en' ? 'en-US' : 'es-ES',
+  description: metaDescription,
+};
 ---
 
 <!doctype html>
@@ -19,6 +70,28 @@ const { title = "Horizon.gh", locale = 'en' } = Astro.props;
 <link rel="icon" type="image/x-icon" href="/icon.ico" />
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
+<meta name="description" content={metaDescription} />
+<link rel="canonical" href={canonicalURL} />
+<meta name="robots" content={robots} />
+<link rel="alternate" hreflang="en" href={enURL} />
+<link rel="alternate" hreflang="es" href={esURL} />
+<link rel="alternate" hreflang="x-default" href={enURL} />
+
+<!-- Open Graph / Twitter so social and search crawlers read the right metadata -->
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content="Horizon gh" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content={locale === 'en' ? 'en_US' : 'es_ES'} />
+<meta property="og:locale:alternate" content={locale === 'en' ? 'es_ES' : 'en_US'} />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={metaDescription} />
+
+<!-- Structured data for search engines -->
+<script type="application/ld+json" set:html={JSON.stringify(schemaOrganization)} />
+<script type="application/ld+json" set:html={JSON.stringify(schemaWebSite)} />
 
 <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, Manrope, Caveat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +113,10 @@ const { title = "Horizon.gh", locale = 'en' } = Astro.props;
 </head>
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen overflow-x-hidden">
   <Navigation locale={locale} />
-  <slot />
+  <main id="main">
+    <slot />
+  </main>
+  <Footer locale={locale} />
   <ContactFormHandler />
 </body>
 </html>
