@@ -8,11 +8,11 @@
     "getStarted": "Comenzar"
   },
   "hero": {
-    "title_part1": "TRANSFORMANDO",
-    "title_part2": "HORIZONTE",
-    "title_part3": "DIGITAL.",
-    "subtitle": "Pioneros en experiencias web con innovación americanaesa.",
-    "cta": "Eleva tu Presencia"
+    "title_part1": "DESARROLLO DE SOFTWARE",
+    "title_part2": "CRECIMIENTO",
+    "title_part3": "Y WEB PARA NEGOCIOS EN",
+    "subtitle": "Construimos plataformas web escalables, software a medida e infraestructura digital diseñada para el crecimiento real de tu negocio.",
+    "cta": "Obtén una consulta gratuita"
   },
   "services": {
     "title": "Nuestros Servicios",
@@ -73,8 +73,8 @@
     "social_title": "Nuestras Redes"
   },
   "seo": {
-    "home_title": "Horizon gh - Transformando el Horizonte Digital",
-    "home_desc": "Horizon gh construye plataformas web escalables y software a medida: arquitectura resiliente, rendimiento medible y sistemas diseñados para soportar la carga real.",
+    "home_title": "Desarrollo de Software a Medida y Web para Negocios en Crecimiento | Horizon.gh",
+    "home_desc": "Horizon gh construye plataformas web escalables, software a medida y sistemas ERP diseñados para el crecimiento real. Desarrollo web, software personalizado y ERP para negocios en crecimiento.",
     "services_title": "Servicios | Horizon.gh - Transformando el Horizonte Digital",
     "services_desc": "Horizon gh entrega aplicaciones web de alto rendimiento, software a medida y aceleración digital sobre infraestructura robusta y escalable.",
     "pricing_title": "Precios | Horizon.gh - Transformando el Horizonte Digital",
@@ -136,8 +136,8 @@
     "cta_contact": "Inicia una conversación"
   },
   "home_page": {
-    "hero_title": "TRANSFORMANDO EL HORIZONTE DIGITAL.",
-    "hero_subtitle": "Pioneros en experiencias web con innovación americanaesa.",
+    "hero_title": "DESARROLLO DE SOFTWARE & CRECIMIENTO Y WEB PARA NEGOCIOS EN",
+    "hero_subtitle": "Construimos plataformas web escalables, software a medida e infraestructura digital diseñada para el crecimiento real de tu negocio.",
     "services_card1_desc": "Construyendo bases web escalables, resilientes y de alto rendimiento con frameworks de vanguardia.",
     "services_card2_desc": "Soluciones de software a medida para optimizar operaciones y ofrecer experiencias de usuario unicas.",
     "services_card3_desc": "Optimizamos flujos de trabajo y modernizamos sistemas heredados con ciclos de implementacion rapidos.",

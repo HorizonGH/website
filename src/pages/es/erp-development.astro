@@ -1,0 +1,151 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroCircuitBackdrop from '../../components/HeroCircuitBackdrop.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import { useTranslations } from '../../i18n/utils';
+const t = useTranslations('es') as any;
+
+const FEATURES = [
+  {
+    title: 'Gestión de inventario',
+    body: 'Seguimiento de stock en tiempo real, alertas de existencias bajas y gestión a nivel de ingredientes para negocios con múltiples ubicaciones que necesitan precisión.',
+  },
+  {
+    title: 'Gestión de clientes (CRM)',
+    body: 'Registros de clientes centralizados, historial de pedidos y registros de comunicación que reemplazan hojas de cálculo dispersas con una única fuente de verdad.',
+  },
+  {
+    title: 'Facturación',
+    body: 'Generación automatizada de facturas, seguimiento de pagos y resúmenes financieros integrados directamente en tu flujo operativo.',
+  },
+  {
+    title: 'Informes operativos',
+    body: 'Dashboards e informes personalizados que dan a la dirección los números que importan — rotación de inventario, ingresos por ubicación, tendencias de costos — en tiempo real.',
+  },
+  {
+    title: 'Soporte multi-sede',
+    body: 'Gestiona múltiples tiendas, almacenes o sucursales desde un solo sistema. Cada ubicación opera de forma independiente con informes consolidados.',
+  },
+  {
+    title: 'Acceso por roles',
+    body: 'Permisos granulares para que gerentes, personal y contadores vean exactamente lo que necesitan — y nada que no deban.',
+  },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: '¿Cuánto cuesta un sistema ERP?',
+    a: 'Nuestros proyectos ERP comienzan desde $2,500+ dependiendo de los módulos, número de ubicaciones y complejidad de integración. Cada proyecto recibe un presupuesto detallado antes de escribir código.',
+  },
+  {
+    q: '¿Cuánto tarda el desarrollo de un ERP?',
+    a: 'La mayoría de las plataformas ERP se entregan en 2-6 meses, de forma incremental para que módulos críticos como inventario o facturación se activen primero mientras los informes y análisis siguen después.',
+  },
+  {
+    q: '¿Pueden integrar el ERP con mis herramientas existentes?',
+    a: 'Sí. Construimos conectores para procesadores de pago, software contable, plataformas e-commerce y transportistas para que tu ERP sea el centro único, no otro silo aislado.',
+  },
+];
+---
+
+<Layout
+  locale="es"
+  title="Desarrollo de ERP para Pequeñas y Medianas Empresas | Horizon.gh"
+  description="Sistemas ERP a medida para PYMES: gestión de inventario, facturación, seguimiento de clientes, informes y operaciones multi-sede. Adaptado a cómo funciona realmente tu negocio."
+>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
+
+  <div class="bg-surface text-gray-900 font-sans">
+    <!-- Hero -->
+    <section class="relative overflow-hidden border-b border-gray-200">
+      <HeroCircuitBackdrop />
+      <div class="shell relative flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
+        <p class="label-sm inline-block rounded-full border-2 border-[var(--color-accent-cyan)] px-4 py-1.5 text-[var(--color-accent-cyan)]">
+          Desarrollo ERP
+        </p>
+        <h1 class="display-xl mt-8 max-w-5xl font-display text-5xl font-black uppercase tracking-[-0.08em] leading-[0.9] sm:text-6xl md:text-7xl">
+          Tus operaciones, <span class="text-accent-cyan drop-shadow-[0_0_16px_rgba(76,214,251,0.45)]">unificadas</span>
+        </h1>
+        <p class="body-lg mx-auto mt-8 max-w-xl text-gray-600">
+          Un ERP construido a la medida de cómo funciona realmente tu negocio: inventario, clientes, facturación e informes, todo en un solo sistema.
+        </p>
+        <a
+          href="/es/contact"
+          class="mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--color-accent-cyan)] px-7 py-3.5 text-base font-bold text-black transition-shadow hover:shadow-[0_0_24px_rgba(76,214,251,0.55)]"
+        >
+          Solicita una demo
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Modules -->
+    <section class="border-b border-gray-200 bg-white py-24" aria-labelledby="modules-heading">
+      <div class="shell mx-auto max-w-7xl px-6">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <h2 id="modules-heading" class="display-lg text-gray-900 max-w-lg">
+            <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">Módulos</span> ERP
+          </h2>
+          <p class="body-md max-w-sm text-gray-600">
+            Empieza con lo que necesitas. Añade capacidades a medida que tu negocio crece.
+          </p>
+        </div>
+        <div class="mt-14 grid gap-6 md:grid-cols-3">
+          {FEATURES.map((feature) => (
+            <article class="group rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-[var(--color-accent-cyan)]">
+              <h3 class="text-xl font-display font-bold">{feature.title}</h3>
+              <p class="mt-4 text-gray-600">{feature.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="border-b border-gray-200 py-20" aria-labelledby="erp-faq-heading">
+      <div class="shell mx-auto max-w-3xl px-6">
+        <h2 id="erp-faq-heading" class="display-lg text-gray-900 text-center">
+          Preguntas <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">frecuentes</span>
+        </h2>
+        <div class="mt-14 space-y-4">
+          {FAQ_ITEMS.map((item) => <FaqItem question={item.q} answer={item.a} />)}
+        </div>
+        <p class="mt-12 text-center text-gray-600">
+          ¿Más curiosidades?{' '}
+          <a href="/es/faq" class="font-bold text-[var(--color-accent-cyan)] underline underline-offset-4 hover:no-underline">
+            Ver todas las FAQ
+          </a>{' '}
+          o{' '}
+          <a href="/es/services" class="font-bold text-[var(--color-accent-cyan)] underline underline-offset-4 hover:no-underline">
+            explora nuestros servicios
+          </a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gray-50">
+      <div class="shell mx-auto max-w-7xl px-6 text-center">
+        <h2 class="display-lg text-gray-900">
+          ¿Listo para unificar tus <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">operaciones?</span>
+        </h2>
+        <p class="body-lg mx-auto mt-6 max-w-lg text-gray-600">
+          Cuéntanos sobre tu flujo de trabajo actual y los puntos de dolor que quieres resolver. Diseñaremos un alcance basado en tu realidad.
+        </p>
+        <a
+          href="/es/contact"
+          class="mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--color-accent-cyan)] px-7 py-3.5 text-base font-bold text-black transition-shadow hover:shadow-[0_0_24px_rgba(76,214,251,0.55)]"
+        >
+          Inicia la conversación
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

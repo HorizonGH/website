@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroCircuitBackdrop from '../components/HeroCircuitBackdrop.astro';
+import FaqItem from '../components/FaqItem.astro';
+
+const TITLE = 'Custom Software Development for Growing Businesses | Horizon.gh';
+const DESCRIPTION =
+  'Bespoke software solutions tailored to your operations. SaaS platforms, internal tools, APIs, dashboards and automation — engineered to scale with your business.';
+
+const FEATURES = [
+  {
+    title: 'Bespoke Platforms',
+    body: 'Custom SaaS products and internal tools built around how your team actually works, not around a generic template.',
+  },
+  {
+    title: 'Secure APIs',
+    body: 'REST and GraphQL APIs with typed contracts, rate limiting, and zero-trust patterns built in from day one.',
+  },
+  {
+    title: 'Admin Dashboards',
+    body: 'Operational analytics panels that surface live data from your systems, giving your team the insights that drive decisions.',
+  },
+  {
+    title: 'Third-Party Integrations',
+    body: 'Connect your platform with CRMs, ERPs, payment processors, and any third-party service your operations depend on.',
+  },
+  {
+    title: 'Cloud Infrastructure',
+    body: 'Serverless, containerized, or hybrid architectures on AWS with observability, rollback, and a performance budget.',
+  },
+  {
+    title: 'Knowledge Transfer',
+    body: 'Every project ships with documentation, architectural decision records, and a playbook your own engineers can extend.',
+  },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: 'How much does custom software development cost?',
+    a: 'Our custom software projects start at $2,500+ depending on scope, integrations, and technical complexity. Every project gets a detailed scope and quote upfront.',
+  },
+  {
+    q: 'How long does custom software take to build?',
+    a: 'Most custom platforms take 2-6 months, delivered in structured sprints so you see measurable progress every 2-4 weeks.',
+  },
+  {
+    q: "What's the difference between custom software and off-the-shelf tools?",
+    a: 'Off-the-shelf tools force your team to adapt to the software. Custom software adapts to your actual workflows, eliminating friction and improving productivity from day one.',
+  },
+];
+---
+
+<Layout title={TITLE} description={DESCRIPTION} keywords="custom software development, SaaS development, enterprise software, API development, dashboard development">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
+
+  <div class="bg-surface text-gray-900 font-sans">
+    <!-- Hero -->
+    <section class="relative overflow-hidden border-b border-gray-200">
+      <HeroCircuitBackdrop />
+      <div class="shell relative flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
+        <p class="label-sm inline-block rounded-full border-2 border-[var(--color-accent-cyan)] px-4 py-1.5 text-[var(--color-accent-cyan)]">
+          Custom Software Development
+        </p>
+        <h1 class="display-xl mt-8 max-w-5xl font-display text-5xl font-black uppercase tracking-[-0.08em] leading-[0.9] sm:text-6xl md:text-7xl">
+          Software built <span class="text-accent-cyan drop-shadow-[0_0_16px_rgba(76,214,251,0.45)]">around you</span>
+        </h1>
+        <p class="body-lg mx-auto mt-8 max-w-xl text-gray-600">
+          Custom platforms, internal tools, and SaaS products engineered to fit your operational reality &mdash; not a vendor's roadmap.
+        </p>
+        <a
+          href="/contact"
+          class="mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--color-accent-cyan)] px-7 py-3.5 text-base font-bold text-black transition-shadow hover:shadow-[0_0_24px_rgba(76,214,251,0.55)]"
+        >
+          Discuss your project
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="border-b border-gray-200 bg-white py-24" aria-labelledby="approach-heading">
+      <div class="shell mx-auto max-w-7xl px-6">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <h2 id="approach-heading" class="display-lg text-gray-900 max-w-lg">
+            Our <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">approach</span>
+          </h2>
+          <p class="body-md max-w-sm text-gray-600">
+            We don&rsquo;t sell generic software. We engineer systems that match how your team actually ships.
+          </p>
+        </div>
+        <div class="mt-14 grid gap-6 md:grid-cols-3">
+          {FEATURES.map((feature) => (
+            <article class="group rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-[var(--color-accent-cyan)]">
+              <h3 class="text-xl font-display font-bold">{feature.title}</h3>
+              <p class="mt-4 text-gray-600">{feature.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="border-b border-gray-200 py-20" aria-labelledby="csw-faq-heading">
+      <div class="shell mx-auto max-w-3xl px-6">
+        <h2 id="csw-faq-heading" class="display-lg text-gray-900 text-center">
+          Common <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">questions</span>
+        </h2>
+        <div class="mt-14 space-y-4">
+          {FAQ_ITEMS.map((item) => <FaqItem question={item.q} answer={item.a} />)}
+        </div>
+        <p class="mt-12 text-center text-gray-600">
+          Need more details?{' '}
+          <a href="/faq" class="font-bold text-[var(--color-accent-cyan)] underline underline-offset-4 hover:no-underline">
+            See our full FAQ
+          </a>{' '}
+          or{' '}
+          <a href="/services" class="font-bold text-[var(--color-accent-cyan)] underline underline-offset-4 hover:no-underline">
+            explore our services
+          </a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gray-50">
+      <div class="shell mx-auto max-w-7xl px-6 text-center">
+        <h2 class="display-lg text-gray-900">
+          Ready to build your <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">system?</span>
+        </h2>
+        <p class="body-lg mx-auto mt-6 max-w-lg text-gray-600">
+          Tell us what you need. We'll send a scoping document within one business day &mdash; no obligation.
+        </p>
+        <a
+          href="/contact"
+          class="mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--color-accent-cyan)] px-7 py-3.5 text-base font-bold text-black transition-shadow hover:shadow-[0_0_24px_rgba(76,214,251,0.55)]"
+        >
+          Start the conversation
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
