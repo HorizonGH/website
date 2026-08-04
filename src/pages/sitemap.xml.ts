@@ -12,12 +12,20 @@ const STATIC_ROUTES = [
   { path: '/services', priority: '0.9' },
   { path: '/pricing', priority: '0.9' },
   { path: '/blog', priority: '0.8' },
+  { path: '/faq', priority: '0.8' },
   { path: '/contact', priority: '0.8' },
+  { path: '/custom-software-development', priority: '0.7' },
+  { path: '/web-development', priority: '0.7' },
+  { path: '/erp-development', priority: '0.7' },
   { path: '/es/', priority: '0.9' },
   { path: '/es/services', priority: '0.8' },
   { path: '/es/pricing', priority: '0.8' },
   { path: '/es/blog', priority: '0.7' },
+  { path: '/es/faq', priority: '0.7' },
   { path: '/es/contact', priority: '0.7' },
+  { path: '/es/custom-software-development', priority: '0.6' },
+  { path: '/es/web-development', priority: '0.6' },
+  { path: '/es/erp-development', priority: '0.6' },
 ];
 
 export const GET: APIRoute = async () => {
