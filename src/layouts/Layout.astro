@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import ContactFormHandler from '../components/ContactFormHandler.astro';
 
 interface Props {
+  keywords?: string;
   title?: string;
   description?: string;
   locale?: Locale;
@@ -13,7 +14,14 @@ interface Props {
   ogType?: 'website' | 'article';
 }
 
-const { title = "Horizon.gh", locale = 'en', description, robots = 'index, follow', ogType = 'website' } = Astro.props;
+const { title = "Horizon.gh", locale = 'en', description, robots = 'index, follow', ogType = 'website', keywords: customKeywords } = Astro.props;
+
+// Default keywords per locale for SEO meta tag
+const DEFAULT_KEYWORDS: Record<Locale, string> = {
+  en: "digital transformation, ERP, software development, web design, maintenance, Horizon",
+  es: "transformación digital, ERP, desarrollo de software, diseño web, mantenimiento, Horizon",
+};
+const keywords = customKeywords ?? DEFAULT_KEYWORDS[locale];
 
 // Canonical URL: always resolve against the production site so every page
 // points search engines at a single preferred URL.
@@ -71,6 +79,7 @@ const schemaWebSite = {
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 <meta name="description" content={metaDescription} />
+<meta name="keywords" content={keywords} />
 <link rel="canonical" href={canonicalURL} />
 <meta name="robots" content={robots} />
 <link rel="alternate" hreflang="en" href={enURL} />
