@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FaqItem from '../components/FaqItem.astro';
 
 const SERVICES = [
   {
@@ -68,6 +69,25 @@ const STACK = [
   { name: "Python", role: "Data & Backend" },
   { name: "Postgres", role: "Persistence" },
   { name: "Docker", role: "Containers" },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: 'How much does it cost to develop a web platform?',
+    a: 'Our professional websites start from $500. Custom software and ERP platforms start from $2,500+ depending on scope, integrations, and technical complexity. Every project receives a clear quote before we start.',
+  },
+  {
+    q: 'How long does a web or software project take?',
+    a: 'Most website projects take between 1 and 3 weeks. Full custom platforms typically take 1–6 months. Every engagement is structured in clear milestones so you never wonder where things stand.',
+  },
+  {
+    q: 'Can I hire maintenance and support after launch?',
+    a: 'Yes. Our ongoing engineering partnerships start at $50/month and cover maintenance, support, hosting, and updates. A maintained site stays fast, secure, and relevant.',
+  },
+  {
+    q: 'What technologies power your projects?',
+    a: 'Our default toolkit includes React, Astro, NextJS, TypeScript, Python, PostgreSQL, Docker, .NET, and Go. More importantly, we choose the right stack for each project instead of forcing a one-size-fits-all solution.',
+  },
 ];
 ---
 
@@ -197,6 +217,28 @@ const STACK = [
             </li>
           ))}
         </ul>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20" aria-labelledby="services-faq-heading">
+      <div class="shell mx-auto max-w-3xl px-6">
+        <h2 id="services-faq-heading" class="display-lg text-gray-900 text-center">
+          Common <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">questions</span>
+        </h2>
+        <div class="mt-14 space-y-4">
+          {FAQ_ITEMS.map((item) => <FaqItem question={item.q} answer={item.a} />)}
+        </div>
+        <p class="mt-12 text-center text-gray-600">
+          Have a different question?{' '}
+          <a href="/faq" class="font-bold text-[var(--color-accent-cyan)] underline underline-offset-4 hover:no-underline">
+            See our full FAQ
+          </a>{' '}
+          or{' '}
+          <a href="/contact" class="font-bold text-[var(--color-accent-cyan)] underline underline-offset-4 hover:no-underline">
+            talk to us directly
+          </a>.
+        </p>
       </div>
     </section>
   </div>

@@ -60,6 +60,47 @@
       "success": "Message sent successfully!"
     }
   },
+  "faq": {
+    "page_title": "FAQ | Horizon.gh - Transforming the Digital Horizon",
+    "page_desc": "Frequently asked questions about Horizon gh pricing, timelines, tech stack, international collaboration, maintenance, and our engineering process.",
+    "hero_badge": "FAQ",
+    "hero_title": "Your questions,",
+    "hero_emphasis": "answered",
+    "hero_subtitle": "Clear answers about our services, timelines, technology, and how we work with teams around the world.",
+    "section_title": "Frequently asked questions",
+    "cta_prefix": "Didn't find your answer?",
+    "cta_text": "Start a conversation",
+    "items": [
+      {
+        "q": "How much does it cost to develop a platform?",
+        "a": "Our projects start from $500 for professional websites and range from $2,500+ for custom ERP or software platforms, depending on scope, integrations, and technical complexity. Every project receives a clear quote before we start."
+      },
+      {
+        "q": "How long does a project take?",
+        "a": "Most projects take between 1 and 3 weeks for websites, and 1–6 months for full platforms, depending on scope. We work in structured sprints so you see measurable progress consistently."
+      },
+      {
+        "q": "Do you work with companies outside the United States?",
+        "a": "Yes. Horizon works with teams internationally. We coordinate across time zones and adapt to your communication rhythms so distance never slows delivery."
+      },
+      {
+        "q": "Can I hire maintenance after development?",
+        "a": "Yes. We offer ongoing engineering partnerships starting at $50/month to keep your site fast, secure, and up to date. We also offer monthly maintenance, support, updates, and hosting."
+      },
+      {
+        "q": "What technologies do you use?",
+        "a": "React, Astro, NextJS, TypeScript, Python, PostgreSQL, Docker, .NET, Go, and more. We pick the right stack for each project rather than forcing a one-size-fits-all solution."
+      },
+      {
+        "q": "Do you offer custom dashboards and reporting?",
+        "a": "Yes — admin dashboards, real-time analytics panels, and operational reporting are core to our custom software and ERP offerings."
+      },
+      {
+        "q": "What's the typical development process?",
+        "a": "We start with a discovery call, define the project scope clearly, design, build in structured milestones, and deliver with full documentation and knowledge transfer."
+      }
+    ]
+  },
   "footer": {
     "mission": "Engineering the Digital Horizon",
     "rights": "All rights reserved.",

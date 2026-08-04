@@ -86,6 +86,47 @@
     "not_found_title": "404 | Horizon.gh - Transformando el Horizonte Digital",
     "not_found_desc": "No se encontró la página que buscabas. Vuelve al inicio de Horizon gh o inicia una conversación sobre tu próximo proyecto."
   },
+  "faq": {
+    "page_title": "FAQ | Horizon.gh - Transformando el Horizonte Digital",
+    "page_desc": "Preguntas frecuentes sobre precios, plazos, tecnologías, colaboración internacional, mantenimiento y nuestro proceso de ingeniería en Horizon gh.",
+    "hero_badge": "FAQ",
+    "hero_title": "Tus preguntas,",
+    "hero_emphasis": "respondidas",
+    "hero_subtitle": "Respuestas claras sobre nuestros servicios, plazos, tecnología y cómo trabajamos con equipos de todo el mundo.",
+    "section_title": "Preguntas frecuentes",
+    "cta_prefix": "¿No encontraste tu respuesta?",
+    "cta_text": "Inicia una conversación",
+    "items": [
+      {
+        "q": "¿Cuánto cuesta desarrollar una plataforma?",
+        "a": "Nuestros proyectos comienzan desde $500 para sitios web profesionales y van desde $2,500+ para plataformas ERP o software a medida, dependiendo del alcance, integraciones y complejidad técnica. Cada proyecto recibe un presupuesto claro antes de empezar."
+      },
+      {
+        "q": "¿Cuánto tarda un proyecto?",
+        "a": "La mayoría de los proyectos toman entre 1 y 3 semanas para sitios web, y de 1 a 6 meses para plataformas completas, dependiendo del alcance. Trabajamos en sprints estructurados para que veas progreso medible de forma constante."
+      },
+      {
+        "q": "¿Trabajan con empresas fuera de Estados Unidos?",
+        "a": "Sí. Horizon trabaja con equipos internacionales. Coordinamos entre diferentes zonas horarias y nos adaptamos a tus ritmos de comunicación para que la distancia nunca ralentice la entrega."
+      },
+      {
+        "q": "¿Puedo contratar mantenimiento después del desarrollo?",
+        "a": "Sí. Ofrecemos alianzas de ingeniería continuas desde $50/mes para mantener tu sitio rápido, seguro y actualizado. También ofrecemos mantenimiento mensual, soporte, actualizaciones y hosting."
+      },
+      {
+        "q": "¿Qué tecnologías utilizan?",
+        "a": "React, Astro, NextJS, TypeScript, Python, PostgreSQL, Docker, .NET, Go y más. Elegimos el stack adecuado para cada proyecto en lugar de imponer una solución única para todos."
+      },
+      {
+        "q": "¿Ofrecen dashboards e informes personalizados?",
+        "a": "Sí — paneles de administración, análisis en tiempo real e informes operativos son parte central de nuestras ofertas de software a medida y ERP."
+      },
+      {
+        "q": "¿Cuál es el proceso de desarrollo típico?",
+        "a": "Comenzamos con una llamada de descubrimiento, definimos el alcance del proyecto con claridad, diseñamos, construimos en hitos estructurados y entregamos con documentación completa y transferencia de conocimiento."
+      }
+    ]
+  },
   "not_found": {
     "badge": "Error 404",
     "title": "Perdido en el",

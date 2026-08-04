@@ -1,0 +1,59 @@
+---
+export interface Props {
+  question: string;
+  answer: string;
+  open?: boolean;
+}
+
+const { question, answer, open = false } = Astro.props;
+
+// Generate a stable id from the question text for the disclosure anchor
+const id = question
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/(^-|-$)/g, '');
+---
+
+<details
+  name="faq"
+  open={open}
+  id={id}
+  class="faq-item group rounded-2xl border border-gray-200 bg-white transition-all hover:border-[var(--color-accent-cyan)] hover:shadow-[0_24px_40px_-24px_rgba(76,214,251,0.5)]"
+>
+  <summary
+    class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left font-display text-lg font-bold text-gray-900 transition-colors group-[open]:text-[var(--color-accent-cyan)]"
+  >
+    <span class="flex-1">{question}</span>
+    <span
+      class="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-gray-300 text-gray-500 transition-all group-open:rotate-45 group-open:border-[var(--color-accent-cyan)] group-open:text-[var(--color-accent-cyan)]"
+    >
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+    </span>
+  </summary>
+
+  <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+    <p>{answer}</p>
+  </div>
+</details>
+
+<style>
+  details[open] summary ~ * {
+    animation: faq-reveal 0.3s ease-out;
+  }
+
+  @keyframes faq-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Safari/Webkit doesn't animate the marker span rotation by default,
+     so we leave the manual class toggle above */
+</style>

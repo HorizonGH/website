@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FaqItem from '../components/FaqItem.astro';
+
+const FAQ_ITEMS = [
+  {
+    q: 'How much does it cost to develop a platform?',
+    a: 'Our projects start from $500 for professional websites and range from $2,500+ for custom ERP or software platforms, depending on scope, integrations, and technical complexity. Every project receives a clear quote before we start.',
+  },
+  {
+    q: 'How long does a project take?',
+    a: 'Most projects take between 1 and 3 weeks for websites, and 1–6 months for full platforms, depending on scope. We work in structured sprints so you see measurable progress consistently.',
+  },
+  {
+    q: 'Do you work with companies outside the United States?',
+    a: 'Yes. Horizon works with teams internationally. We coordinate across time zones and adapt to your communication rhythms so distance never slows delivery.',
+  },
+  {
+    q: 'Can I hire maintenance after development?',
+    a: 'Yes. We offer ongoing engineering partnerships starting at $50/month to keep your site fast, secure, and up to date. We also offer monthly maintenance, support, updates, and hosting.',
+  },
+  {
+    q: 'What technologies do you use?',
+    a: 'React, Astro, NextJS, TypeScript, Python, PostgreSQL, Docker, .NET, Go, and more. We pick the right stack for each project rather than forcing a one-size-fits-all solution.',
+  },
+  {
+    q: 'Do you offer custom dashboards and reporting?',
+    a: 'Yes &mdash; admin dashboards, real-time analytics panels, and operational reporting are core to our custom software and ERP offerings.',
+  },
+  {
+    q: "What's the typical development process?",
+    a: 'We start with a discovery call, define the project scope clearly, design, build in structured milestones, and deliver with full documentation and knowledge transfer.',
+  },
+];
+---
+
+<Layout title="FAQ | Horizon.gh - Transforming the Digital Horizon" description="Frequently asked questions about Horizon gh pricing, timelines, tech stack, international collaboration, maintenance, and our engineering process.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
+
+  <div class="bg-surface text-gray-900 font-sans">
+    <!-- FAQ Hero -->
+    <section class="border-b border-gray-200 py-20 text-center">
+      <div class="shell mx-auto max-w-7xl px-6">
+        <p class="label-sm inline-block rounded-full border-2 border-[var(--color-accent-cyan)] px-4 py-1.5 text-[var(--color-accent-cyan)]">
+          FAQ
+        </p>
+        <h1 class="display-xl mx-auto mt-8 max-w-3xl font-display text-5xl font-black uppercase tracking-[-0.08em] leading-[0.9] sm:text-6xl md:text-7xl">
+          Your questions, <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">answered</span>
+        </h1>
+        <p class="body-lg mx-auto mt-8 max-w-xl text-gray-600">
+          Clear answers about our services, timelines, technology, and how we work with teams around the world.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Items -->
+    <section class="py-20">
+      <div class="shell mx-auto max-w-3xl px-6 space-y-4">
+        <h2 class="sr-only">Frequently asked questions</h2>
+        {FAQ_ITEMS.map((item) => <FaqItem question={item.q} answer={item.a} />)}
+
+        <!-- CTA -->
+        <div class="mt-16 rounded-2xl border border-[var(--color-accent-cyan)]/20 bg-[var(--color-accent-cyan)]/5 p-8 text-center">
+          <p class="text-lg font-display font-bold">
+            Didn&rsquo;t find your answer?
+          </p>
+          <p class="mt-2 text-gray-600">
+            Tell us about your project and we'll get you the details you need.
+          </p>
+          <a
+            href="/contact"
+            class="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--color-accent-cyan)] px-7 py-3.5 text-base font-bold text-black transition-shadow hover:shadow-[0_0_24px_rgba(76,214,251,0.55)]"
+          >
+            Start a conversation
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

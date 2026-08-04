@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FaqItem from '../../components/FaqItem.astro';
 import { useTranslations } from '../../i18n/utils';
 const t = useTranslations('es') as any;
 
@@ -70,6 +71,25 @@ const STACK = [
   { name: "Python", role: t.services_page.stack_data_backend },
   { name: "Postgres", role: "Persistencia" },
   { name: "Docker", role: t.services_page.stack_containers },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: '¿Cuánto cuesta desarrollar una plataforma web?',
+    a: 'Nuestros sitios web profesionales comienzan desde $500. El software a medida y las plataformas ERP empiezan desde $2,500+, dependiendo del alcance, integraciones y complejidad técnica. Cada proyecto recibe un presupuesto claro antes de empezar.',
+  },
+  {
+    q: '¿Cuánto tarda un proyecto web o de software?',
+    a: 'La mayoría de los proyectos web toman entre 1 y 3 semanas. Las plataformas completas a medida suelen tomar de 1 a 6 meses. Cada proyecto se estructura en hitos claros para que siempre sepas en qué punto estamos.',
+  },
+  {
+    q: '¿Puedo contratar mantenimiento y soporte después del lanzamiento?',
+    a: 'Sí. Nuestras alianzas de ingeniería continua empiezan desde $50/mes e incluyen mantenimiento, soporte, hosting y actualizaciones. Un sitio mantenido se mantiene rápido, seguro y relevante.',
+  },
+  {
+    q: '¿Qué tecnologías usan en sus proyectos?',
+    a: 'Nuestras herramientas principales incluyen React, Astro, NextJS, TypeScript, Python, PostgreSQL, Docker, .NET y Go. Lo más importante es que elegimos el stack adecuado para cada proyecto en lugar de imponer una solución única.',
+  },
 ];
 ---
 
@@ -200,6 +220,28 @@ const STACK = [
             </li>
           ))}
         </ul>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20" aria-labelledby="services-faq-heading">
+      <div class="shell mx-auto max-w-3xl px-6">
+        <h2 id="services-faq-heading" class="display-lg text-gray-900 text-center">
+          Preguntas <span class="font-['Caveat'] text-[var(--color-accent-cyan)] text-5xl md:text-6xl">frecuentes</span>
+        </h2>
+        <div class="mt-14 space-y-4">
+          {FAQ_ITEMS.map((item) => <FaqItem question={item.q} answer={item.a} />)}
+        </div>
+        <p class="mt-12 text-center text-gray-600">
+          ¿Tienes una pregunta diferente?{' '}
+          <a href="/es/faq" class="font-bold text-[var(--color-accent-cyan)] underline underline-offset-4 hover:no-underline">
+            Ver todas las FAQ
+          </a>{' '}
+          o{' '}
+          <a href="/es/contact" class="font-bold text-[var(--color-accent-cyan)] underline underline-offset-4 hover:no-underline">
+            habla con nosotros directamente
+          </a>.
+        </p>
       </div>
     </section>
   </div>
