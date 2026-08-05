@@ -12,9 +12,15 @@ const t = useTranslations(locale);
 
 const pathname = Astro.url.pathname;
 
+// Build locale-aware URLs for language switching
+const cleanPath = pathname.replace(/^\/es(?=\/|$)/, '') || '/';
+const enURL = cleanPath;
+const esURL = '/es' + (cleanPath === '/' ? '' : cleanPath);
+
 const NAV = [
   { to: locale === 'en' ? '/' : '/es/', label: t.nav.home },
   { to: locale === 'en' ? '/services' : '/es/services', label: t.nav.services },
+  { to: locale === 'en' ? '/pricing' : '/es/pricing', label: t.nav.pricing },
   { to: locale === 'en' ? '/blog' : '/es/blog', label: t.nav.blog },
   { to: locale === 'en' ? '/contact' : '/es/contact', label: t.nav.contact },
 ];
@@ -48,7 +54,7 @@ const isActive = (to: string) => {
       </span>
       <div class="flex items-center gap-2">
         <a
-          href="/"
+          href={enURL}
           class={`px-4 py-1.5 rounded-full border text-sm font-medium transition-colors ${
             locale === 'en'
               ? 'bg-[var(--color-accent-cyan)] text-black border-transparent'
@@ -58,7 +64,7 @@ const isActive = (to: string) => {
           EN
         </a>
         <a
-          href="/es/"
+          href={esURL}
           class={`px-4 py-1.5 rounded-full border text-sm font-medium transition-colors ${
             locale === 'es'
               ? 'bg-[var(--color-accent-cyan)] text-black border-transparent'
