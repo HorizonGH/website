@@ -273,6 +273,91 @@
     "prefer_message": "\u00BFPrefieres enviar un mensaje?",
     "contact_link": "Cont\u00E1ctanos \u2192"
   },
+  "privacy_policy": {
+    "seo_title": "Política de Privacidad | Horizon.gh",
+    "seo_desc": "Conoce cómo Horizon recopila, usa y protege tu información personal. Nuestra política de privacidad explica nuestras prácticas de datos para visitantes y clientes.",
+    "last_updated": "4 de agosto de 2026",
+    "page_title": "Política de Privacidad",
+    "intro_text": "Horizon gh (\"Horizon\", \"nosotros\" o \"nuestro\") opera el sitio web horizon-gh.com. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos la información cuando visitas nuestro sitio web o utilizas nuestros servicios. Estamos comprometidos con la transparencia sobre nuestras prácticas de datos y el respeto a tu privacidad.",
+    "section_intro": "Acerca de esta política",
+    "section_info_collect": "Información que recopilamos",
+    "subsection_provided": "Información que proporcionas",
+    "subsection_auto": "Información recopilada automáticamente",
+    "info_provided_items": [
+      "Nombre",
+      "Dirección de correo electrónico",
+      "Nombre de la empresa (cuando se proporciona)",
+      "Detalles y requisitos del proyecto",
+      "Información enviada a través de formularios de contacto",
+      "Información proporcionada al agendar una reunión"
+    ],
+    "info_auto_items": [
+      "Dirección IP",
+      "Tipo y versión de navegador",
+      "Tipo de dispositivo y sistema operativo",
+      "Páginas visitadas en nuestro sitio web",
+      "Sitio o fuente de referencia",
+      "Ubicación geográfica aproximada (derivada de la IP)",
+      "Fecha y hora de las visitas",
+      "Interacción con elementos del sitio web"
+    ],
+    "section_use": "Cómo usamos tu información",
+    "use_items": [
+      "Responder a tus consultas y proporcionar la información solicitada",
+      "Programar y gestionar reuniones y consultas",
+      "Comprender los requisitos de tu proyecto y necesidades técnicas",
+      "Proveer y mejorar nuestros servicios de consultoría",
+      "Analizar y mejorar el rendimiento y contenido de nuestro sitio web",
+      "Comprender cómo los visitantes descubren e interactúan con nuestro sitio",
+      "Proteger nuestro sitio web contra actividades fraudulentas o no autorizadas",
+      "Comunicar actualizaciones relevantes del servicio cuando sea apropiado",
+      "Cumplir con obligaciones legales y regulatorias aplicables"
+    ],
+    "section_analytics": "Analítica",
+    "analytics_text": "Usamos Google Analytics para entender cómo los visitantes interactúan con nuestro sitio web, medir el rendimiento y mejorar el contenido. Google Analytics recopila información como frecuencia de visitas, páginas visitadas y cómo llegaste al sitio. Google Analytics puede establecer cookies o recopilar información del dispositivo según lo descrito en la documentación de privacidad de Google.",
+    "analytics_opt_out": "Puedes obtener más información sobre cómo Google utiliza los datos visitando la Política de Privacidad de Google o desactivar el seguimiento de Google Analytics usando el Complemento de inhabilitación de Google Analytics.",
+    "section_meta": "Meta Pixel",
+    "meta_text": "Nuestro sitio web puede utilizar Meta Pixel para comprender el rendimiento de nuestras campañas publicitarias, medir conversiones y mejorar la relevancia del contenido publicitario. Meta puede recopilar o recibir datos sobre las interacciones con nuestros anuncios y sitio. Meta procesa estos datos de acuerdo con su Política de Datos.",
+    "section_calendly": "Agendamiento",
+    "calendly_text": "Usamos Calendly para permitir a los visitantes agendar reuniones y gestionar citas. Al reservar una reunión, Calendly puede procesar: nombre, correo electrónico, datos de empresa, respuestas a preguntas del formulario de reserva, fecha y hora seleccionada, y detalles relacionados con la reunión. El procesamiento de datos por Calendly se rige por su propio Aviso de Privacidad.",
+    "section_calendar": "Calendario y videollamadas",
+    "calendar_text": "Google Calendar y Google Meet pueden procesar información de reuniones necesaria para crear, programar, coordinar y realizar reuniones y videollamadas programadas. Google procesa estos datos según se describe en el Aviso de Privacidad de Google.",
+    "section_providers": "Proveedores de servicios",
+    "provider_intro": "Autorizamos ciertos proveedores a gestionar datos para entregar de forma efectiva sitio & servicios del servicio:",
+    "providers": [
+      {"name": "Google Analytics", "purpose": "Analítica web y medición de rendimiento"},
+      {"name": "Meta", "purpose": "Medición de campañas publicitarias y conversiones"},
+      {"name": "Calendly", "purpose": "Agendamiento de reuniones y gestión de citas"},
+      {"name": "Google", "purpose": "Servicios de calendario y videollamadas"},
+      {"name": "Cloudflare", "purpose": "Entrega, seguridad y rendimiento del sitio web"}
+    ],
+    "section_retention": "Conservación de datos",
+    "retention_text": "Conservamos la información personal solo durante el tiempo que sea razonablemente necesario para cumplir estas finalidades: (a) responder a consultas, contactos comerciales y uso de servicios; (b) gestionar relaciones de negocio y seguimiento; (c) mantener registros para fines comerciales legítimos; (d) cumplir obligaciones legales y regulatorias; (e) resolver disputas o hacer cumplir obligaciones. Al dejar de ser necesaria, eliminamos o anonimizamos la información.",
+    "section_security": "Seguridad de datos",
+    "security_text": "Aplicamos medidas técnicas y organizativas proporcionales a los riesgos presentados al manejo de datos para cuidar tu información personal. Nuestras defensas incluyen comunicaciones sobre el protocolo HTTPS real, acceso restringido para limitar los procesos solo a la realidad necesaria del servicio, infraestructura gestionada mediante Cloudflare y nuestro proveedor de hosting, selección y actualización periódica de proveedores de servicio con análisis de su seguridad. Ninguna medida es perfecta ni ningún método se garantiza absoluto, pero sí mantenemos estándares actuales en lo razonable de la industria.",
+    "section_rights": "Tus derechos",
+    "rights_intro": "Según sea aplicable y tu lugar de residencia y comportamiento de ley local, podrías tener un conjunto de derechos sobre tus datos personales:",
+    "rights_items": [
+      "Acceder y obtener copia de qué información conservamos sobre ti",
+      "Solicitar corregir o completar datos inexactos",
+      "Solicitar la eliminación de referencia personal de nuestra base",
+      "Oponerte o limitar el procesamiento en ciertas situaciones (cuando aplica legalmente)",
+      "Retirar el consentimiento para los usos que basábamos en consentimiento como base",
+      "Obtener información sobre el uso y finalidad que aplicamos para los datos",
+      "Cuando corresponda, pedir la portabilidad a otro servicio de tus datos en un formato de salida estructurado"
+    ],
+    "rights_exercise": "Queremos facilitar la aplicación práctica de estos derechos cuando apliquen según tu situación. Para ejercer tu requerimiento, contáctanos: privacy@horizon-gh.com. Verificaremos tu identidad y te responderemos en línea con los plazos que marquen las leyes aplicables sobre la autoridad.",
+    "section_transfers": "Transferencias internacionales de datos",
+    "transfers_text": "Horizon opera desde territorios de América Latina. Algunos proveedores de servicios (incluidos Google, Calendly, Meta y Cloudflare) podrían tratar datos fuera de la región de residencia, y para garantías relativas a ello dispondrán de protecciones adecuadas a las regiones involucradas (cláusulas contractuales, decisiones de adecuación, etc. caso a caso).",
+    "section_children": "Privacidad de menores",
+    "children_text": "Nuestros servicios y sitio no van destinados a menores de 13 años ni procesamos conscientemente información de estos sin el consentimiento debido y sin directrices en aplicación de las leyes locales.",
+    "section_changes": "Cambios a esta política",
+    "changes_text": "Podemos revisar este documento cuando resulte necesario y las modificaciones se publicarán. El cambio de la fecha señala que las modificaciones rigen; para cambios sustanciales, agregaremos un aviso adicional cuando las circunstancias así lo pidan. Continuar usando el sitio luego de cambios publicados significa conformidad con las versiones actualizadas según la redacción arriba indicada.",
+    "section_contact": "Contacto",
+    "contact_intro": "Si tienes preguntas sobre nuestra política, prácticas, o deseas ejercitar los derechos según correspondan las reglas:",
+    "contact_email": "privacy@horizon-gh.com",
+    "contact_address": "América, Centro de Innovación Digital"
+  },
   "contact_page": {
     "hero_title": "HABLEMOS",
     "hero_emphasis": "Hoy",
@@ -298,5 +383,71 @@
     "form_submit": "Enviar solicitud",
     "footer_description": "Impulsamos la proxima generacion de aplicaciones web.",
     "footer_rights": "Todos los derechos reservados."
+  },
+  "cookie_policy": {
+    "seo_title": "Política de Cookies | Horizon.gh",
+    "seo_desc": "Conoce cómo Horizon utiliza cookies y tecnologías similares en nuestro sitio web. Información transparente sobre cookies necesarias, de analítica y publicitarias.",
+    "last_updated": "4 de agosto de 2026",
+    "page_title": "Política de Cookies",
+    "section_what_are": "¿Qué son las cookies?",
+    "what_are_text": "Las cookies son pequeños archivos de texto que se colocan en tu dispositivo cuando visitas un sitio web. Se utilizan ampliamente para hacer que los sitios web funcionen de forma eficiente, proporcionar funcionalidades y ofrecer información al propietario del sitio. Las cookies pueden ser establecidas por nosotros (\"cookies propias\") o por servicios de terceros que utilizamos (\"cookies de terceros\"). Tecnologías similares como píxeles, etiquetas y almacenamiento local también pueden utilizarse con fines comparables.",
+    "section_manage": "Cómo gestionar las cookies",
+    "manage_text": "La mayoría de navegadores web permiten controlar las cookies a través de sus preferencias de configuración. Normalmente puedes eliminar las cookies ya almacenadas y configurar tu navegador para rechazar nuevas cookies. Ten en cuenta que desactivar ciertas categorías de cookies puede afectar el funcionamiento de algunas funciones de nuestro sitio web. Para más información sobre gestión de cookies en navegadores populares, consulta la documentación de ayuda de tu navegador.",
+    "section_necessary": "Cookies necesarias",
+    "necessary_intro": "Estas cookies y tecnologías son esenciales para el correcto funcionamiento del sitio web. Habilitan funcionalidades básicas como seguridad, gestión de sesiones y las preferencias que seleccionas. Bajo muchos marcos de privacidad, estas cookies no requieren consentimiento porque el sitio web no puede funcionar sin ellas.",
+    "necessary_items": [
+      {"name": "Tokens de seguridad CSRF", "provider": "Horizon", "purpose": "Prevenir falsificación de solicitudes entre sitios y proteger envíos de formularios"},
+      {"name": "Preferencia de tema (localStorage)", "provider": "Horizon", "purpose": "Recordar tu preferencia de modo oscuro o claro"}
+    ],
+    "section_analytics": "Cookies de análisis",
+    "analytics_intro": "Utilizamos estas cookies para entender cómo los visitantes interactúan con nuestro sitio web, medir el rendimiento y mejorar nuestro contenido.",
+    "analytics_items": [
+      {"name": "Cookies de Google Analytics 4", "provider": "Google", "purpose": "Comprender el tráfico del sitio, comportamiento del visitante y rendimiento"}
+    ],
+    "section_advertising": "Cookies publicitarias",
+    "advertising_intro": "Estas cookies y tecnologías nos permiten medir y comprender el rendimiento de nuestras campañas publicitarias.",
+    "advertising_items": [
+      {"name": "Meta Pixel", "provider": "Meta", "purpose": "Medir el rendimiento publicitario y realizar seguimiento de conversiones desde anuncios Meta"}
+    ],
+    "section_scheduling": "Tecnologías de agendamiento",
+    "scheduling_intro": "Integramos herramientas de agendamiento en nuestro sitio web para permitirte reservar reuniones y consultas.",
+    "scheduling_items": [
+      {"name": "Widget de Calendly", "provider": "Calendly", "purpose": "Proporcionar funcionalidad de agendamiento de reuniones en nuestra página de reservas"}
+    ],
+    "section_all_table": "Todas las tecnologías en uso",
+    "table_col_name": "Cookie / Tecnología",
+    "table_col_provider": "Proveedor",
+    "table_col_category": "Categoría",
+    "table_col_purpose": "Propósito",
+    "table_col_duration": "Duración",
+    "table_duration_note": "Nota: Los nombres específicos de cookies y los tiempos de retención se registran en una auditoría periódica. Cuando la auditoría esté completada, esta tabla será actualizada.",
+    "table_rows": [
+      {"name": "Token CSRF / manejo de sesión", "provider": "Horizon", "category": "Necesaria", "purpose": "Proteger formularios de contacto e integridad del sitio"},
+      {"name": "Preferencia de tema", "provider": "Horizon", "category": "Necesaria", "purpose": "Configuración de modo oscuro / claro"},
+      {"name": "Google Analytics 4", "provider": "Google", "category": "Analítica", "purpose": "Medir tráfico y uso del sitio web"},
+      {"name": "Meta Pixel", "provider": "Meta", "category": "Publicidad", "purpose": "Medir rendimiento de anuncios y conversiones"},
+      {"name": "Widget de Calendly", "provider": "Calendly", "category": "Funcional", "purpose": "Agendamiento y reserva de reuniones"}
+    ]
+  },
+  "cookie_consent": {
+    "banner_title": "Valoramos tu privacidad",
+    "banner_text": "Utilizamos cookies y tecnologías similares para mejorar tu experiencia, analizar el tráfico y medir el rendimiento publicitario.",
+    "policy_links": "Política de Privacidad · Política de Cookies",
+    "btn_reject": "Rechazar no esenciales",
+    "btn_manage": "Gestionar preferencias",
+    "btn_accept": "Aceptar todas",
+    "settings_title": "Configuración de Cookies",
+    "settings_desc": "Elige qué categorías de cookies y tecnologías permites. Las cookies necesarias están siempre activas ya que son requeridas para el funcionamiento del sitio web.",
+    "cat_necessary": "Necesarias",
+    "cat_necessary_desc": "Requeridas para el correcto funcionamiento del sitio web. No se pueden desactivar.",
+    "cat_always_active": "Siempre activas",
+    "cat_analytics": "Analítica",
+    "cat_analytics_desc": "Nos ayudan a entender cómo los visitantes usan nuestro sitio web y mejorar el rendimiento.",
+    "cat_advertising": "Publicidad",
+    "cat_advertising_desc": "Se utilizan para medir y comprender el rendimiento de nuestras campañas publicitarias.",
+    "cat_functional": "Funcionales",
+    "cat_functional_desc": "Habilitan funciones adicionales como agendamiento y funcionalidades mejoradas.",
+    "btn_save": "Guardar preferencias",
+    "footer_trigger": "Configuración de Cookies"
   }
 }

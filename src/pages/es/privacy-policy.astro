@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const locale = 'es';
+const t = useTranslations(locale);
+const pp = t.privacy_policy;
+---
+
+<Layout
+  title={pp.seo_title}
+  description={pp.seo_desc}
+  locale={locale}
+  robots="index, follow"
+>
+  <div class="min-h-screen bg-surface font-body antialiased">
+    <div class="container mx-auto max-w-3xl px-4 sm:px-6 pt-20 sm:pt-28 pb-28 sm:pb-36">
+
+      <!-- Page title -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-on-surface leading-[1.1] mb-3">
+        {pp.page_title}
+      </h1>
+      <p class="text-sm text-on-surface-variant mb-14">
+        {pp.last_updated}
+      </p>
+
+      <!-- 1. About this policy -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_intro}</h2>
+        <p class="body-md leading-relaxed">{pp.intro_text}</p>
+      </section>
+
+      <!-- 2. Information We Collect -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{pp.section_info_collect}</h2>
+
+        <h3 class="text-lg font-semibold text-on-surface mb-3">{pp.subsection_provided}</h3>
+        <ul class="list-disc pl-5 space-y-1.5 body-md mb-6">
+          {pp.info_provided_items.map((item: string) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+
+        <h3 class="text-lg font-semibold text-on-surface mb-3">{pp.subsection_auto}</h3>
+        <ul class="list-disc pl-5 space-y-1.5 body-md">
+          {pp.info_auto_items.map((item: string) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- 3. How We Use Your Information -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{pp.section_use}</h2>
+        <ul class="list-disc pl-5 space-y-1.5 body-md">
+          {pp.use_items.map((item: string) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- 4. Analytics -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_analytics}</h2>
+        <p class="body-md leading-relaxed mb-3">{pp.analytics_text}</p>
+        <p class="body-md leading-relaxed">{pp.analytics_opt_out}</p>
+      </section>
+
+      <!-- 5. Meta Pixel -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_meta}</h2>
+        <p class="body-md leading-relaxed">{pp.meta_text}</p>
+      </section>
+
+      <!-- 6. Scheduling (Calendly) -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_calendly}</h2>
+        <p class="body-md leading-relaxed">{pp.calendly_text}</p>
+      </section>
+
+      <!-- 7. Calendar & Video Meetings -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_calendar}</h2>
+        <p class="body-md leading-relaxed">{pp.calendar_text}</p>
+      </section>
+
+      <!-- 8. Service Providers -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{pp.section_providers}</h2>
+        <p class="body-md leading-relaxed mb-5">{pp.provider_intro}</p>
+        <div class="overflow-x-auto rounded-xl border border-outline-variant">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-surface-container-high">
+                <th class="text-left p-4 font-semibold text-on-surface">Proveedor</th>
+                <th class="text-left p-4 font-semibold text-on-surface">Propósito</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant">
+              {pp.providers.map((item: { name: string; purpose: string }) => (
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-4 font-medium text-on-surface">{item.name}</td>
+                  <td class="p-4 text-on-surface-variant">{item.purpose}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 9. Data Retention -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_retention}</h2>
+        <p class="body-md leading-relaxed">{pp.retention_text}</p>
+      </section>
+
+      <!-- 10. Data Security -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_security}</h2>
+        <p class="body-md leading-relaxed">{pp.security_text}</p>
+      </section>
+
+      <!-- 11. Your Rights -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{pp.section_rights}</h2>
+        <p class="body-md leading-relaxed mb-4">{pp.rights_intro}</p>
+        <ul class="list-disc pl-5 space-y-1.5 body-md mb-4">
+          {pp.rights_items.map((item: string) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <p class="body-md leading-relaxed">{pp.rights_exercise}</p>
+      </section>
+
+      <!-- 12. International Transfers -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_transfers}</h2>
+        <p class="body-md leading-relaxed">{pp.transfers_text}</p>
+      </section>
+
+      <!-- 13. Children's Privacy -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_children}</h2>
+        <p class="body-md leading-relaxed">{pp.children_text}</p>
+      </section>
+
+      <!-- 14. Changes -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{pp.section_changes}</h2>
+        <p class="body-md leading-relaxed">{pp.changes_text}</p>
+      </section>
+
+      <!-- 15. Contact -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{pp.section_contact}</h2>
+        <p class="body-md leading-relaxed mb-4">{pp.contact_intro}</p>
+        <div class="premium-panel rounded-2xl p-6 sm:p-8 space-y-4">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:privacy@horizon-gh.com" class="text-sm sm:text-base font-medium text-accent-cyan hover:underline">{pp.contact_email}</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

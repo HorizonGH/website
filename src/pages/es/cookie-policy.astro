@@ -1,0 +1,147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const locale = 'es';
+const t = useTranslations(locale);
+const cp = t.cookie_policy;
+---
+
+<Layout
+  title={cp.seo_title}
+  description={cp.seo_desc}
+  locale={locale}
+  robots="index, follow"
+>
+  <div class="min-h-screen bg-surface font-body antialiased">
+    <div class="container mx-auto max-w-3xl px-4 sm:px-6 pt-20 sm:pt-28 pb-28 sm:pb-36">
+
+      <!-- Page title -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-on-surface leading-[1.1] mb-3">
+        {cp.page_title}
+      </h1>
+      <p class="text-sm text-on-surface-variant mb-14">
+        {cp.last_updated}
+      </p>
+
+      <!-- 1. What are cookies? -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{cp.section_what_are}</h2>
+        <p class="body-md leading-relaxed">{cp.what_are_text}</p>
+      </section>
+
+      <!-- 2. How to manage cookies -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-4 tracking-tight">{cp.section_manage}</h2>
+        <p class="body-md leading-relaxed">{cp.manage_text}</p>
+      </section>
+
+      <!-- 3. Necessary Cookies -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{cp.section_necessary}</h2>
+        <p class="body-md leading-relaxed mb-5">{cp.necessary_intro}</p>
+        <div class="space-y-4">
+          {cp.necessary_items.map((item: { name: string; provider: string; purpose: string }) => (
+            <div class="premium-panel rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-accent-cyan bg-accent-cyan/10 px-2.5 py-1 rounded-full shrink-0 w-fit">
+                {item.provider}
+              </span>
+              <div>
+                <p class="font-semibold text-on-surface text-sm sm:text-base">{item.name}</p>
+                <p class="text-xs sm:text-sm text-on-surface-variant mt-0.5">{item.purpose}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- 4. Analytics Cookies -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{cp.section_analytics}</h2>
+        <p class="body-md leading-relaxed mb-5">{cp.analytics_intro}</p>
+        <div class="space-y-4">
+          {cp.analytics_items.map((item: { name: string; provider: string; purpose: string }) => (
+            <div class="premium-panel rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-accent-cyan bg-accent-cyan/10 px-2.5 py-1 rounded-full shrink-0 w-fit">
+                {item.provider}
+              </span>
+              <div>
+                <p class="font-semibold text-on-surface text-sm sm:text-base">{item.name}</p>
+                <p class="text-xs sm:text-sm text-on-surface-variant mt-0.5">{item.purpose}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- 5. Advertising Cookies -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{cp.section_advertising}</h2>
+        <p class="body-md leading-relaxed mb-5">{cp.advertising_intro}</p>
+        <div class="space-y-4">
+          {cp.advertising_items.map((item: { name: string; provider: string; purpose: string }) => (
+            <div class="premium-panel rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-accent-cyan bg-accent-cyan/10 px-2.5 py-1 rounded-full shrink-0 w-fit">
+                {item.provider}
+              </span>
+              <div>
+                <p class="font-semibold text-on-surface text-sm sm:text-base">{item.name}</p>
+                <p class="text-xs sm:text-sm text-on-surface-variant mt-0.5">{item.purpose}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- 6. Scheduling Technologies -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{cp.section_scheduling}</h2>
+        <p class="body-md leading-relaxed mb-5">{cp.scheduling_intro}</p>
+        <div class="space-y-4">
+          {cp.scheduling_items.map((item: { name: string; provider: string; purpose: string }) => (
+            <div class="premium-panel rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-accent-cyan bg-accent-cyan/10 px-2.5 py-1 rounded-full shrink-0 w-fit">
+                {item.provider}
+              </span>
+              <div>
+                <p class="font-semibold text-on-surface text-sm sm:text-base">{item.name}</p>
+                <p class="text-xs sm:text-sm text-on-surface-variant mt-0.5">{item.purpose}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- 7. Full summary table -->
+      <section class="mb-14">
+        <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-5 tracking-tight">{cp.section_all_table}</h2>
+        <p class="body-md leading-relaxed mb-5">{cp.table_duration_note}</p>
+        <div class="overflow-x-auto rounded-xl border border-outline-variant">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-surface-container-high">
+                <th class="text-left p-3 sm:p-4 font-semibold text-on-surface">{cp.table_col_name}</th>
+                <th class="text-left p-3 sm:p-4 font-semibold text-on-surface">{cp.table_col_provider}</th>
+                <th class="text-left p-3 sm:p-4 font-semibold text-on-surface">{cp.table_col_category}</th>
+                <th class="text-left p-3 sm:p-4 font-semibold text-on-surface">{cp.table_col_purpose}</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant">
+              {cp.table_rows.map((row: { name: string; provider: string; category: string; purpose: string }) => (
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-3 sm:p-4 font-medium text-on-surface text-xs sm:text-sm">{row.name}</td>
+                  <td class="p-3 sm:p-4 text-on-surface-variant text-xs sm:text-sm">{row.provider}</td>
+                  <td class="p-3 sm:p-4">
+                    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-accent-cyan/10 text-accent-cyan">{row.category}</span>
+                  </td>
+                  <td class="p-3 sm:p-4 text-on-surface-variant text-xs sm:text-sm leading-relaxed">{row.purpose}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>
