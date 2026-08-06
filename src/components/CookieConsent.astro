@@ -208,18 +208,20 @@ const cc = t.cookie_consent;
     document.documentElement.setAttribute('data-cookie-choice', '1');
   }
 
-  // Initialise gtag if analytics consent is granted and gtag not yet loaded
-  function initAnalyticsIfNeeded(): void {
+  // Push consent update to GTM dataLayer when analytics consent is granted.
+  // This tells Google tags to respect the user's choice after consent is given.
+  function pushConsentToGTM(): void {
     try {
-      if (typeof gtag !== 'undefined') return;
       var raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return;
       var parsed = JSON.parse(raw);
-      if (parsed.accepted && parsed.analytics) {
+      if (parsed.accepted) {
         window.dataLayer = window.dataLayer || [];
-        function gtag(){ window.dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QX4S1BD86Y');
+        window.dataLayer.push({
+          'analytics_storage': parsed.analytics ? 'granted' : 'denied',
+          'ad_storage': parsed.advertising ? 'granted' : 'denied',
+          'functionality_storage': parsed.functional ? 'granted' : 'denied',
+        });
       }
     } catch (_) {}
   }
@@ -229,6 +231,7 @@ const cc = t.cookie_consent;
   if (stored && stored.accepted) {
     currentConsent = stored;
     applyConsent(stored);
+    pushConsentToGTM();
   } else {
     currentConsent = { analytics: false, advertising: false, functional: false, accepted: false };
     document.documentElement.setAttribute('data-cookie-choice', '0');
@@ -260,7 +263,7 @@ const cc = t.cookie_consent;
     applyConsent(state);
     currentConsent = state;
     banner?.classList.add('hidden');
-    initAnalyticsIfNeeded();
+    pushConsentToGTM();
   });
 
   // ── Reject non-essential ──
@@ -300,7 +303,7 @@ const cc = t.cookie_consent;
     banner?.classList.add('hidden');
     overlay?.classList.add('hidden');
     overlay?.classList.remove('flex');
-    initAnalyticsIfNeeded();
+    pushConsentToGTM();
   });
 
   // ── Close panel ──

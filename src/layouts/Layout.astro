@@ -78,6 +78,14 @@ const schemaWebSite = {
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/x-icon" href="/icon.ico" />
 <meta name="generator" content={Astro.generator} />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WMNGBX5X');</script>
+<!-- End Google Tag Manager -->
 <title>{title}</title>
 <meta name="description" content={metaDescription} />
 <meta name="keywords" content={keywords} />
@@ -121,26 +129,13 @@ const schemaWebSite = {
   })();
 </script>
 
-<!-- Google tag (gtag.js) — loaded here, but only activates if analytics consent was given -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QX4S1BD86Y"></script>
-<script is:inline>
-  (function () {
-    try {
-      var raw = localStorage.getItem('horizon_cookie_consent');
-      if (raw) {
-        var parsed = JSON.parse(raw);
-        if (parsed.accepted && parsed.analytics) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){ window.dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', 'G-QX4S1BD86Y');
-        }
-      }
-    } catch (e) {}
-  })();
-</script>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen overflow-x-hidden">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMNGBX5X"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <Navigation locale={locale} />
   <main id="main">
     <slot />
