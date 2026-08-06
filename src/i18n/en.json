@@ -3,6 +3,7 @@
     "home": "Home",
     "services": "Services",
     "pricing": "Pricing",
+    "book": "Book a call",
     "blog": "Blog",
     "contact": "Contact",
     "getStarted": "Get Started"
@@ -100,6 +101,31 @@
         "a": "We start with a discovery call, define the project scope clearly, design, build in structured milestones, and deliver with full documentation and knowledge transfer."
       }
     ]
+  },
+  "book_page": {
+    "seo_title": "Book a 30-Minute Strategy Call | Horizon.gh",
+    "seo_desc": "Schedule a free 30-minute strategy call with Horizon. Discuss your project goals, technical challenges, and next steps.",
+    "h1": "Book a 30-Minute Strategy Call",
+    "subtitle": "Let's discuss what you're building, what you're trying to improve, and the right technical approach for your business.",
+    "duration": "30 minutes \u00B7 Online \u00B7 No commitment",
+    "discuss_title": "What we'll discuss",
+    "point1_title": "Your goals",
+    "point1_desc": "What are you trying to build, improve, or scale?",
+    "point2_title": "Current challenges",
+    "point2_desc": "Where are your current systems, website, or infrastructure falling short?",
+    "point3_title": "Technical direction",
+    "point3_desc": "We'll discuss potential approaches, technologies, and priorities.",
+    "point4_title": "Next steps",
+    "point4_desc": "If there's a fit, we'll outline what working together could look like.",
+    "after_call_title": "What happens after the call?",
+    "after_call_step1": "Discovery",
+    "after_call_step1_desc": "We dive deeper into your requirements and objectives.",
+    "after_call_step2": "Scope",
+    "after_call_step2_desc": "We define deliverables, timeline, and investment.",
+    "after_call_step3": "Plan",
+    "after_call_step3_desc": "You get a clear roadmap and we start building.",
+    "prefer_message": "Prefer to send a message?",
+    "contact_link": "Contact us \u2192"
   },
   "footer": {
     "mission": "Engineering the Digital Horizon",

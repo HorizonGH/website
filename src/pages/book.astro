@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../i18n/utils';
+
+const locale = 'en';
+const t = useTranslations(locale);
+---
+
+<Layout
+  title={t.book_page.seo_title}
+  description={t.book_page.seo_desc}
+  locale={locale}
+  robots="index, follow"
+>
+  <div class="min-h-screen bg-surface font-body antialiased">
+    <!-- Hero / Booking Section -->
+    <section class="relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 pt-20 sm:pt-28 pb-16 sm:pb-20">
+
+        <!-- H1 -->
+        <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-on-surface leading-[1.1] mb-5">
+            {t.book_page.h1}
+          </h1>
+          <p class="body-lg max-w-2xl mx-auto mb-4 text-on-surface-variant">
+            {t.book_page.subtitle}
+          </p>
+          <div class="flex items-center justify-center gap-2 text-sm font-medium text-on-surface-variant">
+            <span class="inline-flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              30 min
+            </span>
+            <span class="w-1 h-1 rounded-full bg-on-surface-variant/40"></span>
+            <span>Online</span>
+            <span class="w-1 h-1 rounded-full bg-on-surface-variant/40"></span>
+            <span>No commitment</span>
+          </div>
+        </div>
+
+        <!-- Two-column: What we'll discuss + Calendly -->
+        <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+
+          <!-- What we'll discuss -->
+          <div class="order-2 lg:order-1">
+            <div class="premium-panel rounded-2xl p-6 sm:p-8">
+              <h2 class="text-xl sm:text-2xl font-bold text-on-surface mb-8 tracking-tight">
+                {t.book_page.discuss_title}
+              </h2>
+
+              <div class="space-y-7">
+                <!-- 01 -->
+                <div class="flex gap-4">
+                  <span class="text-accent-cyan font-black text-lg leading-none shrink-0 w-8">01</span>
+                  <div>
+                    <h3 class="font-bold text-on-surface mb-1">{t.book_page.point1_title}</h3>
+                    <p class="body-md text-on-surface-variant">{t.book_page.point1_desc}</p>
+                  </div>
+                </div>
+
+                <!-- 02 -->
+                <div class="flex gap-4">
+                  <span class="text-accent-cyan font-black text-lg leading-none shrink-0 w-8">02</span>
+                  <div>
+                    <h3 class="font-bold text-on-surface mb-1">{t.book_page.point2_title}</h3>
+                    <p class="body-md text-on-surface-variant">{t.book_page.point2_desc}</p>
+                  </div>
+                </div>
+
+                <!-- 03 -->
+                <div class="flex gap-4">
+                  <span class="text-accent-cyan font-black text-lg leading-none shrink-0 w-8">03</span>
+                  <div>
+                    <h3 class="font-bold text-on-surface mb-1">{t.book_page.point3_title}</h3>
+                    <p class="body-md text-on-surface-variant">{t.book_page.point3_desc}</p>
+                  </div>
+                </div>
+
+                <!-- 04 -->
+                <div class="flex gap-4">
+                  <span class="text-accent-cyan font-black text-lg leading-none shrink-0 w-8">04</span>
+                  <div>
+                    <h3 class="font-bold text-on-surface mb-1">{t.book_page.point4_title}</h3>
+                    <p class="body-md text-on-surface-variant">{t.book_page.point4_desc}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calendly Widget -->
+          <div class="order-1 lg:order-2">
+            <div class="premium-panel rounded-2xl overflow-hidden" style="min-height: 700px;">
+              <div
+                class="calendly-inline-widget"
+                data-url="https://calendly.com/horizon-gh-contact/30min"
+                data-resize="false"
+                style="min-width:320px;height:700px;">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- What happens after the call? -->
+    <section class="relative z-10 pb-20 sm:pb-28">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-2xl sm:text-3xl font-black text-on-surface mb-12 tracking-tight">
+            {t.book_page.after_call_title}
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Step 1 -->
+            <div class="premium-panel rounded-2xl p-6 sm:p-8 text-center">
+              <div class="w-12 h-12 rounded-full bg-accent-cyan/15 flex items-center justify-center mx-auto mb-4">
+                <span class="text-accent-cyan font-black text-xl">1</span>
+              </div>
+              <h3 class="font-bold text-on-surface mb-2">{t.book_page.after_call_step1}</h3>
+              <p class="body-md text-on-surface-variant">{t.book_page.after_call_step1_desc}</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="premium-panel rounded-2xl p-6 sm:p-8 text-center">
+              <div class="w-12 h-12 rounded-full bg-accent-cyan/15 flex items-center justify-center mx-auto mb-4">
+                <span class="text-accent-cyan font-black text-xl">2</span>
+              </div>
+              <h3 class="font-bold text-on-surface mb-2">{t.book_page.after_call_step2}</h3>
+              <p class="body-md text-on-surface-variant">{t.book_page.after_call_step2_desc}</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="premium-panel rounded-2xl p-6 sm:p-8 text-center">
+              <div class="w-12 h-12 rounded-full bg-accent-cyan/15 flex items-center justify-center mx-auto mb-4">
+                <span class="text-accent-cyan font-black text-xl">3</span>
+              </div>
+              <h3 class="font-bold text-on-surface mb-2">{t.book_page.after_call_step3}</h3>
+              <p class="body-md text-on-surface-variant">{t.book_page.after_call_step3_desc}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prefer to send a message? -->
+    <section class="relative z-10 pb-28 sm:pb-36">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="max-w-lg mx-auto text-center">
+          <div class="premium-panel rounded-2xl p-8 sm:p-10">
+            <p class="text-lg font-semibold text-on-surface mb-4">
+              {t.book_page.prefer_message}
+            </p>
+            <a
+              href="/contact"
+              class="inline-flex items-center gap-2 rounded-full bg-accent-cyan px-6 py-3 text-sm font-bold text-black transition-all hover:shadow-[0_0_24px_rgba(76,214,251,0.55)]"
+            >
+              {t.book_page.contact_link}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Calendly widget script (loaded once) -->
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</Layout>
