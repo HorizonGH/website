@@ -208,6 +208,22 @@ const cc = t.cookie_consent;
     document.documentElement.setAttribute('data-cookie-choice', '1');
   }
 
+  // Initialise gtag if analytics consent is granted and gtag not yet loaded
+  function initAnalyticsIfNeeded(): void {
+    try {
+      if (typeof gtag !== 'undefined') return;
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      var parsed = JSON.parse(raw);
+      if (parsed.accepted && parsed.analytics) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ window.dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QX4S1BD86Y');
+      }
+    } catch (_) {}
+  }
+
   let currentConsent: ConsentState;
   var stored = getStoredConsent();
   if (stored && stored.accepted) {
@@ -244,6 +260,7 @@ const cc = t.cookie_consent;
     applyConsent(state);
     currentConsent = state;
     banner?.classList.add('hidden');
+    initAnalyticsIfNeeded();
   });
 
   // ── Reject non-essential ──
@@ -283,6 +300,7 @@ const cc = t.cookie_consent;
     banner?.classList.add('hidden');
     overlay?.classList.add('hidden');
     overlay?.classList.remove('flex');
+    initAnalyticsIfNeeded();
   });
 
   // ── Close panel ──

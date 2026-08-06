@@ -120,6 +120,25 @@ const schemaWebSite = {
     } catch (e) {}
   })();
 </script>
+
+<!-- Google tag (gtag.js) — loaded here, but only activates if analytics consent was given -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QX4S1BD86Y"></script>
+<script is:inline>
+  (function () {
+    try {
+      var raw = localStorage.getItem('horizon_cookie_consent');
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        if (parsed.accepted && parsed.analytics) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){ window.dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-QX4S1BD86Y');
+        }
+      }
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen overflow-x-hidden">
   <Navigation locale={locale} />
