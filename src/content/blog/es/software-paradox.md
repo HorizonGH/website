@@ -1,6 +1,6 @@
 ---
 title: "La paradoja del software: Resolver problemas, no solo digitalizarlo todo"
-date: "2026-07-31"
+date: "2026-07-28"
 excerpt: "La mayoría de las implementaciones de software fallidas no fracasan porque la tecnología no fuera lo suficientemente avanzada. Fracasan porque las empresas digitalizaron problemas en lugar de resolverlos."
 category: "Software Development"
 tags: ["software", "digital-transformation", "best-practices"]

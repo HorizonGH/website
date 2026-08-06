@@ -1,6 +1,6 @@
 ---
 title: "Sistemas ERP: El motor detrás de la eficiencia empresarial y el crecimiento de las ventas"
-date: "2026-07-31"
+date: "2026-07-15"
 excerpt: "Las soluciones ERP integradas son inversiones estratégicas que transforman fundamentalmente cómo operan y venden las empresas. Descubra cómo los sistemas ERP impulsan la eficiencia y el crecimiento de los ingresos."
 category: "Technology"
 tags: ["erp", "enterprise", "efficiency", "sales"]

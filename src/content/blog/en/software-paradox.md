@@ -1,6 +1,6 @@
 ---
 title: "The Software Paradox: Fixing Problems, Not Just Digitizing Everything"
-date: "2026-07-31"
+date: "2026-07-28"
 excerpt: "Most failed software implementations don't fail because the technology wasn't advanced enough. They fail because companies digitized problems instead of solving them."
 category: "Software Development"
 tags: ["software", "digital-transformation", "best-practices"]

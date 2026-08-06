@@ -1,12 +1,9 @@
 {
   "nav": {
-    "home": "Inicio",
     "services": "Servicios",
     "pricing": "Precios",
-    "book": "Agenda una llamada",
     "blog": "Blog",
-    "contact": "Contacto",
-    "getStarted": "Comenzar"
+    "contact": "Contacto"
   },
   "hero": {
     "title_part1": "TRANSFORMANDO",
@@ -449,5 +446,33 @@
     "cat_functional_desc": "Habilitan funciones adicionales como agendamiento y funcionalidades mejoradas.",
     "btn_save": "Guardar preferencias",
     "footer_trigger": "Configuración de Cookies"
+  },
+  "footer": {
+    "brand_name": "HORIZON",
+    "brand_tagline": "Transformando el horizonte digital.",
+    "brand_desc": "Construyendo soluciones digitales para negocios listos para avanzar.",
+    "col_services": "SERVICIOS",
+    "col_company": "EMPRESA",
+    "col_resources": "RECURSOS",
+    "link_software": "Desarrollo de Software",
+    "link_web": "Plataformas Web",
+    "link_digital": "Transformación Digital",
+    "link_about": "Nosotros",
+    "link_work": "Trabajos",
+    "link_pricing": "Precios",
+    "link_book": "Agenda una Llamada",
+    "link_blog": "Blog",
+    "link_faq": "FAQ",
+    "link_contact": "Contacto",
+    "cta_heading": "¿Listo para discutir tu próximo proyecto?",
+    "cta_button": "Agenda una Llamada",
+    "cta_or": "o",
+    "cta_contact": "Contáctanos →",
+    "legal_privacy": "Política de Privacidad",
+    "legal_cookies": "Política de Cookies",
+    "legal_terms": "Términos",
+    "legal_legal": "Legal",
+    "legal_settings": "Configuración de Cookies",
+    "rights": "Todos los derechos reservados."
   }
 }

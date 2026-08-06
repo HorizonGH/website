@@ -18,16 +18,14 @@ const enURL = cleanPath;
 const esURL = '/es' + (cleanPath === '/' ? '' : cleanPath);
 
 const NAV = [
-  { to: locale === 'en' ? '/' : '/es/', label: t.nav.home },
   { to: locale === 'en' ? '/services' : '/es/services', label: t.nav.services },
   { to: locale === 'en' ? '/pricing' : '/es/pricing', label: t.nav.pricing },
-  { to: locale === 'en' ? '/book' : '/es/book', label: t.nav.book },
   { to: locale === 'en' ? '/blog' : '/es/blog', label: t.nav.blog },
   { to: locale === 'en' ? '/contact' : '/es/contact', label: t.nav.contact },
 ];
 
-const contactHref = locale === 'en' ? '/contact' : '/es/contact';
-const ctaLabel = locale === 'en' ? 'Start a project' : 'Comenzar un proyecto';
+const bookHref = locale === 'en' ? '/book' : '/es/book';
+const ctaLabel = locale === 'en' ? 'Book a call' : 'Agenda una llamada';
 
 const isActive = (to: string) => {
   if (to.endsWith('/')) return pathname === to;
@@ -79,7 +77,7 @@ const isActive = (to: string) => {
     </div>
 
     <a
-      href={contactHref}
+      href={bookHref}
       class="my-4 rounded-full bg-[var(--color-accent-cyan)] px-5 py-3 text-center text-sm font-bold text-black transition-shadow hover:shadow-[0_0_24px_rgba(76,214,251,0.55)]"
     >
       {ctaLabel}
