@@ -9,17 +9,29 @@
     "title_part1": "TRANSFORMANDO",
     "title_part2": "HORIZONTE",
     "title_part3": "DIGITAL.",
-    "subtitle": "Construimos plataformas web escalables, software a medida e infraestructura digital diseñada para el crecimiento real de tu negocio.",
+    "subtitle": "Desarrollo de software a medida y plataformas web para negocios en crecimiento. Herramientas internas, infraestructura digital y tecnología construida alrededor de cómo operas realmente.",
     "cta": "Obtén una consulta gratuita"
   },
   "services": {
     "title": "Nuestros Servicios",
-    "card1_title": "Arquitectura Web",
-    "card1_desc": "Construyendo bases web escalables, resilientes y de alto rendimiento utilizando los frameworks más avanzados.",
-    "card2_title": "Plataformas a Medida",
-    "card2_desc": "Soluciones de software personalizadas diseñadas para optimizar operaciones y ofrecer experiencias de usuario únicas.",
-    "card3_title": "Aceleración Digital",
-    "card3_desc": "Optimización de flujos de trabajo y modernización de sistemas heredados con ciclos de implementación rápidos."
+    "web_dev": {
+      "title": "Desarrollo Web",
+      "subtitle": "Arquitectura Web",
+      "description": "Construyendo bases web escalables, resilientes y de alto rendimiento con frameworks de vanguardia.",
+      "metric": "Objetivos LCP en menos de 1s"
+    },
+    "software_dev": {
+      "title": "Desarrollo de Software a Medida",
+      "subtitle": "Plataformas a Medida",
+      "description": "Soluciones de software personalizadas diseñadas para optimizar operaciones y ofrecer experiencias de usuario únicas.",
+      "metric": "APIs REST y GraphQL"
+    },
+    "digital_transform": {
+      "title": "Transformación Digital",
+      "subtitle": "Aceleración Digital",
+      "description": "Optimización de flujos de trabajo y modernización de sistemas heredados con ciclos de implementación rápidos.",
+      "metric": "Ciclos de release de 2 semanas"
+    }
   },
   "framework": {
     "title": "El Marco de Trabajo",
@@ -71,8 +83,8 @@
     "social_title": "Nuestras Redes"
   },
   "seo": {
-    "home_title": "Desarrollo de Software a Medida y Web para Negocios en Crecimiento | Horizon.gh",
-    "home_desc": "Horizon gh construye plataformas web escalables, software a medida y ERP para el crecimiento real. Desarrollo web a medida para negocios en crecimiento.",
+    "home_title": "Desarrollo de Software a Medida y Plataformas Web | Horizon",
+    "home_desc": "Horizon diseña y construye software a medida, plataformas web, herramientas internas e infraestructura digital para negocios en crecimiento.",
     "services_title": "Servicios | Horizon.gh - Transformando el Horizonte Digital",
     "services_desc": "Horizon gh entrega aplicaciones web de alto rendimiento, software a medida y aceleración digital sobre infraestructura robusta y escalable.",
     "pricing_title": "Precios | Horizon.gh - Transformando el Horizonte Digital",

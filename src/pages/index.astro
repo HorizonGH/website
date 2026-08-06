@@ -2,28 +2,28 @@
 import Layout from '../layouts/Layout.astro';
 import HeroCircuitBackdrop from '../components/HeroCircuitBackdrop.astro';
 
-const TITLE = "Custom Software & Web Development for Growing Businesses | Horizon.gh";
+const TITLE = "Custom Software & Web Development | Horizon";
 const DESCRIPTION =
-  "Horizon gh builds scalable web platforms, custom software, and ERP for real-world growth. Web development and custom software for growing businesses.";
+  "Horizon designs and builds custom software, web platforms, internal tools, and digital infrastructure for businesses that need technology built around the way they actually operate.";
 
 const SERVICES = [
   {
-    title: "Web Architecture",
+    title: "Custom Web Development",
+    subtitle: "Web Architecture",
     body: "Scalable, resilient front ends and delivery layers built on modern frameworks, measured against Core Web Vitals rather than opinion.",
     metric: "Sub-second LCP targets",
-    icon: "globe",
   },
   {
-    title: "Custom Platforms",
+    title: "Custom Software Development",
+    subtitle: "Custom Platforms",
     body: "Bespoke internal tools, dashboards, and SaaS products shaped around how your team actually works instead of a template's assumptions.",
     metric: "REST & GraphQL APIs",
-    icon: "code",
   },
   {
-    title: "Digital Acceleration",
+    title: "Digital Transformation",
+    subtitle: "Digital Acceleration",
     body: "Modernization of legacy systems in short, shippable cycles, so value lands in production while the migration is still running.",
     metric: "2-week release cadence",
-    icon: "zap",
   },
 ];
 
@@ -114,8 +114,8 @@ const TESTIMONIALS = [
           Transforming the <span class="text-accent-cyan drop-shadow-[0_0_16px_rgba(76,214,251,0.45)]">digital</span> horizon.
         </h1>
         <p class="body-lg mt-8 max-w-xl text-gray-600">
-          We build scalable web platforms, custom software and digital infrastructure
-          designed for real-world growth.
+          Custom software and web development for growing businesses — from web platforms
+          and internal tools to digital infrastructure built around the way you actually operate.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
@@ -140,6 +140,20 @@ const TESTIMONIALS = [
       </div>
     </section>
 
+    <!-- Intro Section -->
+    <section class="border-b border-gray-200 bg-white py-20 sm:py-24">
+      <div class="shell mx-auto max-w-4xl px-6 text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900 leading-tight mb-6">
+          Custom software and web development for growing businesses
+        </h2>
+        <p class="body-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Horizon designs and builds custom software, web platforms, internal tools,
+          and digital infrastructure for businesses that need technology built around
+          the way they actually operate.
+        </p>
+      </div>
+    </section>
+
     <!-- Services Section -->
     <section class="border-b border-gray-200 bg-gray-50 py-24" aria-labelledby="services-heading">
       <div class="shell mx-auto max-w-7xl px-6">
@@ -159,6 +173,7 @@ const TESTIMONIALS = [
               key={service.title}
               class="group flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-[var(--color-accent-cyan)] hover:shadow-[0_24px_40px_-24px_rgba(76,214,251,0.5)]"
             >
+              <p class="label-sm text-[var(--color-accent-cyan)] mb-2">{service.subtitle}</p>
               <h3 class="text-2xl font-display font-bold">{service.title}</h3>
               <p class="mt-4 flex-1 text-gray-600">{service.body}</p>
               <p class="label-sm mt-8 text-[var(--color-accent-cyan)]">{service.metric}</p>

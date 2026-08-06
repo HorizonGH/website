@@ -36,8 +36,8 @@ const enURL = new URL(cleanPath, site);
 const esURL = new URL(`/es${cleanPath === '/' ? '' : cleanPath}`, site);
 
 const DEFAULT_DESCRIPTIONS: Record<Locale, string> = {
-  en: "Horizon gh engineers scalable web platforms and custom software: resilient architecture, measurable performance, and systems built to hold under real load.",
-  es: "Horizon gh construye plataformas web escalables y software a medida: arquitectura resiliente, rendimiento medible y sistemas diseñados para soportar la carga real.",
+  en: "Horizon designs and builds custom software, web platforms, internal tools, and digital infrastructure for growing businesses.",
+  es: "Horizon diseña y construye software a medida, plataformas web, herramientas internas e infraestructura digital para negocios en crecimiento.",
 };
 const metaDescription = (description ?? DEFAULT_DESCRIPTIONS[locale]).trim();
 

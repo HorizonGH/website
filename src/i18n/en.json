@@ -6,37 +6,33 @@
     "contact": "Contact"
   },
   "home": {
-    "tagline": "Redefining Innovation",
-    "headline": "Engineering the Digital Horizon",
-    "subheadline": "Enterprise IT solutions designed for forward-thinking organizations that demand more than status quo.",
-    "cta": "Explore Our Services"
+    "tagline": "Engineered in America",
+    "headline": "Custom Software & Web Development | Horizon",
+    "subheadline": "Custom software and web development for growing businesses — from web platforms and internal tools to digital infrastructure built around the way you actually operate.",
+    "intro_heading": "Custom software and web development for growing businesses",
+    "intro_body": "Horizon designs and builds custom software, web platforms, internal tools, and digital infrastructure for businesses that need technology built around the way they actually operate.",
+    "cta": "Get a free consultation"
   },
   "services": {
     "title": "Our Services",
     "description": "Enterprise IT solutions built on technical excellence and strategic vision.",
-    "consulting": {
-      "title": "IT Consulting",
-      "description": "Strategic guidance for digital transformation and infrastructure modernization."
-    },
-    "cloudServices": {
-      "title": "Cloud Services",
-      "description": "Seamless migration and management across AWS, Azure, and Google Cloud."
-    },
-    "security": {
-      "title": "Security Solutions",
-      "description": "Zero-trust architecture and comprehensive threat management."
-    },
-    "devops": {
-      "title": "DevOps & Automation",
-      "description": "CI/CD pipelines and infrastructure as code for maximum velocity."
-    },
-    "webDevelopment": {
+    "web_dev": {
       "title": "Web Development",
-      "description": "Landing pages that convert, professional websites, and a strong digital presence."
+      "subtitle": "Web Architecture",
+      "description": "Scalable, resilient front ends and delivery layers built on modern frameworks, measured against Core Web Vitals rather than opinion.",
+      "metric": "Sub-second LCP targets"
     },
-    "softwareDevelopment": {
-      "title": "Software Development",
-      "description": "Internal systems, APIs, dashboards, and practical automation for smarter operations."
+    "software_dev": {
+      "title": "Custom Software Development",
+      "subtitle": "Custom Platforms",
+      "description": "Bespoke internal tools, dashboards, and SaaS products shaped around how your team actually works instead of a template's assumptions.",
+      "metric": "REST & GraphQL APIs"
+    },
+    "digital_transform": {
+      "title": "Digital Transformation",
+      "subtitle": "Digital Acceleration",
+      "description": "Modernization of legacy systems in short, shippable cycles, so value lands in production while the migration is still running.",
+      "metric": "2-week release cadence"
     }
   },
   "blog": {

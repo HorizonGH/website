@@ -6,19 +6,22 @@ const t = useTranslations('es') as any;
 
 const SERVICES = [
   {
-    title: t.services.card1_title,
-    body: t.home_page.services_card1_desc,
-    metric: "Objetivos LCP en menos de 1s",
+    title: t.services.web_dev.title,
+    subtitle: t.services.web_dev.subtitle,
+    body: t.services.web_dev.description,
+    metric: t.services.web_dev.metric,
   },
   {
-    title: t.services.card2_title,
-    body: t.home_page.services_card2_desc,
-    metric: "APIs REST y GraphQL",
+    title: t.services.software_dev.title,
+    subtitle: t.services.software_dev.subtitle,
+    body: t.services.software_dev.description,
+    metric: t.services.software_dev.metric,
   },
   {
-    title: t.services.card3_title,
-    body: t.home_page.services_card3_desc,
-    metric: "Ciclos de release de 2 semanas",
+    title: t.services.digital_transform.title,
+    subtitle: t.services.digital_transform.subtitle,
+    body: t.services.digital_transform.description,
+    metric: t.services.digital_transform.metric,
   },
 ];
 
@@ -106,7 +109,9 @@ const TESTIMONIALS = [
           {t.hero.title_part1} EL <span class="text-accent-cyan drop-shadow-[0_0_16px_rgba(76,214,251,0.45)]">{t.hero.title_part2}</span> {t.hero.title_part3}
         </h1>
         <p class="body-lg mt-8 max-w-xl text-gray-600">
-          {t.hero.subtitle}
+          Desarrollo de software a medida y plataformas web para negocios en crecimiento
+          — desde herramientas internas hasta infraestructura digital construida alrededor
+          de cómo operas realmente.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
@@ -131,6 +136,20 @@ const TESTIMONIALS = [
       </div>
     </section>
 
+    <!-- Intro Section -->
+    <section class="border-b border-gray-200 bg-white py-20 sm:py-24">
+      <div class="shell mx-auto max-w-4xl px-6 text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900 leading-tight mb-6">
+          Desarrollo de software a medida y plataformas web para negocios en crecimiento
+        </h2>
+        <p class="body-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Horizon diseña y construye software a medida, plataformas web, herramientas
+          internas e infraestructura digital para negocios que necesitan tecnología
+          construida alrededor de la forma en que realmente operan.
+        </p>
+      </div>
+    </section>
+
     <!-- Services Section -->
     <section class="border-b border-gray-200 bg-gray-50 py-24" aria-labelledby="services-heading">
       <div class="shell mx-auto max-w-7xl px-6">
@@ -150,6 +169,7 @@ const TESTIMONIALS = [
               key={service.title}
               class="group flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-[var(--color-accent-cyan)] hover:shadow-[0_24px_40px_-24px_rgba(76,214,251,0.5)]"
             >
+              <p class="label-sm text-[var(--color-accent-cyan)] mb-2">{service.subtitle}</p>
               <h3 class="text-2xl font-display font-bold">{service.title}</h3>
               <p class="mt-4 flex-1 text-gray-600">{service.body}</p>
               <p class="label-sm mt-8 text-[var(--color-accent-cyan)]">{service.metric}</p>
